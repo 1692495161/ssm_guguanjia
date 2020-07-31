@@ -1,0 +1,210 @@
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <base href="/guguanjia/">
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>固管家服务平台</title>
+    <meta name="description" content="index"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="static/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="static/chosen/chosen.min.css"/>
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="static/ace/css/ace.min.css" id="main-ace-style"/>
+    <link rel="stylesheet" href="static/ace/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="static/ace/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="static/ztree/metro.css"/>
+    <link rel="stylesheet" href="static/validate/css/validform.css"/>
+    <link rel="stylesheet" href="static/css/custom.css"/>
+    <link rel="stylesheet" href="static/css/work_style.css">
+    <!--[if !IE]> -->
+    <script src="static/jquery/jquery.js"></script>
+    <!-- <![endif]-->
+    <!-- ace settings handler -->
+    <script src="static/ace/js/ace-extra.min.js"></script>
+</head>
+
+<body class="no-skin" id="body-content">
+
+
+
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+
+
+            <ul class="tab" id="breadcrumb">
+                <!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+            </ul><!-- /.breadcrumb -->
+            <div id="tab-menu">
+                <ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+                    <li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+                    <li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="ace-settings-container" id="ace-settings-container">
+                <div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+                     id="ace-settings-btn">
+                    <i class="ace-icon fa fa-cog bigger-150"></i>
+                </div>
+
+            </div>
+            <!-- /.ace-settings-container -->
+            <div class="page-header">
+                <h1> {{workOrder.code}}详情 </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="fill-main-content" style="height:100%">
+                        <div class="xuboxPageHtml" id="xboxTest" style="overflow-y: auto; height: 932px;">
+
+                            <div class="layer">
+                                <div class="profile-user-info profile-user-info-striped">
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">工单编号</div>
+                                        <div class="profile-info-value">
+                                            <span>{{workOrder.code}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">工单状态</div>
+                                        <div class="profile-info-value">
+			<span>
+					<font color="red" v-if="workOrder.status=='0'">待运输</font>
+					<font color="green" v-else-if="workOrder.status=='1'">运输中</font>
+					<font color="gray" v-else-if="workOrder.status=='2'">已结束</font>
+			</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">创建用户</div>
+                                        <div class="profile-info-value">
+			<span>
+				{{workOrder.createUserName}} - {{workOrder.createOfficeName}}&nbsp;&nbsp;&nbsp;{{workOrder.createUserPhone}}
+			</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">运输用户</div>
+                                        <div class="profile-info-value">
+			<span>
+				{{workOrder.transportUserName}} -  &nbsp;&nbsp;&nbsp;{{workOrder.transportUserPhone}}
+			</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">处理用户</div>
+                                        <div class="profile-info-value">
+			<span>
+				{{workOrder.recipientUserName}} - &nbsp;&nbsp;&nbsp;{{workOrder.recipientUserPhone}}
+			</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">转运清单</div>
+                                        <div class="profile-info-value">
+                                            <span><b>运输车牌号：</b><span v-if="workOrder.details!=undefined&&workOrder.details.length>0">{{workOrder.details[0].plateNumber}}</span></span>
+                                            <table class="table table-striped table-bordered table-hover nomargin-bottom">
+                                                <thead>
+                                                <tr>
+                                                    <th class="center">废物名称</th>
+                                                    <th class="center">类别编号</th>
+                                                    <th class="center">主害成份</th>
+                                                    <th class="center">重量(吨)</th>
+                                                    <th class="center">形态</th>
+                                                    <th class="center">包装方式</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr v-for="detail in workOrder.detail">
+                                                    <td class="center">{{detail.wasteTypeCode}}-{{detail.wasteTypeName}}</td>
+                                                    <td class="center">{{detail.wasteCode}}</td>
+                                                    <td class="center">{{detail.component}}</td>
+                                                    <td class="center">{{detail.weight}}</td>
+                                                    <td class="center">{{detail.morphological}}</td>
+                                                    <td class="center">{{detail.packaging}}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">转运记录</div>
+                                        <div class="profile-info-value">
+                                            <div data-mohe-type="work_new" class="g-mohe " id="ggj-work_new">
+                                                <div id="ggj-work_new_nucom">
+                                                    <div class="mohe-wrap mh-wrap">
+                                                        <div class="mh-cont mh-list-wrap mh-unfold">
+                                                            <div class="mh-list" style="border-top: 0px; padding:0px;">
+                                                                <ul style="margin:0px;" >
+                                                                    <li :class="index==0?'first':''" v-for="(transfer,index) in workOrder.transfer">
+                                                                        <p>{{transfer.updateDate | formatTime('Y-M-D')}}</p>
+                                                                        <p>{{transfer.content}}</p>
+                                                                        <p></p>
+                                                                        <p>操作员：{{transfer.transferUserName}}&nbsp;&nbsp;{{transfer.transferUserPhone}}</p>
+                                                                        <span class="before"></span><span class="after"></span>
+                                                                        <i v-if="index==0" class="mh-icon mh-icon-new"></i>
+                                                                    </li><li>
+                                                                </li></ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.page-content -->
+
+            </div><!-- /.main-content -->
+
+            <a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"
+               style="z-index:1111">
+                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+            </a>
+        </div><!-- /.main-container -->
+    </div>
+</div>
+<!-- 底部 -->
+<!-- basic scripts -->
+<script src="static/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="static/ace/js/ace-elements.min.js"></script>
+<script src="static/ace/js/ace.min.js"></script>
+
+
+<!-- 引入其他js -->
+<script src="static/js/history.js"></script>
+<script type="text/javascript" src="static/layer/layer.js"></script>
+<script type="text/javascript" src="static/js/spin.min.js"></script>
+<script type="text/javascript" src="static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="static/js/jquery.form.js"></script>
+<script type="text/javascript" src="static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="static/js/public.js"></script>
+<script type="text/javascript" src="static/vue/vue.js"></script>
+<script type="text/javascript" src="static/vue/axios.js"></script>
+
+<script type="text/javascript" src="static/js/vuePublic.js"></script>
+<script type="text/javascript" src="static/js/work/detail.js"></script>
+
+</body>
+</html>

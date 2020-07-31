@@ -1,0 +1,241 @@
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <base href="/guguanjia/">
+	<meta charset="utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>固管家服务平台</title>
+    <meta name="description" content="index" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+	<!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="static/chosen/chosen.min.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="static/ace/css/ace.min.css" id="main-ace-style" />
+
+    <link rel="stylesheet" href="static/ace/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="static/ace/css/ace-rtl.min.css" />
+
+    <link rel="stylesheet" href="static/ztree/metro.css" />
+    <link rel="stylesheet" href="static/validate/css/validform.css" />
+    <link rel="stylesheet" href="static/css/custom.css" />
+
+
+	<script src="static/jquery/jquery.js"></script>
+
+	<!-- ace settings handler -->
+	<script src="static/ace/js/ace-extra.min.js"></script>
+	<!--日期插件-->
+	<script type="text/javascript" src="static/js/jedate/jedate.js"></script>
+</head>
+
+<body class="no-skin" id="body-content">
+<style>
+		#profile .center>label{width: 100px;text-align: right;}
+	</style>
+
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+           
+
+            <ul class="tab" id="breadcrumb">
+                <!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+            </ul><!-- /.breadcrumb -->
+            <div id="tab-menu">
+                <ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+                    <li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+                    <li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-content">
+
+            <div class="page-header">
+                <h1> 法律法规 </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="fill-main-content" style="height: 100%;"><!-- ueditor所需引入 -->
+                        <div class="xuboxPageHtml" id="xboxTest" style="overflow-y: auto; height: 457px;">
+                            <div class="layer">
+                                <form name="FormPost" id="statute-save" class="FormGrid" method="post"
+                                      action="/guguanjia/manager/statute/save">
+
+                                    <input type="hidden" value="4" name="id">
+                                    <table class="EditTable" width="100%">
+                                        <tbody>
+                                        <tr style="display: none;">
+                                            <td class="ui-state-error" id="FormError"></td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">标题</td>
+                                            <td class="DataTD width-100"><input type="text" v-model="statute.title" name="title" datatype="*"
+                                                                                nullmsg="请输入标题！"
+                                                                                value="交通运输部关于修改《道路危险货物运输管理规定》的决定"></td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">类型</td>
+                                            <td class="DataTD width-100">
+                                                <select name="type" class="width-70" v-model="statute.type">
+                                                    <option value="1" selected="">国家</option>
+                                                    <option value="2">地方</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">发布时间</td>
+                                            <td class="DataTD width-100">
+                                                <input id="modifydate" type="text" v-model="statute.pubDate" name="pubDate" nullmsg="请输入发布时间！"
+                                                       value="2016-04-11" placeholder="YYYY-MM-DD" readonly="">
+                                                <!--<script type="text/javascript">
+                                                    jeDate({
+                                                        dateCell: '#modifydate',
+                                                        format: 'YYYY-MM-DD',
+                                                        zIndex: 999999999
+                                                    });
+                                                </script>-->
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD" >来源</td>
+                                            <td class="DataTD width-100"><input type="text" v-model="statute.stemFrom" name="stemFrom" datatype="*"
+                                                                                nullmsg="请输入来源！" value="交通运输部"></td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD" style="vertical-align: top;">内容</td>
+                                            <td class="DataTD width-100">
+                                                <!-- 加载编辑器的容器 -->
+                                                <div id="container2" class="edui-default" style="width: 100%;">
+                                                    <vue-ueditor-wrap v-model="statute.description" :config="ueditorConfig"></vue-ueditor-wrap>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <textarea name="description" id="ueditor_textarea_description"
+                                              style="display: none;"></textarea></form>
+                            </div>
+
+                            <div class="width-100 clearfix" tag-save-btn=""
+                                 style="bottom: -36px; left: 0px; position: absolute;">
+	<span class="btn btn-primary btn-sm bigger-110 width-50  pull-left" id="statute-save-save" @click="doUpdate">
+		<i class="ace-icon fa fa-floppy-o align-top bigger-125"></i> 确 定
+	</span>
+                                <span class="btn btn-yellow btn-sm bigger-110 width-50 pull-right"
+                                      id="statute-save-cancel" @click="doClose">
+		<i class="ace-icon fa fa-times align-top  bigger-125" ></i> 取 消
+	</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div><!-- /.page-content -->
+
+    </div><!-- /.main-content -->
+
+    <a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse" style="z-index:1111">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+<!--<script type="text/javascript" src="static/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="static/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" charset="utf-8"
+        src="static/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+&lt;!&ndash; 实例化编辑器 &ndash;&gt;
+<script type="text/javascript">
+
+
+
+
+    var ue = UE.getEditor('container2');
+</script>-->
+
+<script >
+
+
+    try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+
+    try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+
+    try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+
+    try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+
+    try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+
+    $(function(){
+
+
+
+
+
+    });
+
+
+</script>
+
+
+<script src="static/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="static/ace/js/ace-elements.min.js"></script>
+<script src="static/ace/js/ace.min.js"></script>
+
+
+
+<!-- 引入其他js -->
+<script src="static/js/history.js"></script>
+<script type="text/javascript" src="static/layer/layer.js"></script>
+<script type="text/javascript" src="static/js/spin.min.js"></script>
+<script type="text/javascript" src="static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="static/js/jquery.form.js"></script>
+<script type="text/javascript" src="static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="static/js/public.js"></script>
+
+<script type="text/javascript" src="static/vue/vue.js"></script>
+<script type="text/javascript" src="static/vue/axios.js"></script>
+
+<!--vue-ueditor-wrap.min.js文件加载时会从默认ueditor资源加载路径中自动加载
+ueditor.all.min.js 和 ueditor.config.js-->
+<!--<script src="static/ueditor/ueditor.all.js"></script>
+    <script src="static/ueditor/ueditor.config.js"></script>-->
+<script type="text/javascript" src="static/vue/vue-ueditor-wrap.min.js"></script>
+
+<script type="text/javascript" src="static/js/statute/update.js"></script>
+
+<script>
+    $(function () {//页面加载完成后加载
+        //load（网页）  在组件加载的时候，发送ajax请求获取服务器返回回来的页面内容
+        $("#navbar").load("main/navbar");
+        $("#sidebar").load("main/sidebar");
+    })
+
+</script>
+
+</body>
+</html>

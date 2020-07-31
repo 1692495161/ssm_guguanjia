@@ -1,0 +1,1191 @@
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>固管家服务平台</title>
+
+    <meta name="description" content="index" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../static/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="../../../static/chosen/chosen.min.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="../../../static/ace/css/ace.min.css" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../../../static/ace/css/ace-part2.min.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="../../../static/ace/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="../../../static/ace/css/ace-rtl.min.css" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../../../static/ace/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <link rel="stylesheet" href="../../../static/ztree/metro.css" />
+    <link rel="stylesheet" href="../../../static/validate/css/validform.css" />
+    <link rel="stylesheet" href="../../../static/css/custom.css" />
+
+    <!--[if !IE]> -->
+    <script src="../../../static/jquery/jquery.js"></script>
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+    <![endif]-->
+
+
+    <!-- ace settings handler -->
+    <script src="../../../static/ace/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="../../../static/bootstrap/html5shiv.min.js"></script>
+    <script src="../../../static/bootstrap/respond.min.js"></script>
+    <script>var ie8 = "ie8";</script>
+    <![endif]-->
+</head>
+
+<body class="no-skin" id="body-content">
+<!-- 顶部条 -->
+<div id="navbar" class="navbar navbar-default">
+    <script type="text/javascript">
+        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+    </script>
+
+    <div class="navbar-container clearfix" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="navbar-header pull-left" style="min-width:190px;">
+            <a  class="navbar-brand">
+                <small>
+                    固管家服务平台
+                </small>
+            </a>
+        </div>
+        <!-- <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a  data-trigger="ajax" data-target="#fill-main-content" class="bigger-120">
+                    <i class="menu-icon fa "></i>&nbsp;
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+
+                <li class="green">
+                    <a class="dropdown-toggle" href="javascript:void(0);" id="fullscreen" title="全屏"
+                       onclick="launchFullscreen(document.documentElement);">
+                        <i class="ace-icon fa fa-arrows-alt "></i>
+                    </a>
+                </li>
+
+                <li class="purple" style="display:none;">
+                    <a data-toggle="dropdown" class="dropdown-toggle" >
+                        <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+                        <span class="badge badge-important">8</span>
+                    </a>
+
+                    <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-exclamation-triangle"></i>
+                            8 Notifications
+                        </li>
+
+                        <li>
+                            <a >
+                                <div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+												New Comments
+											</span>
+                                    <span class="pull-right badge badge-info">+12</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a >
+                                <i class="btn btn-xs btn-primary fa fa-user"></i>
+                                Bob just signed up as an editor ...
+                            </a>
+                        </li>
+
+                        <li>
+                            <a >
+                                <div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+												New Orders
+											</span>
+                                    <span class="pull-right badge badge-success">+8</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a >
+                                <div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+												Followers
+											</span>
+                                    <span class="pull-right badge badge-info">+11</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a >
+                                See all notifications
+                                <i class="ace-icon fa fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="light-blue">
+                    <a data-toggle="dropdown"  class="dropdown-toggle">
+                        <img class="nav-user-photo" src="../../../static/img/small-male-pic.png" />
+                        <span class="user-info">
+									<small>你好,</small>
+									超级管理员
+								</span>
+
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="../userCenter/userCenter.html">
+                                <i class="ace-icon fa fa-user"></i>
+                                我的资料
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="../login.html">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.navbar-container -->
+</div>
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
+
+
+    <div id="sidebar" class="sidebar responsive">
+        <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+        </script>
+
+        <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                <button class="btn btn-success">
+                    <i class="ace-icon fa fa-signal"></i>
+                </button>
+
+                <button class="btn btn-info">
+                    <i class="ace-icon fa fa-pencil"></i>
+                </button>
+
+                <button class="btn btn-warning">
+                    <i class="ace-icon fa fa-users"></i>
+                </button>
+
+                <button class="btn btn-danger">
+                    <i class="ace-icon fa fa-cogs"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                <span class="btn btn-success"></span>
+
+                <span class="btn btn-info"></span>
+
+                <span class="btn btn-warning"></span>
+
+                <span class="btn btn-danger"></span>
+            </div>
+        </div><!-- /.sidebar-shortcuts -->
+
+        <ul class="nav nav-list" id="sidebar-menu">
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-user"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 个人中心 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../userCenter/userCenter.html"
+                                id="menu_manageruserCenter"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-file-o"></i>
+                            <span class="menu-text"
+                            > 我的资料 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-lastfm"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 单位管理 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../office/office-detail.html"
+                                id="menu_managercompanydetail"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 单位信息 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../user/user.html"
+                                id="menu_managercompanyaccounts"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 单位账号 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../work/company/work.html"
+                                id="menu_managercompanywork"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 电子台账 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-puzzle-piece"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 业务管理 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../work/admin/work.html"
+                                id="menu_manageradminwork"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 电子台账 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../qualification/index.html"
+                                id="menu_managerqualificationindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 资质审核 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../demand/index.html"
+                                id="menu_managerdemandindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 服务需求 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../examine/index.html"
+                                id="menu_managerexamineindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 考核管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../app/index.html"
+                                id="menu_managerappindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > APP管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../statute/index.html"
+                                id="menu_managerstatuteindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-bolt"></i>
+                            <span class="menu-text"
+                            > 法律法规 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-group"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 机构用户 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../area/index.html"
+                                id="menu_managerarea"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-globe"></i>
+                            <span class="menu-text"
+                            > 区域管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../office/office.html"
+                                id="menu_manageroffice"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-sitemap"></i>
+                            <span class="menu-text"
+                            > 机构管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../user/user-list.html"
+                                id="menu_managersysuser"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-user"></i>
+                            <span class="menu-text"
+                            > 用户管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../role/role.html"
+                                id="menu_managerrole"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-graduation-cap"></i>
+                            <span class="menu-text"
+                            > 角色管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-cogs"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 系统管理 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../menu/menu.html"
+                                id="menu_managermenu"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-list"></i>
+                            <span class="menu-text"
+                            > 菜单配置 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../dict/dict.html"
+                                id="menu_managerdict"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-calculator"></i>
+                            <span class="menu-text"
+                            > 字典管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../log/log.html"
+                                id="menu_managersyslog"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-copy"></i>
+                            <span class="menu-text"
+                            > 日志查询 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-binoculars"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 系统监控 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../ehcache/ehcache.html"
+                                id="menu_managermonitorehcache"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-crosshairs"></i>
+                            <span class="menu-text"
+                            > Ehcache监控 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../jvm/jvm.html"
+                                id="menu_managermonitorjvm"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-flash"></i>
+                            <span class="menu-text"
+                            > jvm监控 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+        </ul><!-- /.nav-list -->
+        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+        </div>
+
+        <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+        </script>
+    </div>
+
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="tab" id="breadcrumb">
+                <!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+            </ul><!-- /.breadcrumb -->
+            <div id="tab-menu">
+                <ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+                    <li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+                    <li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="ace-settings-container" id="ace-settings-container">
+                <div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+                     id="ace-settings-btn">
+                    <i class="ace-icon fa fa-cog bigger-150"></i>
+                </div>
+
+                <div class="ace-settings-box clearfix" id="ace-settings-box">
+                    <div class="pull-left width-50">
+                        <div class="ace-settings-item">
+                            <div class="pull-left">
+                                <select id="skin-colorpicker" class="hide">
+                                    <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                                    <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                    <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                    <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                                </select>
+                            </div>
+                            <span>&nbsp; 皮肤</span>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-navbar" /> <label class="lbl"
+                                                                      for="ace-settings-navbar"> 固定页头</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-sidebar" /> <label class="lbl"
+                                                                       for="ace-settings-sidebar"> 固定导航菜单</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-breadcrumbs" /> <label class="lbl"
+                                                                           for="ace-settings-breadcrumbs"> 固定导航条</label>
+                        </div>
+
+                        <!-- <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                id="ace-settings-rtl" /> <label class="lbl" for="ace-settings-rtl">
+                                Right To Left (rtl)</label>
+                        </div> -->
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-add-container" /> <label class="lbl"
+                                                                             for="ace-settings-add-container"> 固定宽度
+                        </label>
+                        </div>
+                    </div>
+                    <!-- /.pull-left -->
+
+                    <div class="pull-left width-50">
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-hover" /> <label class="lbl"
+                                                                     for="ace-settings-hover"> 滑动式菜单</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-compact" /> <label class="lbl"
+                                                                       for="ace-settings-compact"> 紧凑式菜单</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-highlight" /> <label class="lbl"
+                                                                         for="ace-settings-highlight"> 高亮选中</label>
+                        </div>
+                    </div>
+                    <!-- /.pull-left -->
+                </div>
+                <!-- /.ace-settings-box -->
+            </div>
+            <!-- /.ace-settings-container -->
+            <div class="page-header">
+                <h1> 固管家服务平台 编辑 </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="fill-main-content" style="height:100%">
+
+                        <div class="xuboxPageHtml" id="xboxTest" style="overflow-y: auto; height: 457px;"><script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+                            <script src="../../../static/js/jquery.uploadPreview.js"></script>
+                            <!-- ueditor所需引入 -->
+                            <script type="text/javascript" src="../../../static/ueditor/ueditor.config.js"></script>
+                            <script type="text/javascript" src="../../../static/ueditor/ueditor.all.min.js"></script>
+                            <script type="text/javascript" charset="utf-8" src="../../../static/ueditor/lang/zh-cn/zh-cn.js"></script><div class="layer">
+                                <form enctype="multipart/form-data" name="FormPost" id="office-save-form" class="FormGrid" method="post" action="/guguanjia/manager/office/save">
+
+                                    <input type="hidden" value="56" name="id">
+                                    <input type="hidden" value="" name="parentIds">
+                                    <input type="hidden" value="0," name="oldParentIds">
+                                    <table class="EditTable" width="100%">
+                                        <tbody>
+                                        <tr style="display: none;">
+                                            <td class="ui-state-error" id="FormError"></td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">单位LOGO</td>
+                                            <td class="DataTD width-100">
+                                                <div class="sbd">
+                                                    <input name="logoFile" type="file" id="logo_input" style="display:none;">
+                                                    <a id="office-logo">
+                                                        <img id="logo" width="60" height="60" src="/static/uploads/logos/07A71D4101DD4A6995221B0B1BCFED08.png">
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD"><span class="red">*</span>机构名称</td>
+                                            <td class="DataTD width-100">
+                                                <input type="text" name="name" datatype="*" nullmsg="请输入机构名称！" value="固管家服务平台">
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD"><span class="red">*</span>机构类型</td>
+                                            <td class="DataTD width-100">
+                                                <select class="chosen-select " name="type" id="chosen-select" style="display: none;">
+                                                    <option value="1" selected="">
+                                                        公司
+                                                    </option>
+
+                                                </select>
+                                                <script>
+                                                    $(function(){
+                                                        $("#chosen-select").chosen({width: "100%",search_contains: true});
+                                                    });
+                                                </script>					</td>
+                                        </tr>
+                                        <tr class="FormData" style="display: none;">
+                                            <td class="CaptionTD">上级机构</td>
+                                            <td class="DataTD width-100">
+
+                                                <div class="clearfix width-100  input-group" style="">
+                                                    <input class="form-control search-query" type="text" readonly="" id="poffice" name="" value="">
+                                                    <span class="input-group-btn">
+		<span class="btn btn-purple btn-sm" type="button" style="height: 34px;" data-mode="page" data-url="/guguanjia/manager/tag/treeselect" data-data="{url:'/guguanjia/manager/office/tree',id:'poffice_id',nameId:'poffice',pIdKey:'parentId',selectIds:'',curId:'56',checked:'false',rootNodeName:'',isLayer:'true'}" data-title="请选择" data-width="350px" data-height="400px">
+			<i class="ace-icon fa fa-search bigger-110"></i>
+            查找
+		</span>
+	</span>
+                                                    <input type="hidden" name="parentId" id="poffice_id" value="0">
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD"><span class="red">*</span>归属区域</td>
+                                            <td class="DataTD width-100">
+
+                                                <div class="clearfix width-100  input-group" style="">
+                                                    <input class="form-control search-query" type="text" readonly="" id="area" name="" value="中国" datatype="*" nullmsg="请选择归属区域">
+                                                    <span class="input-group-btn">
+		<span class="btn btn-purple btn-sm" type="button" style="height: 34px;" data-mode="page" data-url="/guguanjia/manager/tag/treeselect" data-data="{url:'/guguanjia/manager/area/tree',id:'area_id',nameId:'area',pIdKey:'parentId',selectIds:'1',curId:'-1',checked:'false',rootNodeName:'',isLayer:'true'}" data-title="请选择" data-width="350px" data-height="400px">
+			<i class="ace-icon fa fa-search bigger-110"></i>
+            <a href="../area/area-select.html">查找</a>
+		</span>
+	</span>
+                                                    <input type="hidden" name="areaId" id="area_id" value="1">
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData" style="display: none;">
+                                            <td class="CaptionTD">区域图标</td>
+                                            <td class="DataTD">
+                                                <div class="width-100 clearfix ">
+                                                    <input type="hidden" value="" name="icon" id="icon-input">
+                                                    <i class="ace-icon  bigger-200 pink" style="vertical-align: middle;padding-right: 10px;"></i>
+                                                    <span class="btn btn-sm btn-purple" id="icon-icon-btn">
+		<i class="ace-icon fa fa-search bigger-110"></i>查找
+	</span>
+                                                </div>
+                                                <script>
+                                                    $(function(){
+                                                        $("#icon-icon-btn").click(function(){
+                                                            $.layer({
+                                                                type: 2,
+                                                                title: '请单击选择图标',
+                                                                maxmin: true,
+                                                                iframe: {src : ctxPath+'/manager/tag/fontawesome?id=icon-input'},
+                                                                area: ['1000px' , '550px']
+                                                            });
+                                                        });
+                                                    });
+                                                </script>
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">废物类型</td>
+                                            <td class="DataTD width-100">
+                                                <select name="wasteType" id="wasteType" style="display: none;">
+                                                    <option value="0">请选择废物类型</option>
+                                                    <option value="1">
+                                                        HW01-医疗废物
+                                                    </option>
+                                                    <option value="2">
+                                                        HW02-医药废物
+                                                    </option>
+                                                    <option value="3">
+                                                        HW03-废药物、药品
+                                                    </option>
+                                                    <option value="4">
+                                                        HW04-农药废物
+                                                    </option>
+                                                    <option value="5">
+                                                        HW05-木材防腐剂废物
+                                                    </option>
+                                                    <option value="6">
+                                                        HW06-有机溶剂废物
+                                                    </option>
+                                                    <option value="7">
+                                                        HW07-热处理含氰废物
+                                                    </option>
+                                                    <option value="8">
+                                                        HW08-废矿物油
+                                                    </option>
+                                                    <option value="9">
+                                                        HW09-油/水、烃/水混合物或乳化液
+                                                    </option>
+                                                    <option value="10">
+                                                        HW10-多氯（溴）联苯类废物
+                                                    </option>
+                                                    <option value="11">
+                                                        HW11-精（蒸）馏残渣
+                                                    </option>
+                                                    <option value="12">
+                                                        HW12-染料、涂料废物
+                                                    </option>
+                                                    <option value="13">
+                                                        HW13-有机树脂类废物
+                                                    </option>
+                                                    <option value="14">
+                                                        HW14-新化学药品废物
+                                                    </option>
+                                                    <option value="15">
+                                                        HW15-爆炸性废物
+                                                    </option>
+                                                    <option value="16">
+                                                        HW16-感光材料废物
+                                                    </option>
+                                                    <option value="17">
+                                                        HW17-表面处理废物
+                                                    </option>
+                                                    <option value="18">
+                                                        HW18-焚烧处置残渣
+                                                    </option>
+                                                    <option value="19">
+                                                        HW19-含金属羰基化合物废物
+                                                    </option>
+                                                    <option value="20">
+                                                        HW20-含铍废物
+                                                    </option>
+                                                    <option value="21">
+                                                        HW21-含铬废物
+                                                    </option>
+                                                    <option value="22">
+                                                        HW22-含铜废物
+                                                    </option>
+                                                    <option value="23">
+                                                        HW23-含锌废物
+                                                    </option>
+                                                    <option value="24">
+                                                        HW24-含砷废物
+                                                    </option>
+                                                    <option value="25">
+                                                        HW25-含硒废物
+                                                    </option>
+                                                    <option value="26">
+                                                        HW26-含镉废物
+                                                    </option>
+                                                    <option value="27">
+                                                        HW27-含锑废物
+                                                    </option>
+                                                    <option value="28">
+                                                        HW28-含碲废物
+                                                    </option>
+                                                    <option value="29">
+                                                        HW29-含汞废物
+                                                    </option>
+                                                    <option value="30">
+                                                        HW30-含铊废物
+                                                    </option>
+                                                    <option value="31">
+                                                        HW31-含铅废物
+                                                    </option>
+                                                    <option value="32">
+                                                        HW32-无机氟化物废物
+                                                    </option>
+                                                    <option value="33">
+                                                        HW33-无机氰化物废物
+                                                    </option>
+                                                    <option value="34">
+                                                        HW34-废酸
+                                                    </option>
+                                                    <option value="35">
+                                                        HW35-废碱
+                                                    </option>
+                                                    <option value="36">
+                                                        HW36-石棉废物
+                                                    </option>
+                                                    <option value="37">
+                                                        HW37-有机磷化合物废物
+                                                    </option>
+                                                    <option value="38">
+                                                        HW38-有机氰化物废物
+                                                    </option>
+                                                    <option value="39">
+                                                        HW39-含酚废物
+                                                    </option>
+                                                    <option value="40">
+                                                        HW40-含醚废物
+                                                    </option>
+                                                    <option value="41">
+                                                        HW41-废卤化有机溶剂
+                                                    </option>
+                                                    <option value="42">
+                                                        HW42-废有机溶剂
+                                                    </option>
+                                                    <option value="43">
+                                                        HW43-含多氯苯并呋喃类废物
+                                                    </option>
+                                                    <option value="44">
+                                                        HW44-含多氯苯并二恶英废物
+                                                    </option>
+                                                    <option value="45">
+                                                        HW45-含有机卤化物废物
+                                                    </option>
+                                                    <option value="46">
+                                                        HW46-含镍废物
+                                                    </option>
+                                                    <option value="47">
+                                                        HW47-含钡废物
+                                                    </option>
+                                                    <option value="48">
+                                                        HW48-有色金属冶炼废物
+                                                    </option>
+                                                    <option value="49">
+                                                        HW49-其他废物
+                                                    </option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">危废</td>
+                                            <td class="DataTD width-100">
+                                                <select data-placeholder="请选择危废" id="waste" style="display: none;">
+                                                    <option value="0">请选择废物类型</option>
+                                                </select>
+
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD"></td>
+                                            <td class="DataTD width-100" id="selectedWaste">
+
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">负责人</td>
+                                            <td class="DataTD width-100">
+                                                <input type="text" name="master" value="管理员">
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">电话</td>
+                                            <td class="DataTD width-100">
+                                                <input type="text" name="phone" value="">
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">邮箱</td>
+                                            <td class="DataTD width-100">
+                                                <input type="text" name="email" value="">
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">联系地址</td>
+                                            <td class="DataTD width-100">
+                                                <input type="text" name="address" value="">
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">邮政编码</td>
+                                            <td class="DataTD width-100">
+                                                <input type="text" name="zip_code" value="">
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">传真</td>
+                                            <td class="DataTD width-100">
+                                                <input type="text" name="fax" value="">
+                                            </td>
+                                        </tr>
+                                        <tr class="FormData">
+                                            <td class="CaptionTD">机构描述</td>
+                                            <td class="DataTD width-100">
+                                                <!-- 加载编辑器的容器 -->
+                                                <div id="container" class="edui-default" style="min-height: 300px; width: 100%;"><div id="edui1" class="edui-editor  edui-default" style="width: 100%; z-index: 19910323;"><div id="edui1_toolbarbox" class="edui-editor-toolbarbox edui-default"><div id="edui1_toolbarboxouter" class="edui-editor-toolbarboxouter edui-default"><div class="edui-editor-toolbarboxinner edui-default"><div id="edui2" class="edui-toolbar   edui-default" onselectstart="return false;" onmousedown="return $EDITORUI[&quot;edui2&quot;]._onMouseDown(event, this);" style="user-select: none;"><div id="edui3" class="edui-box edui-button edui-for-fullscreen edui-default"><div id="edui3_state" onmousedown="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui3&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui3_body" unselectable="on" title="全屏" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui3&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui3&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui4" class="edui-box edui-button edui-for-source edui-default"><div id="edui4_state" onmousedown="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui4_body" unselectable="on" title="源代码" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui4&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui4&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui5" class="edui-box edui-separator  edui-default"></div><div id="edui6" class="edui-box edui-button edui-for-undo edui-default"><div id="edui6_state" onmousedown="$EDITORUI[&quot;edui6&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui6&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui6&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui6&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui6_body" unselectable="on" title="撤销" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui6&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui6&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui7" class="edui-box edui-button edui-for-redo edui-default"><div id="edui7_state" onmousedown="$EDITORUI[&quot;edui7&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui7&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui7&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui7&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui7_body" unselectable="on" title="重做" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui7&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui7&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui8" class="edui-box edui-separator  edui-default"></div><div id="edui9" class="edui-box edui-button edui-for-bold edui-default"><div id="edui9_state" onmousedown="$EDITORUI[&quot;edui9&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui9&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui9&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui9&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui9_body" unselectable="on" title="加粗" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui9&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui9&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui10" class="edui-box edui-button edui-for-italic edui-default"><div id="edui10_state" onmousedown="$EDITORUI[&quot;edui10&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui10&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui10&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui10&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui10_body" unselectable="on" title="斜体" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui10&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui10&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui11" class="edui-box edui-button edui-for-underline edui-default"><div id="edui11_state" onmousedown="$EDITORUI[&quot;edui11&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui11&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui11&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui11&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui11_body" unselectable="on" title="下划线" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui11&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui11&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui12" class="edui-box edui-button edui-for-fontborder edui-default"><div id="edui12_state" onmousedown="$EDITORUI[&quot;edui12&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui12&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui12&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui12&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui12_body" unselectable="on" title="字符边框" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui12&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui12&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui13" class="edui-box edui-button edui-for-strikethrough edui-default"><div id="edui13_state" onmousedown="$EDITORUI[&quot;edui13&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui13&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui13&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui13&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui13_body" unselectable="on" title="删除线" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui13&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui13&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui14" class="edui-box edui-button edui-for-superscript edui-default"><div id="edui14_state" onmousedown="$EDITORUI[&quot;edui14&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui14&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui14&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui14&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui14_body" unselectable="on" title="上标" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui14&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui14&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui15" class="edui-box edui-button edui-for-subscript edui-default"><div id="edui15_state" onmousedown="$EDITORUI[&quot;edui15&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui15&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui15&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui15&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui15_body" unselectable="on" title="下标" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui15&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui15&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui16" class="edui-box edui-button edui-for-removeformat edui-default"><div id="edui16_state" onmousedown="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui16_body" unselectable="on" title="清除格式" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui16&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui16&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui17" class="edui-box edui-button edui-for-formatmatch edui-default"><div id="edui17_state" onmousedown="$EDITORUI[&quot;edui17&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui17&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui17&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui17&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui17_body" unselectable="on" title="格式刷" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui17&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui17&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui18" class="edui-box edui-splitbutton edui-for-autotypeset edui-default"><div title="自动排版" id="edui18_state" onmousedown="$EDITORUI[&quot;edui18&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui18&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui18&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui18&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-splitbutton-body edui-default"><div id="edui18_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui18&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui18&quot;]._onArrowClick();"></div></div></div></div><div id="edui21" class="edui-box edui-button edui-for-blockquote edui-default"><div id="edui21_state" onmousedown="$EDITORUI[&quot;edui21&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui21&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui21&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui21&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui21_body" unselectable="on" title="引用" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui21&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui21&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui22" class="edui-box edui-button edui-for-pasteplain edui-default"><div id="edui22_state" onmousedown="$EDITORUI[&quot;edui22&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui22&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui22&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui22&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui22_body" unselectable="on" title="纯文本粘贴模式" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui22&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui22&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui23" class="edui-box edui-separator  edui-default"></div><div id="edui24" class="edui-box edui-splitbutton edui-for-forecolor edui-default edui-colorbutton"><div title="字体颜色" id="edui24_state" onmousedown="$EDITORUI[&quot;edui24&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui24&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui24&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui24&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-splitbutton-body edui-default"><div id="edui24_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui24&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div id="edui24_colorlump" class="edui-colorlump"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui24&quot;]._onArrowClick();"></div></div></div></div><div id="edui27" class="edui-box edui-splitbutton edui-for-backcolor edui-default edui-colorbutton"><div title="背景色" id="edui27_state" onmousedown="$EDITORUI[&quot;edui27&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui27&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui27&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui27&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-splitbutton-body edui-default"><div id="edui27_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui27&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div id="edui27_colorlump" class="edui-colorlump"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui27&quot;]._onArrowClick();"></div></div></div></div><div id="edui30" class="edui-box edui-menubutton edui-for-insertorderedlist edui-default"><div title="有序列表" id="edui30_state" onmousedown="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-menubutton-body edui-default"><div id="edui30_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui30&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui30&quot;]._onArrowClick();"></div></div></div></div><div id="edui43" class="edui-box edui-menubutton edui-for-insertunorderedlist edui-default"><div title="无序列表" id="edui43_state" onmousedown="$EDITORUI[&quot;edui43&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui43&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui43&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui43&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-menubutton-body edui-default"><div id="edui43_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui43&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui43&quot;]._onArrowClick();"></div></div></div></div><div id="edui50" class="edui-box edui-button edui-for-selectall edui-default"><div id="edui50_state" onmousedown="$EDITORUI[&quot;edui50&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui50&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui50&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui50&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui50_body" unselectable="on" title="全选" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui50&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui50&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui51" class="edui-box edui-button edui-for-cleardoc edui-default"><div id="edui51_state" onmousedown="$EDITORUI[&quot;edui51&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui51&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui51&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui51&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui51_body" unselectable="on" title="清空文档" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui51&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui51&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui52" class="edui-box edui-separator  edui-default"></div><div id="edui53" class="edui-box edui-menubutton edui-for-rowspacingtop edui-default"><div title="段前距" id="edui53_state" onmousedown="$EDITORUI[&quot;edui53&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui53&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui53&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui53&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-menubutton-body edui-default"><div id="edui53_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui53&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui53&quot;]._onArrowClick();"></div></div></div></div><div id="edui60" class="edui-box edui-menubutton edui-for-rowspacingbottom edui-default"><div title="段后距" id="edui60_state" onmousedown="$EDITORUI[&quot;edui60&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui60&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui60&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui60&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-menubutton-body edui-default"><div id="edui60_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui60&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui60&quot;]._onArrowClick();"></div></div></div></div><div id="edui67" class="edui-box edui-menubutton edui-for-lineheight edui-default"><div title="行间距" id="edui67_state" onmousedown="$EDITORUI[&quot;edui67&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui67&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui67&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui67&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-menubutton-body edui-default"><div id="edui67_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui67&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui67&quot;]._onArrowClick();"></div></div></div></div><div id="edui76" class="edui-box edui-separator  edui-default"></div><div id="edui77" class="edui-box edui-combox edui-for-customstyle edui-default"><div title="自定义标题" id="edui77_state" onmousedown="$EDITORUI[&quot;edui77&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui77&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui77&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui77&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-combox-body edui-default"><div id="edui77_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui77&quot;]._onButtonClick(event, this);">自定义标题</div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui77&quot;]._onArrowClick();"></div></div></div></div><div id="edui83" class="edui-box edui-combox edui-for-paragraph edui-default"><div title="段落格式" id="edui83_state" onmousedown="$EDITORUI[&quot;edui83&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui83&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui83&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui83&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-combox-body edui-default"><div id="edui83_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui83&quot;]._onButtonClick(event, this);">段落格式</div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui83&quot;]._onArrowClick();"></div></div></div></div><div id="edui92" class="edui-box edui-combox edui-for-fontfamily edui-default"><div title="字体" id="edui92_state" onmousedown="$EDITORUI[&quot;edui92&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui92&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui92&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui92&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-combox-body edui-default"><div id="edui92_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui92&quot;]._onButtonClick(event, this);">字体</div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui92&quot;]._onArrowClick();"></div></div></div></div><div id="edui105" class="edui-box edui-combox edui-for-fontsize edui-default"><div title="字号" id="edui105_state" onmousedown="$EDITORUI[&quot;edui105&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui105&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui105&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui105&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-combox-body edui-default"><div id="edui105_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui105&quot;]._onButtonClick(event, this);">字号</div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui105&quot;]._onArrowClick();"></div></div></div></div><div id="edui116" class="edui-box edui-separator  edui-default"></div><div id="edui117" class="edui-box edui-button edui-for-directionalityltr edui-default"><div id="edui117_state" onmousedown="$EDITORUI[&quot;edui117&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui117&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui117&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui117&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui117_body" unselectable="on" title="从左向右输入" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui117&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui117&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui118" class="edui-box edui-button edui-for-directionalityrtl edui-default"><div id="edui118_state" onmousedown="$EDITORUI[&quot;edui118&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui118&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui118&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui118&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui118_body" unselectable="on" title="从右向左输入" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui118&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui118&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui119" class="edui-box edui-button edui-for-indent edui-default"><div id="edui119_state" onmousedown="$EDITORUI[&quot;edui119&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui119&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui119&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui119&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui119_body" unselectable="on" title="首行缩进" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui119&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui119&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui120" class="edui-box edui-separator  edui-default"></div><div id="edui121" class="edui-box edui-button edui-for-justifyleft edui-default"><div id="edui121_state" onmousedown="$EDITORUI[&quot;edui121&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui121&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui121&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui121&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui121_body" unselectable="on" title="居左对齐" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui121&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui121&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui122" class="edui-box edui-button edui-for-justifycenter edui-default"><div id="edui122_state" onmousedown="$EDITORUI[&quot;edui122&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui122&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui122&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui122&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui122_body" unselectable="on" title="居中对齐" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui122&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui122&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui123" class="edui-box edui-button edui-for-justifyright edui-default"><div id="edui123_state" onmousedown="$EDITORUI[&quot;edui123&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui123&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui123&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui123&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui123_body" unselectable="on" title="居右对齐" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui123&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui123&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui124" class="edui-box edui-button edui-for-justifyjustify edui-default"><div id="edui124_state" onmousedown="$EDITORUI[&quot;edui124&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui124&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui124&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui124&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui124_body" unselectable="on" title="两端对齐" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui124&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui124&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui125" class="edui-box edui-separator  edui-default"></div><div id="edui126" class="edui-box edui-button edui-for-touppercase edui-default"><div id="edui126_state" onmousedown="$EDITORUI[&quot;edui126&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui126&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui126&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui126&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui126_body" unselectable="on" title="字母大写" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui126&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui126&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui127" class="edui-box edui-button edui-for-tolowercase edui-default"><div id="edui127_state" onmousedown="$EDITORUI[&quot;edui127&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui127&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui127&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui127&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui127_body" unselectable="on" title="字母小写" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui127&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui127&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui128" class="edui-box edui-separator  edui-default"></div><div id="edui135" class="edui-box edui-button edui-for-link edui-default"><div id="edui135_state" onmousedown="$EDITORUI[&quot;edui135&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui135&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui135&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui135&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui135_body" unselectable="on" title="超链接" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui135&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui135&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui136" class="edui-box edui-button edui-for-unlink edui-default"><div id="edui136_state" onmousedown="$EDITORUI[&quot;edui136&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui136&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui136&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui136&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui136_body" unselectable="on" title="取消链接" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui136&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui136&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui141" class="edui-box edui-button edui-for-anchor edui-default"><div id="edui141_state" onmousedown="$EDITORUI[&quot;edui141&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui141&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui141&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui141&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui141_body" unselectable="on" title="锚点" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui141&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui141&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui142" class="edui-box edui-separator  edui-default"></div><div id="edui143" class="edui-box edui-button edui-for-imagenone edui-default"><div id="edui143_state" onmousedown="$EDITORUI[&quot;edui143&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui143&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui143&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui143&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui143_body" unselectable="on" title="默认" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui143&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui143&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui144" class="edui-box edui-button edui-for-imageleft edui-default"><div id="edui144_state" onmousedown="$EDITORUI[&quot;edui144&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui144&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui144&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui144&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui144_body" unselectable="on" title="左浮动" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui144&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui144&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui145" class="edui-box edui-button edui-for-imageright edui-default"><div id="edui145_state" onmousedown="$EDITORUI[&quot;edui145&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui145&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui145&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui145&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui145_body" unselectable="on" title="右浮动" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui145&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui145&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui146" class="edui-box edui-button edui-for-imagecenter edui-default"><div id="edui146_state" onmousedown="$EDITORUI[&quot;edui146&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui146&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui146&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui146&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui146_body" unselectable="on" title="居中" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui146&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui146&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui147" class="edui-box edui-separator  edui-default"></div><div id="edui148" class="edui-box edui-button edui-for-simpleupload edui-default"><div id="edui148_state" onmousedown="$EDITORUI[&quot;edui148&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui148&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui148&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui148&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui148_body" unselectable="on" title="单图上传" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui148&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui148&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"><iframe style="display: block; width: 20px; height: 20px; overflow: hidden; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; opacity: 0; cursor: pointer;"></iframe></div></div></div></div></div><div id="edui153" class="edui-box edui-button edui-for-insertimage edui-default"><div id="edui153_state" onmousedown="$EDITORUI[&quot;edui153&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui153&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui153&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui153&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui153_body" unselectable="on" title="多图上传" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui153&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui153&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui154" class="edui-box edui-splitbutton edui-for-emotion edui-default"><div title="表情" id="edui154_state" onmousedown="$EDITORUI[&quot;edui154&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui154&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui154&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui154&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-splitbutton-body edui-default"><div id="edui154_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui154&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui154&quot;]._onArrowClick();"></div></div></div></div><div id="edui160" class="edui-box edui-button edui-for-scrawl edui-default"><div id="edui160_state" onmousedown="$EDITORUI[&quot;edui160&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui160&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui160&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui160&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui160_body" unselectable="on" title="涂鸦" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui160&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui160&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui165" class="edui-box edui-button edui-for-insertvideo edui-default"><div id="edui165_state" onmousedown="$EDITORUI[&quot;edui165&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui165&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui165&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui165&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui165_body" unselectable="on" title="视频" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui165&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui165&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui170" class="edui-box edui-button edui-for-music edui-default"><div id="edui170_state" onmousedown="$EDITORUI[&quot;edui170&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui170&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui170&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui170&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui170_body" unselectable="on" title="音乐" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui170&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui170&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui175" class="edui-box edui-button edui-for-attachment edui-default"><div id="edui175_state" onmousedown="$EDITORUI[&quot;edui175&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui175&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui175&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui175&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui175_body" unselectable="on" title="附件" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui175&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui175&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui180" class="edui-box edui-button edui-for-map edui-default"><div id="edui180_state" onmousedown="$EDITORUI[&quot;edui180&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui180&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui180&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui180&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui180_body" unselectable="on" title="Baidu地图" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui180&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui180&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui185" class="edui-box edui-button edui-for-insertframe edui-default"><div id="edui185_state" onmousedown="$EDITORUI[&quot;edui185&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui185&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui185&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui185&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui185_body" unselectable="on" title="插入Iframe" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui185&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui185&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui186" class="edui-box edui-combox edui-for-insertcode edui-default"><div title="代码语言" id="edui186_state" onmousedown="$EDITORUI[&quot;edui186&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui186&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui186&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui186&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-combox-body edui-default"><div id="edui186_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui186&quot;]._onButtonClick(event, this);">代码语言</div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui186&quot;]._onArrowClick();"></div></div></div></div><div id="edui212" class="edui-box edui-button edui-for-pagebreak edui-default"><div id="edui212_state" onmousedown="$EDITORUI[&quot;edui212&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui212&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui212&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui212&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui212_body" unselectable="on" title="分页" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui212&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui212&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui217" class="edui-box edui-button edui-for-template edui-default"><div id="edui217_state" onmousedown="$EDITORUI[&quot;edui217&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui217&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui217&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui217&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui217_body" unselectable="on" title="模板" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui217&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui217&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui222" class="edui-box edui-button edui-for-background edui-default"><div id="edui222_state" onmousedown="$EDITORUI[&quot;edui222&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui222&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui222&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui222&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui222_body" unselectable="on" title="背景" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui222&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui222&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui223" class="edui-box edui-separator  edui-default"></div><div id="edui224" class="edui-box edui-button edui-for-horizontal edui-default"><div id="edui224_state" onmousedown="$EDITORUI[&quot;edui224&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui224&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui224&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui224&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui224_body" unselectable="on" title="分隔线" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui224&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui224&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui225" class="edui-box edui-button edui-for-date edui-default"><div id="edui225_state" onmousedown="$EDITORUI[&quot;edui225&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui225&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui225&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui225&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui225_body" unselectable="on" title="日期" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui225&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui225&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui226" class="edui-box edui-button edui-for-time edui-default"><div id="edui226_state" onmousedown="$EDITORUI[&quot;edui226&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui226&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui226&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui226&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui226_body" unselectable="on" title="时间" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui226&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui226&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui229" class="edui-box edui-button edui-for-spechars edui-default"><div id="edui229_state" onmousedown="$EDITORUI[&quot;edui229&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui229&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui229&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui229&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui229_body" unselectable="on" title="特殊字符" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui229&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui229&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui234" class="edui-box edui-button edui-for-wordimage edui-default"><div id="edui234_state" onmousedown="$EDITORUI[&quot;edui234&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui234&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui234&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui234&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui234_body" unselectable="on" title="图片转存" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui234&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui234&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui235" class="edui-box edui-separator  edui-default"></div><div id="edui236" class="edui-box edui-splitbutton edui-for-inserttable edui-default"><div title="插入表格" id="edui236_state" onmousedown="$EDITORUI[&quot;edui236&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui236&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui236&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui236&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-splitbutton-body edui-default"><div id="edui236_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui236&quot;]._onButtonClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div><div class="edui-box edui-splitborder edui-default"></div><div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui236&quot;]._onArrowClick();"></div></div></div></div><div id="edui239" class="edui-box edui-button edui-for-deletetable edui-default"><div id="edui239_state" onmousedown="$EDITORUI[&quot;edui239&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui239&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui239&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui239&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui239_body" unselectable="on" title="删除表格" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui239&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui239&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui240" class="edui-box edui-button edui-for-insertparagraphbeforetable edui-default"><div id="edui240_state" onmousedown="$EDITORUI[&quot;edui240&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui240&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui240&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui240&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui240_body" unselectable="on" title="表格前插入行" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui240&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui240&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui241" class="edui-box edui-button edui-for-insertrow edui-default"><div id="edui241_state" onmousedown="$EDITORUI[&quot;edui241&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui241&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui241&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui241&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui241_body" unselectable="on" title="前插入行" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui241&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui241&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui242" class="edui-box edui-button edui-for-deleterow edui-default"><div id="edui242_state" onmousedown="$EDITORUI[&quot;edui242&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui242&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui242&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui242&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui242_body" unselectable="on" title="删除行" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui242&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui242&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui243" class="edui-box edui-button edui-for-insertcol edui-default"><div id="edui243_state" onmousedown="$EDITORUI[&quot;edui243&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui243&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui243&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui243&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui243_body" unselectable="on" title="前插入列" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui243&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui243&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui244" class="edui-box edui-button edui-for-deletecol edui-default"><div id="edui244_state" onmousedown="$EDITORUI[&quot;edui244&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui244&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui244&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui244&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui244_body" unselectable="on" title="删除列" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui244&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui244&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui245" class="edui-box edui-button edui-for-mergecells edui-default"><div id="edui245_state" onmousedown="$EDITORUI[&quot;edui245&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui245&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui245&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui245&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui245_body" unselectable="on" title="合并多个单元格" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui245&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui245&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui246" class="edui-box edui-button edui-for-mergeright edui-default"><div id="edui246_state" onmousedown="$EDITORUI[&quot;edui246&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui246&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui246&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui246&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui246_body" unselectable="on" title="右合并单元格" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui246&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui246&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui247" class="edui-box edui-button edui-for-mergedown edui-default"><div id="edui247_state" onmousedown="$EDITORUI[&quot;edui247&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui247&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui247&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui247&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui247_body" unselectable="on" title="下合并单元格" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui247&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui247&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui248" class="edui-box edui-button edui-for-splittocells edui-default"><div id="edui248_state" onmousedown="$EDITORUI[&quot;edui248&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui248&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui248&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui248&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui248_body" unselectable="on" title="完全拆分单元格" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui248&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui248&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui249" class="edui-box edui-button edui-for-splittorows edui-default"><div id="edui249_state" onmousedown="$EDITORUI[&quot;edui249&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui249&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui249&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui249&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui249_body" unselectable="on" title="拆分成行" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui249&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui249&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui250" class="edui-box edui-button edui-for-splittocols edui-default"><div id="edui250_state" onmousedown="$EDITORUI[&quot;edui250&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui250&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui250&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui250&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui250_body" unselectable="on" title="拆分成列" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui250&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui250&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui255" class="edui-box edui-button edui-for-charts edui-default"><div id="edui255_state" onmousedown="$EDITORUI[&quot;edui255&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui255&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui255&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui255&quot;].Stateful_onMouseOut(event, this);" class="edui-default edui-state-disabled"><div class="edui-button-wrap edui-default"><div id="edui255_body" unselectable="on" title="图表" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui255&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui255&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui256" class="edui-box edui-separator  edui-default"></div><div id="edui257" class="edui-box edui-button edui-for-print edui-default"><div id="edui257_state" onmousedown="$EDITORUI[&quot;edui257&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui257&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui257&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui257&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui257_body" unselectable="on" title="打印" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui257&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui257&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div><div id="edui260" class="edui-box edui-button edui-for-preview edui-default"><div id="edui260_state" onmousedown="$EDITORUI[&quot;edui260&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui260&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui260&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui260&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui260_body" unselectable="on" title="预览" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui260&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui260&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui263" class="edui-box edui-button edui-for-searchreplace edui-default"><div id="edui263_state" onmousedown="$EDITORUI[&quot;edui263&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui263&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui263&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui263&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui263_body" unselectable="on" title="查询替换" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui263&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui263&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div><div class="edui-box edui-label edui-default"></div></div></div></div></div><div id="edui264" class="edui-box edui-button edui-for-drafts edui-default"><div id="edui264_state" onmousedown="$EDITORUI[&quot;edui264&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui264&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui264&quot;].Stateful_onMouseOver(event, this);" onmouseout="$EDITORUI[&quot;edui264&quot;].Stateful_onMouseOut(event, this);" class="edui-default"><div class="edui-button-wrap edui-default"><div id="edui264_body" unselectable="on" title="从草稿箱加载" class="edui-button-body edui-default" onmousedown="return $EDITORUI[&quot;edui264&quot;]._onMouseDown(event, this);" onclick="return $EDITORUI[&quot;edui264&quot;]._onClick(event, this);"><div class="edui-box edui-icon edui-default"></div></div></div></div></div></div></div></div><div id="edui1_toolbarmsg" class="edui-editor-toolbarmsg edui-default" style="display:none;"><div id="edui1_upload_dialog" class="edui-editor-toolbarmsg-upload edui-default" onclick="$EDITORUI[&quot;edui1&quot;].showWordImageDialog();">点击上传</div><div class="edui-editor-toolbarmsg-close edui-default" onclick="$EDITORUI[&quot;edui1&quot;].hideToolbarMsg();">x</div><div id="edui1_toolbarmsg_label" class="edui-editor-toolbarmsg-label edui-default"></div><div style="height:0;overflow:hidden;clear:both;" class="edui-default"></div></div><div id="edui1_message_holder" class="edui-editor-messageholder edui-default" style="top: 85px; z-index: 19910324;"></div></div><div id="edui1_iframeholder" class="edui-editor-iframeholder edui-default" style="width: 100%; height: 300px; z-index: 19910323; overflow: hidden;"><iframe id="ueditor_0" width="100%" height="100%" frameborder="0" src="javascript:void(function(){document.open();document.write(&quot;<!DOCTYPE html><html xmlns='http://www.w3.org/1999/xhtml' class='view' ><head><style type='text/css'>.view{padding:0;word-wrap:break-word;cursor:text;height:90%;}
+body{margin:8px;font-family:sans-serif;font-size:16px;}p{margin:5px 0;}</style><link rel='stylesheet' type='text/css' href='http://localhost:8080/guguanjia//static/ueditor/themes/iframe.css'/></head><body class='view' ></body><script type='text/javascript'  id='_initialScript'>setTimeout(function(){editor = window.parent.UE.instants['ueditorInstant0'];editor._setup(document);},0);var _tmpScript = document.getElementById('_initialScript');_tmpScript.parentNode.removeChild(_tmpScript);</script></html>&quot;);document.close();}())"></iframe></div><div id="edui1_bottombar" class="edui-editor-bottomContainer edui-default"><table class="edui-default"><tbody class="edui-default"><tr class="edui-default"><td id="edui1_elementpath" class="edui-editor-bottombar edui-default"><div class="edui-editor-breadcrumb">元素路径:</div></td><td id="edui1_wordcount" class="edui-editor-wordcount edui-default">字数统计</td><td id="edui1_scale" class="edui-editor-scale edui-default" style="display: none;"><div class="edui-editor-icon edui-default"></div></td></tr></tbody></table></div><div id="edui1_scalelayer" class="edui-default"></div></div></div>
+                                                <!-- 实例化编辑器 -->
+                                                <script type="text/javascript">var ue = UE.getEditor('container');</script>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                            <div class="width-100 clearfix" tag-save-btn="" style="bottom: -36px; left: 0px; position: absolute;">
+	<span class="btn btn-primary btn-sm bigger-110 width-50  pull-left" id="office-save-btn">
+		<i class="ace-icon fa fa-floppy-o align-top bigger-125"></i> 提交
+	</span>
+                                <span class="btn btn-yellow btn-sm bigger-110 width-50 pull-right" id="office-save-cancel">
+		<i class="ace-icon fa fa-times align-top  bigger-125"></i> 取 消
+	</span>
+                            </div>
+
+                            <script type="text/javascript">
+
+                                $(function(){
+
+                                    $("#office-save-btn").click(function(){
+                                        var name = $("#office-save-form input[name='name']");
+                                        if($(name).val() == null || $(name).val() ==''){
+                                            tip.errorTip($(name).attr('nullmsg'), $(name));
+                                            return false;
+                                        }
+                                        var area = $('#area');
+                                        if($(area).val() == null || $(area).val() == '') {
+                                            tip.errorTip($(name).attr('nullmsg'), $(area));
+                                            return false;
+                                        }
+                                        $('#office-save-form').submit();
+                                    });
+
+                                    $('#office-save-cancel').on('click', function() {
+                                        layer.closeAll();
+                                        return false;
+                                    });
+
+                                    $('#office-logo').on('click',function(){
+                                        $('#logo_input').click();
+                                        return false;
+                                    });
+
+                                    $('#logo_input').click(function(){
+                                        $("#logo_input").uploadPreview({ Img: "logo"});//, Width: 200, Height: 140
+                                    });
+
+                                    $("#wasteType").chosen({width: "100%",search_contains: true});
+                                    $("#waste").chosen({width: "100%",search_contains: true});
+                                    $("#wasteType").on('change', function() {
+                                        if($(this).val() == 0) {
+                                            $("#waste").empty();
+                                            $("#waste").append('<option value="0">请选择废物类型</option>');
+                                        } else {
+                                            $.get('/guguanjia/api/waste/findByWasteType',{parentId: $(this).val()},function(resp) {
+                                                $("#waste").empty();
+                                                $("#waste").append('<option value="0">请选择危废</option>');
+                                                for(var i in resp.data) {
+                                                    if(resp.data[i].code) {
+                                                        $("#waste").append('<option value="'+resp.data[i].id+'">'+resp.data[i].code+'</option>');
+                                                    }
+                                                }
+                                                $("#waste").trigger("chosen:updated");
+                                            });
+                                        }
+                                    });
+                                    $("#waste").on('change', function() {
+                                        appendWaste();
+                                    });
+
+                                    function appendWaste() {
+                                        var wasteEle = $("#waste"),
+                                            wasteTypeEle = $("#wasteType"),
+                                            keyStr = 'waste-' + wasteEle.val(),
+                                            keyEle = $('#selectedWaste').find('#' + keyStr),
+                                            wasteTypeLabel = wasteTypeEle.find('option:selected').text(),
+                                            wasteLabel = wasteEle.find('option:selected').text();
+                                        if(!(keyEle.length > 0) && wasteEle.val() != 0) {
+                                            $('#selectedWaste').append('<p id="'+ keyStr +'" ><i class="fa fa-minus-circle"></i>&nbsp;'+wasteTypeLabel + ' > '+ wasteLabel +' <input type="hidden" name="waste" value="' + wasteEle.val() + '" /></p>');
+                                        }
+                                    }
+
+                                    $('#selectedWaste').on('click', '.fa-minus-circle', function() {
+                                        if(confirm('确定取消该企业与危废对应关系吗？')) {
+                                            $(this).parent('p').remove();
+                                        }
+                                    });
+                                });
+                               /* //描述框自动扩张高度
+                                $('textarea[class*=autosize]').autosize({append: "\n"});
+*/
+                            </script></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /.page-content -->
+
+    </div><!-- /.main-content -->
+
+    <a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+
+
+
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../../../static/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="../../../static/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="../../../static/ace/js/ace-elements.min.js"></script>
+<script src="../../../static/ace/js/ace.min.js"></script>
+
+<script type="text/javascript">
+    var ctxPath = "../../..";
+    window.onload=function(){
+        /* $("#ace-settings-navbar").trigger("click");//固定头部导航栏
+        $("#ace-settings-sidebar").trigger("click");//固定左侧菜单
+        $("#ace-settings-highlight").trigger("click"); */
+    };
+</script>
+
+<!-- 引入其他js -->
+<script src="../../../static/js/history.js"></script>
+<script type="text/javascript" src="../../../static/layer/layer.js"></script>
+<script type="text/javascript" src="../../../static/js/spin.min.js"></script>
+<script type="text/javascript" src="../../../static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="../../../static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../../../static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.form.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../../../static/js/public.js"></script>
+
+
+</body>
+</html>

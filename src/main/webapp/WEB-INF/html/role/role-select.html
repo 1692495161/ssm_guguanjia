@@ -1,0 +1,796 @@
+
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>固管家服务平台</title>
+
+    <meta name="description" content="index" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../static/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="../../../static/chosen/chosen.min.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="../../../static/ace/css/ace.min.css" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../../../static/ace/css/ace-part2.min.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="../../../static/ace/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="../../../static/ace/css/ace-rtl.min.css" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../../../static/ace/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <link rel="stylesheet" href="../../../static/ztree/metro.css" />
+    <link rel="stylesheet" href="../../../static/validate/css/validform.css" />
+    <link rel="stylesheet" href="../../../static/css/custom.css" />
+
+
+    <!--[if !IE]> -->
+    <script src="../../../static/jquery/jquery.js"></script>
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+    <![endif]-->
+
+
+    <!-- ace settings handler -->
+    <script src="../../../static/ace/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="../../../static/bootstrap/html5shiv.min.js"></script>
+    <script src="../../../static/bootstrap/respond.min.js"></script>
+    <script>var ie8 = "ie8";</script>
+    <![endif]-->
+</head>
+
+<body class="no-skin" id="body-content">
+<!-- 顶部条 -->
+<div id="navbar" class="navbar navbar-default">
+    <script type="text/javascript">
+        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+    </script>
+
+    <div class="navbar-container clearfix" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="navbar-header pull-left" style="min-width:190px;">
+            <a  class="navbar-brand">
+                <small>
+                    固管家服务平台
+                </small>
+            </a>
+        </div>
+        <!-- <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a  data-trigger="ajax" data-target="#fill-main-content" class="bigger-120">
+                    <i class="menu-icon fa "></i>&nbsp;
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+
+                <li class="green">
+                    <a class="dropdown-toggle" href="javascript:void(0);" id="fullscreen" title="全屏"
+                       onclick="launchFullscreen(document.documentElement);">
+                        <i class="ace-icon fa fa-arrows-alt "></i>
+                    </a>
+                </li>
+
+                <li class="purple" style="display:none;">
+                    <a data-toggle="dropdown" class="dropdown-toggle" >
+                        <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+                        <span class="badge badge-important">8</span>
+                    </a>
+
+                    <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-exclamation-triangle"></i>
+                            8 Notifications
+                        </li>
+
+                        <li>
+                            <a >
+                                <div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+												New Comments
+											</span>
+                                    <span class="pull-right badge badge-info">+12</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a >
+                                <i class="btn btn-xs btn-primary fa fa-user"></i>
+                                Bob just signed up as an editor ...
+                            </a>
+                        </li>
+
+                        <li>
+                            <a >
+                                <div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+												New Orders
+											</span>
+                                    <span class="pull-right badge badge-success">+8</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a >
+                                <div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+												Followers
+											</span>
+                                    <span class="pull-right badge badge-info">+11</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a >
+                                See all notifications
+                                <i class="ace-icon fa fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="light-blue">
+                    <a data-toggle="dropdown"  class="dropdown-toggle">
+                        <img class="nav-user-photo" src="../../../static/img/small-male-pic.png" />
+                        <span class="user-info">
+									<small>你好,</small>
+									超级管理员
+								</span>
+
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="../userCenter/userCenter.html">
+                                <i class="ace-icon fa fa-user"></i>
+                                我的资料
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="../login.html">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.navbar-container -->
+</div>
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
+
+
+    <div id="sidebar" class="sidebar responsive">
+        <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+        </script>
+
+        <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                <button class="btn btn-success">
+                    <i class="ace-icon fa fa-signal"></i>
+                </button>
+
+                <button class="btn btn-info">
+                    <i class="ace-icon fa fa-pencil"></i>
+                </button>
+
+                <button class="btn btn-warning">
+                    <i class="ace-icon fa fa-users"></i>
+                </button>
+
+                <button class="btn btn-danger">
+                    <i class="ace-icon fa fa-cogs"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                <span class="btn btn-success"></span>
+
+                <span class="btn btn-info"></span>
+
+                <span class="btn btn-warning"></span>
+
+                <span class="btn btn-danger"></span>
+            </div>
+        </div><!-- /.sidebar-shortcuts -->
+
+        <ul class="nav nav-list" id="sidebar-menu">
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-user"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 个人中心 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../userCenter/userCenter.html"
+                                id="menu_manageruserCenter"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-file-o"></i>
+                            <span class="menu-text"
+                            > 我的资料 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-lastfm"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 单位管理 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../office/office-detail.html"
+                                id="menu_managercompanydetail"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 单位信息 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../user/user.html"
+                                id="menu_managercompanyaccounts"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 单位账号 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../work/company/work.html"
+                                id="menu_managercompanywork"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 电子台账 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-puzzle-piece"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 业务管理 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../work/admin/work.html"
+                                id="menu_manageradminwork"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 电子台账 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../qualification/index.html"
+                                id="menu_managerqualificationindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 资质审核 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="index.html"
+                                id="menu_managerdemandindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 服务需求 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../examine/index.html"
+                                id="menu_managerexamineindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > 考核管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../app/index.html"
+                                id="menu_managerappindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon "></i>
+                            <span class="menu-text"
+                            > APP管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../statute/index.html"
+                                id="menu_managerstatuteindex"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-bolt"></i>
+                            <span class="menu-text"
+                            > 法律法规 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-group"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 机构用户 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../area/index.html"
+                                id="menu_managerarea"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-globe"></i>
+                            <span class="menu-text"
+                            > 区域管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../office/office.html"
+                                id="menu_manageroffice"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-sitemap"></i>
+                            <span class="menu-text"
+                            > 机构管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../user/user-list.html"
+                                id="menu_managersysuser"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-user"></i>
+                            <span class="menu-text"
+                            > 用户管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../role/role.html"
+                                id="menu_managerrole"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-graduation-cap"></i>
+                            <span class="menu-text"
+                            > 角色管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-cogs"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 系统管理 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../menu/menu.html"
+                                id="menu_managermenu"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-list"></i>
+                            <span class="menu-text"
+                            > 菜单配置 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../dict/dict.html"
+                                id="menu_managerdict"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-calculator"></i>
+                            <span class="menu-text"
+                            > 字典管理 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../log/log.html"
+                                id="menu_managersyslog"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-copy"></i>
+                            <span class="menu-text"
+                            > 日志查询 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+            <li data-level="1">
+
+                <a
+                        href="javascript:void(0);" class="dropdown-toggle"
+                        haschild="true"
+                >
+                    <i class="menu-icon fa fa-binoculars"></i>
+                    <span class="menu-text"
+                          style="vertical-align: middle;"
+                    > 系统监控 </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display:none;">
+                    <li data-level="2">
+
+                        <a
+                                href="../ehcache/ehcache.html"
+                                id="menu_managermonitorehcache"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-crosshairs"></i>
+                            <span class="menu-text"
+                            > Ehcache监控 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                    <li data-level="2">
+
+                        <a
+                                href="../jvm/jvm.html"
+                                id="menu_managermonitorjvm"
+                                haschild="false"
+                        >
+                            <i class="menu-icon fa fa-flash"></i>
+                            <span class="menu-text"
+                            > jvm监控 </span>
+                        </a>
+                        <b class="arrow"></b>
+
+                    </li>
+                </ul>
+            </li>
+        </ul><!-- /.nav-list -->
+        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+        </div>
+
+        <script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+        </script>
+    </div>
+
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="tab" id="breadcrumb">
+                <!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+            </ul><!-- /.breadcrumb -->
+            <div id="tab-menu">
+                <ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+                    <li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+                    <li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="ace-settings-container" id="ace-settings-container">
+                <div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+                     id="ace-settings-btn">
+                    <i class="ace-icon fa fa-cog bigger-150"></i>
+                </div>
+
+                <div class="ace-settings-box clearfix" id="ace-settings-box">
+                    <div class="pull-left width-50">
+                        <div class="ace-settings-item">
+                            <div class="pull-left">
+                                <select id="skin-colorpicker" class="hide">
+                                    <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                                    <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                    <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                    <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                                </select>
+                            </div>
+                            <span>&nbsp; 皮肤</span>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-navbar" /> <label class="lbl"
+                                                                      for="ace-settings-navbar"> 固定页头</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-sidebar" /> <label class="lbl"
+                                                                       for="ace-settings-sidebar"> 固定导航菜单</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-breadcrumbs" /> <label class="lbl"
+                                                                           for="ace-settings-breadcrumbs"> 固定导航条</label>
+                        </div>
+
+                        <!-- <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                id="ace-settings-rtl" /> <label class="lbl" for="ace-settings-rtl">
+                                Right To Left (rtl)</label>
+                        </div> -->
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-add-container" /> <label class="lbl"
+                                                                             for="ace-settings-add-container"> 固定宽度
+                        </label>
+                        </div>
+                    </div>
+                    <!-- /.pull-left -->
+
+                    <div class="pull-left width-50">
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-hover" /> <label class="lbl"
+                                                                     for="ace-settings-hover"> 滑动式菜单</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-compact" /> <label class="lbl"
+                                                                       for="ace-settings-compact"> 紧凑式菜单</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                   id="ace-settings-highlight" /> <label class="lbl"
+                                                                         for="ace-settings-highlight"> 高亮选中</label>
+                        </div>
+                    </div>
+                    <!-- /.pull-left -->
+                </div>
+                <!-- /.ace-settings-box -->
+            </div>
+            <!-- /.ace-settings-container -->
+            <div class="page-header">
+                <h1> 请选择 </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="fill-main-content" style="height:100%">
+                        <div>
+                            <div id="search" class="control-group" style="padding:10px 0 0 15px;">
+                                <label for="key" class="control-label" style="float:left;padding:5px 5px 3px;">关键字：</label>
+                                <input type="text" class="empty" id="key" name="key" maxlength="50" style="width:75%;">
+                            </div>
+                            <ul id="select-tree" class="ztree" style="padding:15px 20px;"><li id="select-tree_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_1_switch" title="" class="button level0 switch root_open" treenode_switch=""></span><a id="select-tree_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="全部"><span id="select-tree_1_ico" title="" treenode_ico="" class="button ico_open" style=""></span><span id="select-tree_1_span">全部</span></a><ul id="select-tree_1_ul" class="level0 " style="display:block"><li id="select-tree_2" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_2_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_2_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="新注册用户默认机构"><span id="select-tree_2_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_2_span">新注册用户默认机构</span></a></li><li id="select-tree_3" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_3_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_3_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆天志环保有限公司（长寿处置场）"><span id="select-tree_3_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_3_span">重庆天志环保有限公司（长寿处置场）</span></a></li><li id="select-tree_4" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_4_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_4_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆天志环保有限公司（主城区处置场）"><span id="select-tree_4_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_4_span">重庆天志环保有限公司（主城区处置场）</span></a></li><li id="select-tree_5" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_5_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_5_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市万州区森浩污染物处置有限公司"><span id="select-tree_5_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_5_span">重庆市万州区森浩污染物处置有限公司</span></a></li><li id="select-tree_6" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_6_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_6_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆同兴医疗废物处理有限公司"><span id="select-tree_6_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_6_span">重庆同兴医疗废物处理有限公司</span></a></li><li id="select-tree_7" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_7_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_7_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市涪陵固体废物处理中心"><span id="select-tree_7_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_7_span">重庆市涪陵固体废物处理中心</span></a></li><li id="select-tree_8" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_8_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_8_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆华维实业有限责任公司"><span id="select-tree_8_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_8_span">重庆华维实业有限责任公司</span></a></li><li id="select-tree_9" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_9_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_9_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆宏源实业有限公司"><span id="select-tree_9_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_9_span">重庆宏源实业有限公司</span></a></li><li id="select-tree_10" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_10_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_10_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆龙健金属制造有限公司"><span id="select-tree_10_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_10_span">重庆龙健金属制造有限公司</span></a></li><li id="select-tree_11" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_11_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_11_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市利特环保工程有限公司（德感）"><span id="select-tree_11_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_11_span">重庆市利特环保工程有限公司（德感）</span></a></li><li id="select-tree_12" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_12_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_12_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市利特环保工程有限公司（黑石子）"><span id="select-tree_12_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_12_span">重庆市利特环保工程有限公司（黑石子）</span></a></li><li id="select-tree_13" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_13_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_13_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市长锦物资有限公司"><span id="select-tree_13_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_13_span">重庆市长锦物资有限公司</span></a></li><li id="select-tree_14" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_14_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_14_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市中明环境治理有限公司"><span id="select-tree_14_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_14_span">重庆市中明环境治理有限公司</span></a></li><li id="select-tree_15" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_15_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_15_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆宇立金属制品有限公司"><span id="select-tree_15_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_15_span">重庆宇立金属制品有限公司</span></a></li><li id="select-tree_16" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_16_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_16_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市固体废物管理服务中心"><span id="select-tree_16_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_16_span">重庆市固体废物管理服务中心</span></a></li><li id="select-tree_17" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_17_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_17_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆岭欧环保科技有限公司"><span id="select-tree_17_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_17_span">重庆岭欧环保科技有限公司</span></a></li><li id="select-tree_18" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_18_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_18_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆正艾敏再生资源回收有限公司"><span id="select-tree_18_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_18_span">重庆正艾敏再生资源回收有限公司</span></a></li><li id="select-tree_19" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_19_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_19_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="开县城市固体废弃物综合处理厂"><span id="select-tree_19_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_19_span">开县城市固体废弃物综合处理厂</span></a></li><li id="select-tree_20" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_20_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_20_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="酉阳县钦晟贵金属有限公司"><span id="select-tree_20_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_20_span">酉阳县钦晟贵金属有限公司</span></a></li><li id="select-tree_21" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_21_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_21_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆龙瑞化工有限公司"><span id="select-tree_21_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_21_span">重庆龙瑞化工有限公司</span></a></li><li id="select-tree_22" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_22_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_22_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆环创固体废物处置有限公司"><span id="select-tree_22_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_22_span">重庆环创固体废物处置有限公司</span></a></li><li id="select-tree_23" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_23_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_23_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆可厚德环保技术有限公司"><span id="select-tree_23_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_23_span">重庆可厚德环保技术有限公司</span></a></li><li id="select-tree_24" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_24_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_24_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆嘉惠环保科技有限公司"><span id="select-tree_24_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_24_span">重庆嘉惠环保科技有限公司</span></a></li><li id="select-tree_25" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_25_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_25_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆宏锐环保科技发展有限公司"><span id="select-tree_25_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_25_span">重庆宏锐环保科技发展有限公司</span></a></li><li id="select-tree_26" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_26_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_26_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆德能再生资源股份有限公司"><span id="select-tree_26_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_26_span">重庆德能再生资源股份有限公司</span></a></li><li id="select-tree_27" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_27_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_27_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="精永再生资源回收(重庆)有限公司"><span id="select-tree_27_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_27_span">精永再生资源回收(重庆)有限公司</span></a></li><li id="select-tree_28" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_28_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_28_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="忠县铭荣医疗废物处理有限公司"><span id="select-tree_28_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_28_span">忠县铭荣医疗废物处理有限公司</span></a></li><li id="select-tree_29" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_29_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_29_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆恒杰化工有限公司"><span id="select-tree_29_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_29_span">重庆恒杰化工有限公司</span></a></li><li id="select-tree_30" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_30_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_30_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="秀山县友鑫环境治理有限公司"><span id="select-tree_30_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_30_span">秀山县友鑫环境治理有限公司</span></a></li><li id="select-tree_31" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_31_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_31_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆蓝洁广顺净水材料有限公司"><span id="select-tree_31_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_31_span">重庆蓝洁广顺净水材料有限公司</span></a></li><li id="select-tree_32" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_32_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_32_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆凯怡贵金属有限公司"><span id="select-tree_32_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_32_span">重庆凯怡贵金属有限公司</span></a></li><li id="select-tree_33" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_33_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_33_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆东进世美肯电子材料有限公司"><span id="select-tree_33_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_33_span">重庆东进世美肯电子材料有限公司</span></a></li><li id="select-tree_34" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_34_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_34_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆伟世鑫盛环保科技有限公司"><span id="select-tree_34_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_34_span">重庆伟世鑫盛环保科技有限公司</span></a></li><li id="select-tree_35" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_35_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_35_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆炬缘环保有限公司"><span id="select-tree_35_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_35_span">重庆炬缘环保有限公司</span></a></li><li id="select-tree_36" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_36_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_36_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆万博再生资源利用有限公司"><span id="select-tree_36_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_36_span">重庆万博再生资源利用有限公司</span></a></li><li id="select-tree_37" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_37_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_37_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆中明港桥环保有限责任公司"><span id="select-tree_37_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_37_span">重庆中明港桥环保有限责任公司</span></a></li><li id="select-tree_38" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_38_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_38_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆拉法基瑞安地维水泥有限公司"><span id="select-tree_38_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_38_span">重庆拉法基瑞安地维水泥有限公司</span></a></li><li id="select-tree_39" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_39_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_39_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆九腾环保工程有限公司"><span id="select-tree_39_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_39_span">重庆九腾环保工程有限公司</span></a></li><li id="select-tree_40" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_40_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_40_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆油润再生资源开发有限公司"><span id="select-tree_40_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_40_span">重庆油润再生资源开发有限公司</span></a></li><li id="select-tree_41" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_41_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_41_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市万州区均荣再生资源回收站"><span id="select-tree_41_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_41_span">重庆市万州区均荣再生资源回收站</span></a></li><li id="select-tree_42" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_42_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_42_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市万州区众汇再生资源回收有限责任公司"><span id="select-tree_42_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_42_span">重庆市万州区众汇再生资源回收有限责任公司</span></a></li><li id="select-tree_43" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_43_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_43_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市万州区新聚源再生资源回收有限责任公司"><span id="select-tree_43_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_43_span">重庆市万州区新聚源再生资源回收有限责任公司</span></a></li><li id="select-tree_44" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_44_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_44_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市涪陵区王丰废旧物资回收有限公司"><span id="select-tree_44_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_44_span">重庆市涪陵区王丰废旧物资回收有限公司</span></a></li><li id="select-tree_45" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_45_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_45_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆天思博瑞环保科技发展有限公司"><span id="select-tree_45_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-folder" style=""></span><span id="select-tree_45_span">重庆天思博瑞环保科技发展有限公司</span></a></li><li id="select-tree_46" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_46_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_46_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="利特运输"><span id="select-tree_46_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_46_span">利特运输</span></a></li><li id="select-tree_47" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_47_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_47_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="企业产废"><span id="select-tree_47_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_47_span">企业产废</span></a></li><li id="select-tree_48" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_48_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_48_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="企业运输"><span id="select-tree_48_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_48_span">企业运输</span></a></li><li id="select-tree_49" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_49_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_49_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="企业处置"><span id="select-tree_49_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_49_span">企业处置</span></a></li><li id="select-tree_50" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_50_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_50_a" class="level1 curSelectedNode" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="固管家运输方测试机构"><span id="select-tree_50_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_50_span">固管家运输方测试机构</span></a></li><li id="select-tree_51" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_51_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_51_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="固管家产废方测试机构"><span id="select-tree_51_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_51_span">固管家产废方测试机构</span></a></li><li id="select-tree_52" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_52_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_52_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="固管家处置方测试机构"><span id="select-tree_52_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_52_span">固管家处置方测试机构</span></a></li><li id="select-tree_53" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_53_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_53_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆环投再生资源有限公司"><span id="select-tree_53_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_53_span">重庆环投再生资源有限公司</span></a></li><li id="select-tree_54" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_54_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_54_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="固管家服务平台"><span id="select-tree_54_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_54_span">固管家服务平台</span></a></li><li id="select-tree_55" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_55_switch" title="" class="button level1 switch bottom_docu" treenode_switch=""></span><a id="select-tree_55_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市环境保护局"><span id="select-tree_55_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_55_span">重庆市环境保护局</span></a></li></ul></li></ul>
+                            <div class="width-100" tag-save-btn="" style="padding-top: 15px; bottom: -36px; position: absolute;">
+		<span class="btn btn-primary btn-sm bigger-110 btn-block" id="officeEdit-save">
+			确 定
+		</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /.page-content -->
+
+    </div><!-- /.main-content -->
+
+    <a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="../../../static/jquery/jquery.js"></script>
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../../../static/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="../../../static/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="../../../static/ace/js/ace-elements.min.js"></script>
+<script src="../../../static/ace/js/ace.min.js"></script>
+
+<script type="text/javascript">
+    var ctxPath = "../../..";
+    window.onload=function(){
+        /* $("#ace-settings-navbar").trigger("click");//固定头部导航栏
+        $("#ace-settings-sidebar").trigger("click");//固定左侧菜单
+        $("#ace-settings-highlight").trigger("click"); */
+    };
+</script>
+
+<!-- 引入其他js -->
+<script src="../../../static/js/history.js"></script>
+<script type="text/javascript" src="../../../static/layer/layer.js"></script>
+<script type="text/javascript" src="../../../static/js/spin.min.js"></script>
+<script type="text/javascript" src="../../../static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="../../../static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../../../static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.form.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../../../static/js/public.js"></script>
+
+
+</body>
+</html>

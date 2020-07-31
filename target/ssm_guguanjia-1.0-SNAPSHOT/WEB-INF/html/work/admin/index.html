@@ -1,0 +1,350 @@
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<base href="/guguanjia/">
+	<meta charset="utf-8"/>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title>固管家服务平台</title>
+	<meta name="description" content="index"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="static/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" href="static/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="static/chosen/chosen.min.css"/>
+
+	<!-- ace styles -->
+	<link rel="stylesheet" href="static/ace/css/ace.min.css" id="main-ace-style"/>
+	<link rel="stylesheet" href="static/ace/css/ace-skins.min.css"/>
+	<link rel="stylesheet" href="static/ace/css/ace-rtl.min.css"/>
+	<link rel="stylesheet" href="static/ztree/metro.css"/>
+	<link rel="stylesheet" href="static/validate/css/validform.css"/>
+	<link rel="stylesheet" href="static/css/custom.css"/>
+
+	<!--[if !IE]> -->
+	<script src="static/jquery/jquery.js"></script>
+	<!-- <![endif]-->
+	<!-- ace settings handler -->
+	<script src="static/ace/js/ace-extra.min.js"></script>
+
+</head>
+
+<body class="no-skin" id="body-content">
+<!-- 顶部条 -->
+<div id="navbar" class="navbar navbar-default">
+
+
+</div>
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+
+
+
+	<div id="sidebar" class="sidebar responsive">
+
+	</div>
+
+
+	<div class="main-content">
+		<div class="breadcrumbs" id="breadcrumbs">
+
+
+			<ul class="tab" id="breadcrumb">
+				<!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+			</ul><!-- /.breadcrumb -->
+			<div id="tab-menu">
+				<ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+					<li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+					<li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="page-content">
+			<div class="ace-settings-container" id="ace-settings-container">
+				<div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+					 id="ace-settings-btn">
+					<i class="ace-icon fa fa-cog bigger-150"></i>
+				</div>
+
+				<div class="ace-settings-box clearfix" id="ace-settings-box">
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<div class="pull-left">
+								<select id="skin-colorpicker" class="hide">
+									<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+									<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+									<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+									<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+								</select>
+							</div>
+							<span>&nbsp; 皮肤</span>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-navbar" /> <label class="lbl"
+																	  for="ace-settings-navbar"> 固定页头</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-sidebar" /> <label class="lbl"
+																	   for="ace-settings-sidebar"> 固定导航菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-breadcrumbs" /> <label class="lbl"
+																		   for="ace-settings-breadcrumbs"> 固定导航条</label>
+						</div>
+
+						<!-- <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                id="ace-settings-rtl" /> <label class="lbl" for="ace-settings-rtl">
+                                Right To Left (rtl)</label>
+                        </div> -->
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-add-container" /> <label class="lbl"
+																			 for="ace-settings-add-container"> 固定宽度
+						</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-hover" /> <label class="lbl"
+																	 for="ace-settings-hover"> 滑动式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-compact" /> <label class="lbl"
+																	   for="ace-settings-compact"> 紧凑式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-highlight" /> <label class="lbl"
+																		 for="ace-settings-highlight"> 高亮选中</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+				</div>
+				<!-- /.ace-settings-box -->
+			</div>
+			<!-- /.ace-settings-container -->
+			<div class="page-header">
+				<h1> 电子账台 </h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="fill-main-content" style="height:100%">
+						<div class="tabbable">
+							<div class="tab-content">
+								<div id="home" class="tab-pane active clearfix">
+									<div class="widget-container-col ui-sortable">
+										<div class="widget-box ">
+											<div class="widget-header widget-header-small">
+												<h6 class="widget-title">
+													<i class="ace-icon fa fa-search"></i>搜索
+												</h6>
+
+												<div class="widget-toolbar">
+													<a href="javascript:void(0);" data-action="collapse">
+														<i class="ace-icon fa bigger-125 fa-chevron-up"></i>
+													</a>
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-body-inner" >
+													<div class="widget-main">
+														<form action="admin/workOrder/list" method="post" id="search-form"
+															  target="list-page" class="center clearfix">
+															<div class="row padding-tb-10">
+																<div class="col-sm-6">
+																	<label class="inline">归属机构：</label>
+
+																	<div class="btn-group width-80"   >
+	<span data-toggle="dropdown" class="btn btn-primary btn-white dropdown-toggle width-100">
+		<span id="pullDownTreeCurNameone">{{officeName}}</span> <i class="ace-icon fa fa-angle-down icon-on-right"></i>
+	</span>
+
+																		<div class="dropdown-menu dropdown-caret scrollable width-100" data-height="250">
+																			<div class="padding-15">
+																				<div style="padding-bottom: 10px;">
+																					<input type="text" id="pullDownTreeSearchone" @click.stop placeholder="搜索" @keydown.enter="search" class="width-100" v-model="name"/>
+																				</div>
+																				<ul class="ztree" id="pullDownTreeone" @click="stop"></ul>
+																			</div>
+																		</div>
+																	</div>
+																	<input type="hidden" name="officeId" value="0" id="pullDownTreeCurIdone"/>
+																	<input type="hidden" name="" value="" id="pullDownTreeCurPidone"/>
+																	<input type="hidden" name="officeType" value="" id="pullDownTreeCurCidone"/>
+
+																	</div>
+																<div class="col-sm-6">
+																	<label class="inline">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间：</label>
+																	<input style="height: 35px;" type="date" class="width-40" name="startDate" v-model="params.startDate"/> - <input style="height: 35px;" type="date"class="width-40" name="endDate" v-model="params.endDate"/>
+																</div>
+															</div>
+															<div class="row padding-tb-10">
+																<div class="col-sm-6">
+																	<label class="inline">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态：</label>
+																	<select name="status" class="width-80" v-model="params.status">
+																		<option value="">请选择工单状态</option>
+																		<option value="0">待运输</option>
+																		<option value="1">运输中</option>
+																		<option value="2">已结束</option>
+																	</select>
+																</div>
+															</div>
+															<div class="padding-trb-10 col-sm-12">
+																<span class="btn  btn-primary btn-sm col-sm-6" @click="selectAll">全 部 工 单</span>
+																<span class="btn btn-info btn-sm col-sm-6" id="search-btn" @click="_selectPage(1,pageInfo.pageSize)">条 件 查 询</span>
+															</div>
+														</form>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>			<div class="space-6"></div>
+									<div id="list-page"></div>
+								</div>
+							</div>
+						</div>
+
+						<table class="table table-striped table-bordered table-hover nomargin-bottom">
+							<thead>
+							<tr>
+								<th class="center">编号</th>
+								<th class="center">发起单位</th>
+								<th class="center">发起人</th>
+								<th class="center">运输人</th>
+								<th class="center">处置人</th>
+								<th class="center">状态</th>
+								<th class="center">发起时间</th>
+								<th class="center">更新时间</th>
+								<th class="center">操作</th>
+							</tr>
+							</thead>
+
+							<tbody>
+							<tr v-for="w in pageInfo.list">
+								<td class="center">
+									<a  title="点击查看工单详情" @click="toDetail(w.id)">{{w.code}}</a>
+								</td>
+								<td class="center">{{w.createOfficeName}}</td>
+								<td class="center">{{w.createUserName}}</td>
+								<td class="center">{{w.transportUserName}}</td>
+								<td class="center">{{w.recipientUserName}}</td>
+								<td class="center">
+									<font color="red" v-if="w.status==0">待运输</font>
+									<font color="green" v-else-if="w.status==1">运输中</font>
+									<font color="#808080" v-else-if="w.status==2">已结束</font>
+								</td>
+								<td class="center">{{w.createDate}}</td>
+								<td class="center">{{w.updateDate}}</td>
+								<td class="center">
+									<div class="hidden-sm hidden-xs action-buttons">
+									<a v-if="w.status==2" class="green" href="w/print?id=11" target="_blank" title="打印联单">
+										<i class="ace-icon fa fa-print bigger-130"></i>
+									</a>
+								</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+						<div class="space-8"></div>
+
+						<div class="clearfix">
+							<div style="float: left;">
+								<div style="padding-top:5px;">
+			<span class="badge badge-info">
+				当前第 {{pageInfo.pageNum}} 页 / {{pageInfo.pages}} 页，共 {{pageInfo.total}} 条数据
+			</span>
+								</div>
+							</div>
+							<div>
+
+								<div class="pagination no-margin pull-right clearfix">
+									<li class="prev"><a href="javascript:void(0);" @click="_selectPage(1,pageInfo.pageSize)">首页</a></li>
+									<li v-if="pageInfo.hasPreviousPage" class="prev"><a href="javascript:void(0);" @click="_selectPage(pageInfo.prePage,pageInfo.pageSize)">上一页</a></li>
+									<li v-else class="prev disabled"><a>上一页</a></li>
+									<li v-for="i in pageInfo.navigatepageNums" :class="i==pageInfo.pageNum?'active':''"><a href="javascript:void(0);" @click="_selectPage(i,pageInfo.pageSize)">{{i}}</a></li>
+									<li v-if="pageInfo.hasNextPage" class="next"><a href="javascript:void(0);" @click="_selectPage(pageInfo.nextPage,pageInfo.pageSize)">下一页</a></li>
+									<li v-else class="next disabled"><a >下一页</a></li>
+									<li class="next"><a href="javascript:void(0);" @click="_selectPage(pageInfo.pages,pageInfo.pageSize)">尾页</a></li>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+				</div>
+			</div>
+		</div><!-- /.page-content -->
+
+	</div><!-- /.main-content -->
+
+	<a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+		<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+	</a>
+</div><!-- /.main-container -->
+
+<!--底部-->
+<script src="static/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="static/ace/js/ace-elements.min.js"></script>
+<script src="static/ace/js/ace.min.js"></script>
+
+<script type="text/javascript">
+	try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+	try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+	try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+	try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+
+</script>
+
+<!-- 引入其他js -->
+<script src="static/js/history.js"></script>
+<script type="text/javascript" src="static/layer/layer.js"></script>
+<script type="text/javascript" src="static/js/spin.min.js"></script>
+<script type="text/javascript" src="static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="static/js/jquery.form.js"></script>
+<script type="text/javascript" src="static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="static/js/public.js"></script>
+<script type="text/javascript" src="static/vue/vue.js"></script>
+<script type="text/javascript" src="static/vue/axios.js"></script>
+
+<script type="text/javascript" src="static/js/work/index.js"></script>
+<script>
+	$(function(){//页面加载完成后加载
+		//load（网页）  在组件加载的时候，发送ajax请求获取服务器返回回来的页面内容
+		$("#navbar").load("main/navbar");
+		$("#sidebar").load("main/sidebar");
+	})
+
+</script>
+
+
+</body>
+</html>

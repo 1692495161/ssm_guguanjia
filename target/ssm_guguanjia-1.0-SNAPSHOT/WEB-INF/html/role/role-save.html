@@ -1,0 +1,1228 @@
+
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>固管家服务平台</title>
+
+	<meta name="description" content="index" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="../../../static/css/font-awesome.min.css" />
+
+	<link rel="stylesheet" href="../../../static/chosen/chosen.min.css" />
+
+	<!-- ace styles -->
+	<link rel="stylesheet" href="../../../static/ace/css/ace.min.css" id="main-ace-style" />
+
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" href="../../../static/ace/css/ace-part2.min.css" />
+	<![endif]-->
+	<link rel="stylesheet" href="../../../static/ace/css/ace-skins.min.css" />
+	<link rel="stylesheet" href="../../../static/ace/css/ace-rtl.min.css" />
+
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" href="../../../static/ace/css/ace-ie.min.css" />
+	<![endif]-->
+
+	<link rel="stylesheet" href="../../../static/ztree/metro.css" />
+	<link rel="stylesheet" href="../../../static/validate/css/validform.css" />
+	<link rel="stylesheet" href="../../../static/css/custom.css" />
+
+
+	<!--[if !IE]> -->
+	<script src="../../../static/jquery/jquery.js"></script>
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+	<script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+	<![endif]-->
+
+
+	<!-- ace settings handler -->
+	<script src="../../../static/ace/js/ace-extra.min.js"></script>
+
+	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+	<!--[if lte IE 8]>
+	<script src="../../../static/bootstrap/html5shiv.min.js"></script>
+	<script src="../../../static/bootstrap/respond.min.js"></script>
+	<script>var ie8 = "ie8";</script>
+	<![endif]-->
+</head>
+
+<body class="no-skin" id="body-content">
+<!-- 顶部条 -->
+<div id="navbar" class="navbar navbar-default">
+	<script type="text/javascript">
+        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+	</script>
+
+	<div class="navbar-container clearfix" id="navbar-container">
+		<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+			<span class="sr-only">Toggle sidebar</span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+		</button>
+
+		<div class="navbar-header pull-left" style="min-width:190px;">
+			<a  class="navbar-brand">
+				<small>
+					固管家服务平台
+				</small>
+			</a>
+		</div>
+		<!-- <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a  data-trigger="ajax" data-target="#fill-main-content" class="bigger-120">
+                    <i class="menu-icon fa "></i>&nbsp;
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+
+		<div class="navbar-buttons navbar-header pull-right" role="navigation">
+			<ul class="nav ace-nav">
+
+				<li class="green">
+					<a class="dropdown-toggle" href="javascript:void(0);" id="fullscreen" title="全屏"
+					   onclick="launchFullscreen(document.documentElement);">
+						<i class="ace-icon fa fa-arrows-alt "></i>
+					</a>
+				</li>
+
+				<li class="purple" style="display:none;">
+					<a data-toggle="dropdown" class="dropdown-toggle" >
+						<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+						<span class="badge badge-important">8</span>
+					</a>
+
+					<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+						<li class="dropdown-header">
+							<i class="ace-icon fa fa-exclamation-triangle"></i>
+							8 Notifications
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+												New Comments
+											</span>
+									<span class="pull-right badge badge-info">+12</span>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<i class="btn btn-xs btn-primary fa fa-user"></i>
+								Bob just signed up as an editor ...
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+												New Orders
+											</span>
+									<span class="pull-right badge badge-success">+8</span>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+												Followers
+											</span>
+									<span class="pull-right badge badge-info">+11</span>
+								</div>
+							</a>
+						</li>
+
+						<li class="dropdown-footer">
+							<a >
+								See all notifications
+								<i class="ace-icon fa fa-arrow-right"></i>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="light-blue">
+					<a data-toggle="dropdown"  class="dropdown-toggle">
+						<img class="nav-user-photo" src="../../../static/img/small-male-pic.png" />
+						<span class="user-info">
+									<small>你好,</small>
+									超级管理员
+								</span>
+
+						<i class="ace-icon fa fa-caret-down"></i>
+					</a>
+
+					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						<li>
+							<a href="../userCenter/userCenter.html">
+								<i class="ace-icon fa fa-user"></i>
+								我的资料
+							</a>
+						</li>
+
+						<li class="divider"></li>
+
+						<li>
+							<a href="../login.html">
+								<i class="ace-icon fa fa-power-off"></i>
+								退出
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /.navbar-container -->
+</div>
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+	<script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+	</script>
+
+
+	<div id="sidebar" class="sidebar responsive">
+		<script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+		</script>
+
+		<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+			<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+				<button class="btn btn-success">
+					<i class="ace-icon fa fa-signal"></i>
+				</button>
+
+				<button class="btn btn-info">
+					<i class="ace-icon fa fa-pencil"></i>
+				</button>
+
+				<button class="btn btn-warning">
+					<i class="ace-icon fa fa-users"></i>
+				</button>
+
+				<button class="btn btn-danger">
+					<i class="ace-icon fa fa-cogs"></i>
+				</button>
+			</div>
+
+			<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+				<span class="btn btn-success"></span>
+
+				<span class="btn btn-info"></span>
+
+				<span class="btn btn-warning"></span>
+
+				<span class="btn btn-danger"></span>
+			</div>
+		</div><!-- /.sidebar-shortcuts -->
+
+		<ul class="nav nav-list" id="sidebar-menu">
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-user"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 个人中心 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../userCenter/userCenter.html"
+								id="menu_manageruserCenter"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-file-o"></i>
+							<span class="menu-text"
+							> 我的资料 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-lastfm"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 单位管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../office/office-detail.html"
+								id="menu_managercompanydetail"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 单位信息 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../user/user.html"
+								id="menu_managercompanyaccounts"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 单位账号 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../work/company/work.html"
+								id="menu_managercompanywork"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 电子台账 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-puzzle-piece"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 业务管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../work/admin/work.html"
+								id="menu_manageradminwork"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 电子台账 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../qualification/index.html"
+								id="menu_managerqualificationindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 资质审核 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="index.html"
+								id="menu_managerdemandindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 服务需求 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../examine/index.html"
+								id="menu_managerexamineindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 考核管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../app/index.html"
+								id="menu_managerappindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> APP管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../statute/index.html"
+								id="menu_managerstatuteindex"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-bolt"></i>
+							<span class="menu-text"
+							> 法律法规 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-group"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 机构用户 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../area/index.html"
+								id="menu_managerarea"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-globe"></i>
+							<span class="menu-text"
+							> 区域管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../office/office.html"
+								id="menu_manageroffice"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-sitemap"></i>
+							<span class="menu-text"
+							> 机构管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../user/user-list.html"
+								id="menu_managersysuser"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-user"></i>
+							<span class="menu-text"
+							> 用户管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../role/role.html"
+								id="menu_managerrole"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-graduation-cap"></i>
+							<span class="menu-text"
+							> 角色管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-cogs"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 系统管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../menu/menu.html"
+								id="menu_managermenu"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"
+							> 菜单配置 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../dict/dict.html"
+								id="menu_managerdict"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-calculator"></i>
+							<span class="menu-text"
+							> 字典管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../log/log.html"
+								id="menu_managersyslog"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-copy"></i>
+							<span class="menu-text"
+							> 日志查询 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-binoculars"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 系统监控 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../ehcache/ehcache.html"
+								id="menu_managermonitorehcache"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-crosshairs"></i>
+							<span class="menu-text"
+							> Ehcache监控 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../jvm/jvm.html"
+								id="menu_managermonitorjvm"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-flash"></i>
+							<span class="menu-text"
+							> jvm监控 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+		</ul><!-- /.nav-list -->
+		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+			<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		</div>
+
+		<script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+		</script>
+	</div>
+
+
+	<div class="main-content">
+		<div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="tab" id="breadcrumb">
+				<!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+			</ul><!-- /.breadcrumb -->
+			<div id="tab-menu">
+				<ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+					<li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+					<li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="page-content">
+			<div class="ace-settings-container" id="ace-settings-container">
+				<div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+					 id="ace-settings-btn">
+					<i class="ace-icon fa fa-cog bigger-150"></i>
+				</div>
+
+				<div class="ace-settings-box clearfix" id="ace-settings-box">
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<div class="pull-left">
+								<select id="skin-colorpicker" class="hide">
+									<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+									<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+									<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+									<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+								</select>
+							</div>
+							<span>&nbsp; 皮肤</span>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-navbar" /> <label class="lbl"
+																	  for="ace-settings-navbar"> 固定页头</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-sidebar" /> <label class="lbl"
+																	   for="ace-settings-sidebar"> 固定导航菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-breadcrumbs" /> <label class="lbl"
+																		   for="ace-settings-breadcrumbs"> 固定导航条</label>
+						</div>
+
+						<!-- <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                id="ace-settings-rtl" /> <label class="lbl" for="ace-settings-rtl">
+                                Right To Left (rtl)</label>
+                        </div> -->
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-add-container" /> <label class="lbl"
+																			 for="ace-settings-add-container"> 固定宽度
+						</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-hover" /> <label class="lbl"
+																	 for="ace-settings-hover"> 滑动式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-compact" /> <label class="lbl"
+																	   for="ace-settings-compact"> 紧凑式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-highlight" /> <label class="lbl"
+																		 for="ace-settings-highlight"> 高亮选中</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+				</div>
+				<!-- /.ace-settings-box -->
+			</div>
+			<!-- /.ace-settings-container -->
+			<div class="page-header">
+				<h1> 测试运输方普通人员 编辑 </h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="fill-main-content" style="height:100%">
+						<div class="xuboxPageHtml" id="xboxTest" style="overflow-y: auto; height: 516px;"><div class="layer">
+							<form name="FormPost" id="role-save" class="FormGrid" method="post" action="role/save">
+
+								<input type="hidden" value="27" name="id">
+								<table class="EditTable" width="100%">
+									<tbody>
+									<tr class="FormData">
+										<td class="CaptionTD">归属机构</td>
+										<td class="DataTD width-100">
+
+											<div class="clearfix width-100  input-group" style="">
+												<input class="form-control search-query" type="text" readonly="" id="officeNameEdit" name="" value="固管家运输方测试机构" datatype="*" nullmsg="请选择归属机构">
+												<span class="input-group-btn">
+		<span class="btn btn-purple btn-sm" type="button" style="height: 34px;" data-mode="page" data-url="/guguanjia/manager/tag/treeselect" data-data="{url:'/guguanjia/manager/office/tree',id:'officeEdit',nameId:'officeNameEdit',pIdKey:'parentId',selectIds:'52',curId:'-1',checked:'false',rootNodeName:'',isLayer:'true'}" data-title="请选择" data-width="350px" data-height="400px">
+			<i class="ace-icon fa fa-search bigger-110"></i>
+			<a href="role-select.html">查找</a>
+		</span>
+	</span>
+												<input type="hidden" name="officeId" id="officeEdit" value="52">
+											</div>
+
+										</td>
+									</tr>
+									<tr class="FormData">
+										<td class="CaptionTD">角色名称</td>
+										<td class="DataTD width-100"><input type="text" name="name" datatype="*" nullmsg="请输入角色名称！" value="测试运输方普通人员"></td>
+									</tr>
+									<tr class="FormData">
+										<td class="CaptionTD">数据范围</td>
+										<td class="DataTD width-100">
+											<select class="chosen-select " name="dataScope" id="chosenSelectEdit" style="display: none;">
+												<option value="1">所有数据</option>
+												<option value="2">所在公司及以下数据</option>
+												<option value="3">所在公司数据</option>
+												<option value="4">所在部门及以下数据</option>
+												<option value="5">所在部门数据</option>
+												<option value="8" selected="selected">仅本人数据</option>
+												<option value="9">按明细设置</option>
+											</select>
+											<script>
+                                                $(function(){
+                                                    $("#chosenSelectEdit").chosen({width: "40%",search_contains: true});
+                                                });
+											</script>						<script type="text/javascript">
+                                            $("#chosenSelectEdit").change(function(){
+                                                if($(this).val() == 9){
+                                                    $("#treeSelectOfficeEdit").show();
+                                                }else{
+                                                    $("#treeSelectOfficeEdit").hide();
+                                                }
+                                            })
+                                            $("#chosenSelectEdit option[value='8']").attr("selected",true);
+                                            $("#chosenSelectEdit option[value='8']").trigger('change');
+                                            $("#chosenSelectEdit").trigger("chosen:updated");
+										</script>
+
+											<span class="red width-50"> 特殊情况下,设置为"按明细设置",可进行跨机构授权</span>
+										</td>
+									</tr>
+									<tr class="FormData">
+										<td class="CaptionTD" style="vertical-align: top;">角色授权</td>
+										<td class="DataTD">
+											<div class="clearfix" style="width: 100%;display: inline-block;vertical-align: top;">
+
+												<div id="treeSelectResEdit" style="width: 50%;display: inline-block;vertical-align: top;float: left"><script>
+                                                    var key, lastValue = "", nodeList = [];
+                                                    var treeSelectResEdit, treeSelectResEditsetting = {
+                                                        view:{selectedMulti:false,expandSpeed:100},
+                                                        check:{enable:true,nocheckInherit:true},
+                                                        data:{
+                                                            simpleData:{
+                                                                enable:true,
+                                                                idKey:"id",
+                                                                pIdKey:"parentId"
+                                                            },
+                                                            key:{url:"abcd11"}
+                                                        },
+                                                        view:{
+                                                            fontCss:function(treeId, treeNode) {
+                                                                return (!!treeNode.highlight) ? {"font-weight":"bold","color":"red"} : {"font-weight":"normal","color":"#333"};
+                                                            }
+                                                        },
+                                                        callback:{
+                                                            beforeClick:function(id, node){
+                                                                if("true" == "true"){
+                                                                    treeSelectResEdit.checkNode(node, !node.checked, true, true);
+                                                                    return false;
+                                                                }
+                                                            }
+                                                        }
+                                                    };
+                                                    $(document).ready(function(){
+                                                        $.post("/guguanjia/manager/menu/tree", function(zNodes){
+                                                            var rootName = '权限列表';
+                                                            var root = {id:0,name:rootName,open:true};
+                                                            zNodes[zNodes.length] = root;
+                                                            // 初始化树结构
+                                                            treeSelectResEdit = $.fn.zTree.init($("#select-treetreeSelectResEdit"), treeSelectResEditsetting, zNodes);
+                                                            treeSelectResEdit.setting.check.chkboxType = { "Y": "ps", "N": "s"  };
+
+                                                            // 默认展开一级节点
+                                                            var nodes = treeSelectResEdit.getNodesByParam("level", 0);
+                                                            for(var i=0; i<nodes.length; i++) {
+                                                                treeSelectResEdit.expandNode(nodes[i], true, false, false);
+                                                            }
+                                                            // 默认选择节点
+                                                            var ids = "[209,210,227,228,231]".replace('[','').replace(']','').split(",");
+                                                            for(var i=0; i<ids.length; i++) {
+                                                                var node = treeSelectResEdit.getNodeByParam("id", ids[i]);
+                                                                if("true" == "true"){
+                                                                    try{treeSelectResEdit.checkNode(node, true, false);}catch(e){}
+                                                                    treeSelectResEdit.expandNode(node, true, false, false);
+                                                                }else{
+                                                                    treeSelectResEdit.selectNode(node, true);
+                                                                }
+                                                            }
+
+                                                        });
+                                                        key = $("#key");
+                                                        key.bind("focus", focusKey).bind("blur", blurKey)
+                                                            .bind("change keydown cut input propertychange", searchNode);
+                                                        $("#treeselectid-save").click(function(){
+                                                            node = treeSelectResEdit.getSelectedNodes()[0];
+                                                            if(undefined == node || null == node){
+                                                                tip.errorTip("请选择一个节点",$("#select-tree"));
+                                                                return false;
+                                                            }
+                                                            if("-1" == node.id){
+                                                                tip.errorTip("不能选择自己",$("#select-tree"));
+                                                                return false;
+                                                            }
+                                                            if(node.id == 0){
+                                                                node['name']="";
+                                                            }
+                                                            $("#treeselectname").val(node.name);
+                                                            $("#treeselectid").val(node["id"]);
+                                                            if("-1" != -1){
+                                                                $("input[name='parentIds']").val(node.parentIds);
+                                                            }
+                                                            layer.close(lastIndex);
+                                                            layer.close(layer.index);
+                                                        });
+                                                    });
+
+                                                    function getCheckbox(tree){
+                                                        var ids = [], nodes = tree.getCheckedNodes(true);
+                                                        for(var i=0; i<nodes.length; i++) {
+                                                            var id = nodes[i]["id"];
+                                                            if(id != 0) ids.push(id);
+                                                        }
+                                                        return ids;
+                                                    }
+
+                                                    function focusKey(e) {
+                                                        if (key.hasClass("empty")) {
+                                                            key.removeClass("empty");
+                                                        }
+                                                    };
+                                                    function blurKey(e) {
+                                                        if (key.get(0).value === "") {
+                                                            key.addClass("empty");
+                                                        }
+                                                        searchNode(e);
+                                                    };
+                                                    function searchNode(e) {
+                                                        // 取得输入的关键字的值
+                                                        var value = $.trim(key.get(0).value);
+
+                                                        // 按名字查询
+                                                        var keyType = "name";
+                                                        if (key.hasClass("empty")) {
+                                                            value = "";
+                                                        }
+
+                                                        // 如果和上次一次，就退出不查了。
+                                                        if (lastValue === value) {
+                                                            return;
+                                                        }
+
+                                                        // 保存最后一次
+                                                        lastValue = value;
+
+                                                        // 如果要查空字串，就退出不查了。
+                                                        if (value === "") {
+                                                            return;
+                                                        }
+                                                        updateNodes(false);
+                                                        nodeList = treeSelectResEdit.getNodesByParamFuzzy(keyType, value);
+                                                        updateNodes(true);
+                                                    };
+                                                    function updateNodes(highlight) {
+                                                        for(var i=0, l=nodeList.length; i<l; i++) {
+                                                            nodeList[i].highlight = highlight;
+                                                            treeSelectResEdit.updateNode(nodeList[i]);
+                                                            treeSelectResEdit.expandNode(nodeList[i].getParentNode(), true, false, false);
+                                                        }
+                                                    };
+												</script>
+													<div>
+														<ul id="select-treetreeSelectResEdit" class="ztree" style="padding:15px 20px;"><li id="select-treetreeSelectResEdit_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_1_switch" title="" class="button level0 switch root_open" treenode_switch=""></span><span id="select-treetreeSelectResEdit_1_check" class="button chk checkbox_false_part" treenode_check=""></span><a id="select-treetreeSelectResEdit_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="权限列表"><span id="select-treetreeSelectResEdit_1_ico" title="" treenode_ico="" class="button ico_open" style=""></span><span id="select-treetreeSelectResEdit_1_span">权限列表</span></a><ul id="select-treetreeSelectResEdit_1_ul" class="level0 " style="display:block"><li id="select-treetreeSelectResEdit_2" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_2_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><span id="select-treetreeSelectResEdit_2_check" class="button chk checkbox_true_full" treenode_check=""></span><a id="select-treetreeSelectResEdit_2_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="个人中心"><span id="select-treetreeSelectResEdit_2_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-user" style=""></span><span id="select-treetreeSelectResEdit_2_span">个人中心</span></a><ul id="select-treetreeSelectResEdit_2_ul" class="level1 line"><li id="select-treetreeSelectResEdit_3" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_3_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><span id="select-treetreeSelectResEdit_3_check" class="button chk checkbox_true_full" treenode_check=""></span><a id="select-treetreeSelectResEdit_3_a" class="level2" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="我的资料"><span id="select-treetreeSelectResEdit_3_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-file-o" style=""></span><span id="select-treetreeSelectResEdit_3_span">我的资料</span></a></li></ul></li><li id="select-treetreeSelectResEdit_4" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_4_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><span id="select-treetreeSelectResEdit_4_check" class="button chk checkbox_true_part" treenode_check=""></span><a id="select-treetreeSelectResEdit_4_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="单位管理"><span id="select-treetreeSelectResEdit_4_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-lastfm" style=""></span><span id="select-treetreeSelectResEdit_4_span">单位管理</span></a><ul id="select-treetreeSelectResEdit_4_ul" class="level1 line"><li id="select-treetreeSelectResEdit_5" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_5_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectResEdit_5_check" class="button chk checkbox_true_full" treenode_check=""></span><a id="select-treetreeSelectResEdit_5_a" class="level2" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="单位信息"><span id="select-treetreeSelectResEdit_5_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectResEdit_5_span">单位信息</span></a></li><li id="select-treetreeSelectResEdit_6" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_6_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectResEdit_6_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectResEdit_6_a" class="level2" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="单位账号"><span id="select-treetreeSelectResEdit_6_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectResEdit_6_span">单位账号</span></a></li><li id="select-treetreeSelectResEdit_7" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_7_switch" title="" class="button level2 switch bottom_docu" treenode_switch=""></span><span id="select-treetreeSelectResEdit_7_check" class="button chk checkbox_true_full" treenode_check=""></span><a id="select-treetreeSelectResEdit_7_a" class="level2" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="电子台账"><span id="select-treetreeSelectResEdit_7_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectResEdit_7_span">电子台账</span></a></li></ul></li><li id="select-treetreeSelectResEdit_8" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_8_switch" title="" class="button level1 switch center_close" treenode_switch=""></span><span id="select-treetreeSelectResEdit_8_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectResEdit_8_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="业务管理"><span id="select-treetreeSelectResEdit_8_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-puzzle-piece" style=""></span><span id="select-treetreeSelectResEdit_8_span">业务管理</span></a></li><li id="select-treetreeSelectResEdit_15" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_15_switch" title="" class="button level1 switch center_close" treenode_switch=""></span><span id="select-treetreeSelectResEdit_15_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectResEdit_15_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="机构用户"><span id="select-treetreeSelectResEdit_15_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-group" style=""></span><span id="select-treetreeSelectResEdit_15_span">机构用户</span></a></li><li id="select-treetreeSelectResEdit_21" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_21_switch" title="" class="button level1 switch center_close" treenode_switch=""></span><span id="select-treetreeSelectResEdit_21_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectResEdit_21_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="系统管理"><span id="select-treetreeSelectResEdit_21_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-cogs" style=""></span><span id="select-treetreeSelectResEdit_21_span">系统管理</span></a></li><li id="select-treetreeSelectResEdit_25" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectResEdit_25_switch" title="" class="button level1 switch bottom_close" treenode_switch=""></span><span id="select-treetreeSelectResEdit_25_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectResEdit_25_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="系统监控"><span id="select-treetreeSelectResEdit_25_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-binoculars" style=""></span><span id="select-treetreeSelectResEdit_25_span">系统监控</span></a></li></ul></li></ul>
+													</div>
+												</div>
+
+												<script>
+                                                    $.ajax({
+                                                        url:"/guguanjia/manager/tag/treeselect",
+                                                        type:"post",
+                                                        data:{url:'/guguanjia/manager/menu/tree',id:'treeselectid',nameId:'treeselectname',pIdKey:'parentId',
+                                                            selectIds:'[209,210,227,228,231]',curId:'-1',checked:'true',isLayer:"false",
+                                                            treeSelectId:'treeSelectResEdit',rootNodeName:'权限列表',chkboxType:'2'},
+                                                        success:function(data){
+                                                            $("#treeSelectResEdit").html(data);
+                                                        }
+                                                    });
+												</script>
+
+												<div id="treeSelectOfficeEdit" style="width: 50%; display: none; vertical-align: top; float: right;"><script>
+                                                    var key, lastValue = "", nodeList = [];
+                                                    var treeSelectOfficeEdit, treeSelectOfficeEditsetting = {
+                                                        view:{selectedMulti:false,expandSpeed:100},
+                                                        check:{enable:true,nocheckInherit:true},
+                                                        data:{
+                                                            simpleData:{
+                                                                enable:true,
+                                                                idKey:"id",
+                                                                pIdKey:"parentId"
+                                                            },
+                                                            key:{url:"abcd11"}
+                                                        },
+                                                        view:{
+                                                            fontCss:function(treeId, treeNode) {
+                                                                return (!!treeNode.highlight) ? {"font-weight":"bold","color":"red"} : {"font-weight":"normal","color":"#333"};
+                                                            }
+                                                        },
+                                                        callback:{
+                                                            beforeClick:function(id, node){
+                                                                if("true" == "true"){
+                                                                    treeSelectOfficeEdit.checkNode(node, !node.checked, true, true);
+                                                                    return false;
+                                                                }
+                                                            }
+                                                        }
+                                                    };
+                                                    $(document).ready(function(){
+                                                        $.post("/guguanjia/manager/office/tree", function(zNodes){
+                                                            var rootName = '机构列表';
+                                                            var root = {id:0,name:rootName,open:true};
+                                                            zNodes[zNodes.length] = root;
+                                                            // 初始化树结构
+                                                            treeSelectOfficeEdit = $.fn.zTree.init($("#select-treetreeSelectOfficeEdit"), treeSelectOfficeEditsetting, zNodes);
+                                                            treeSelectOfficeEdit.setting.check.chkboxType = { "Y" : "s", "N" : "s" };
+
+                                                            // 默认展开一级节点
+                                                            var nodes = treeSelectOfficeEdit.getNodesByParam("level", 0);
+                                                            for(var i=0; i<nodes.length; i++) {
+                                                                treeSelectOfficeEdit.expandNode(nodes[i], true, false, false);
+                                                            }
+                                                            // 默认选择节点
+                                                            var ids = "".replace('[','').replace(']','').split(",");
+                                                            for(var i=0; i<ids.length; i++) {
+                                                                var node = treeSelectOfficeEdit.getNodeByParam("id", ids[i]);
+                                                                if("true" == "true"){
+                                                                    try{treeSelectOfficeEdit.checkNode(node, true, false);}catch(e){}
+                                                                    treeSelectOfficeEdit.expandNode(node, true, false, false);
+                                                                }else{
+                                                                    treeSelectOfficeEdit.selectNode(node, true);
+                                                                }
+                                                            }
+
+                                                        });
+                                                        key = $("#key");
+                                                        key.bind("focus", focusKey).bind("blur", blurKey)
+                                                            .bind("change keydown cut input propertychange", searchNode);
+                                                        $("#treeselectid-save").click(function(){
+                                                            node = treeSelectOfficeEdit.getSelectedNodes()[0];
+                                                            if(undefined == node || null == node){
+                                                                tip.errorTip("请选择一个节点",$("#select-tree"));
+                                                                return false;
+                                                            }
+                                                            if("-1" == node.id){
+                                                                tip.errorTip("不能选择自己",$("#select-tree"));
+                                                                return false;
+                                                            }
+                                                            if(node.id == 0){
+                                                                node['name']="";
+                                                            }
+                                                            $("#treeselectname").val(node.name);
+                                                            $("#treeselectid").val(node["id"]);
+                                                            if("-1" != -1){
+                                                                $("input[name='parentIds']").val(node.parentIds);
+                                                            }
+                                                            layer.close(lastIndex);
+                                                            layer.close(layer.index);
+                                                        });
+                                                    });
+
+                                                    function getCheckbox(tree){
+                                                        var ids = [], nodes = tree.getCheckedNodes(true);
+                                                        for(var i=0; i<nodes.length; i++) {
+                                                            var id = nodes[i]["id"];
+                                                            if(id != 0) ids.push(id);
+                                                        }
+                                                        return ids;
+                                                    }
+
+                                                    function focusKey(e) {
+                                                        if (key.hasClass("empty")) {
+                                                            key.removeClass("empty");
+                                                        }
+                                                    };
+                                                    function blurKey(e) {
+                                                        if (key.get(0).value === "") {
+                                                            key.addClass("empty");
+                                                        }
+                                                        searchNode(e);
+                                                    };
+                                                    function searchNode(e) {
+                                                        // 取得输入的关键字的值
+                                                        var value = $.trim(key.get(0).value);
+
+                                                        // 按名字查询
+                                                        var keyType = "name";
+                                                        if (key.hasClass("empty")) {
+                                                            value = "";
+                                                        }
+
+                                                        // 如果和上次一次，就退出不查了。
+                                                        if (lastValue === value) {
+                                                            return;
+                                                        }
+
+                                                        // 保存最后一次
+                                                        lastValue = value;
+
+                                                        // 如果要查空字串，就退出不查了。
+                                                        if (value === "") {
+                                                            return;
+                                                        }
+                                                        updateNodes(false);
+                                                        nodeList = treeSelectOfficeEdit.getNodesByParamFuzzy(keyType, value);
+                                                        updateNodes(true);
+                                                    };
+                                                    function updateNodes(highlight) {
+                                                        for(var i=0, l=nodeList.length; i<l; i++) {
+                                                            nodeList[i].highlight = highlight;
+                                                            treeSelectOfficeEdit.updateNode(nodeList[i]);
+                                                            treeSelectOfficeEdit.expandNode(nodeList[i].getParentNode(), true, false, false);
+                                                        }
+                                                    };
+												</script>
+													<div>
+														<ul id="select-treetreeSelectOfficeEdit" class="ztree" style="padding:15px 20px;"><li id="select-treetreeSelectOfficeEdit_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_1_switch" title="" class="button level0 switch root_open" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_1_check" class="button chk checkbox_true_part" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="机构列表"><span id="select-treetreeSelectOfficeEdit_1_ico" title="" treenode_ico="" class="button ico_open" style=""></span><span id="select-treetreeSelectOfficeEdit_1_span">机构列表</span></a><ul id="select-treetreeSelectOfficeEdit_1_ul" class="level0 " style="display:block"><li id="select-treetreeSelectOfficeEdit_2" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_2_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_2_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_2_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="新注册用户默认机构"><span id="select-treetreeSelectOfficeEdit_2_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_2_span">新注册用户默认机构</span></a></li><li id="select-treetreeSelectOfficeEdit_3" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_3_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_3_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_3_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆天志环保有限公司（长寿处置场）"><span id="select-treetreeSelectOfficeEdit_3_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_3_span">重庆天志环保有限公司（长寿处置场）</span></a></li><li id="select-treetreeSelectOfficeEdit_4" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_4_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_4_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_4_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆天志环保有限公司（主城区处置场）"><span id="select-treetreeSelectOfficeEdit_4_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_4_span">重庆天志环保有限公司（主城区处置场）</span></a></li><li id="select-treetreeSelectOfficeEdit_5" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_5_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_5_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_5_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市万州区森浩污染物处置有限公司"><span id="select-treetreeSelectOfficeEdit_5_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_5_span">重庆市万州区森浩污染物处置有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_6" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_6_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_6_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_6_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆同兴医疗废物处理有限公司"><span id="select-treetreeSelectOfficeEdit_6_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_6_span">重庆同兴医疗废物处理有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_7" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_7_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_7_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_7_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市涪陵固体废物处理中心"><span id="select-treetreeSelectOfficeEdit_7_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_7_span">重庆市涪陵固体废物处理中心</span></a></li><li id="select-treetreeSelectOfficeEdit_8" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_8_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_8_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_8_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆华维实业有限责任公司"><span id="select-treetreeSelectOfficeEdit_8_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_8_span">重庆华维实业有限责任公司</span></a></li><li id="select-treetreeSelectOfficeEdit_9" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_9_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_9_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_9_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆宏源实业有限公司"><span id="select-treetreeSelectOfficeEdit_9_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_9_span">重庆宏源实业有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_10" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_10_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_10_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_10_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆龙健金属制造有限公司"><span id="select-treetreeSelectOfficeEdit_10_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_10_span">重庆龙健金属制造有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_11" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_11_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_11_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_11_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市利特环保工程有限公司（德感）"><span id="select-treetreeSelectOfficeEdit_11_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_11_span">重庆市利特环保工程有限公司（德感）</span></a></li><li id="select-treetreeSelectOfficeEdit_12" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_12_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_12_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_12_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市利特环保工程有限公司（黑石子）"><span id="select-treetreeSelectOfficeEdit_12_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_12_span">重庆市利特环保工程有限公司（黑石子）</span></a></li><li id="select-treetreeSelectOfficeEdit_13" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_13_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_13_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_13_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市长锦物资有限公司"><span id="select-treetreeSelectOfficeEdit_13_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_13_span">重庆市长锦物资有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_14" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_14_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_14_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_14_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市中明环境治理有限公司"><span id="select-treetreeSelectOfficeEdit_14_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_14_span">重庆市中明环境治理有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_15" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_15_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_15_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_15_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆宇立金属制品有限公司"><span id="select-treetreeSelectOfficeEdit_15_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_15_span">重庆宇立金属制品有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_16" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_16_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_16_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_16_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市固体废物管理服务中心"><span id="select-treetreeSelectOfficeEdit_16_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_16_span">重庆市固体废物管理服务中心</span></a></li><li id="select-treetreeSelectOfficeEdit_17" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_17_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_17_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_17_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆岭欧环保科技有限公司"><span id="select-treetreeSelectOfficeEdit_17_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_17_span">重庆岭欧环保科技有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_18" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_18_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_18_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_18_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆正艾敏再生资源回收有限公司"><span id="select-treetreeSelectOfficeEdit_18_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_18_span">重庆正艾敏再生资源回收有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_19" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_19_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_19_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_19_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="开县城市固体废弃物综合处理厂"><span id="select-treetreeSelectOfficeEdit_19_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_19_span">开县城市固体废弃物综合处理厂</span></a></li><li id="select-treetreeSelectOfficeEdit_20" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_20_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_20_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_20_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="酉阳县钦晟贵金属有限公司"><span id="select-treetreeSelectOfficeEdit_20_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_20_span">酉阳县钦晟贵金属有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_21" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_21_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_21_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_21_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆龙瑞化工有限公司"><span id="select-treetreeSelectOfficeEdit_21_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_21_span">重庆龙瑞化工有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_22" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_22_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_22_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_22_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆环创固体废物处置有限公司"><span id="select-treetreeSelectOfficeEdit_22_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_22_span">重庆环创固体废物处置有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_23" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_23_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_23_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_23_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆可厚德环保技术有限公司"><span id="select-treetreeSelectOfficeEdit_23_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_23_span">重庆可厚德环保技术有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_24" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_24_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_24_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_24_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆嘉惠环保科技有限公司"><span id="select-treetreeSelectOfficeEdit_24_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_24_span">重庆嘉惠环保科技有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_25" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_25_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_25_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_25_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆宏锐环保科技发展有限公司"><span id="select-treetreeSelectOfficeEdit_25_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_25_span">重庆宏锐环保科技发展有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_26" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_26_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_26_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_26_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆德能再生资源股份有限公司"><span id="select-treetreeSelectOfficeEdit_26_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_26_span">重庆德能再生资源股份有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_27" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_27_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_27_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_27_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="精永再生资源回收(重庆)有限公司"><span id="select-treetreeSelectOfficeEdit_27_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_27_span">精永再生资源回收(重庆)有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_28" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_28_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_28_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_28_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="忠县铭荣医疗废物处理有限公司"><span id="select-treetreeSelectOfficeEdit_28_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_28_span">忠县铭荣医疗废物处理有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_29" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_29_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_29_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_29_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆恒杰化工有限公司"><span id="select-treetreeSelectOfficeEdit_29_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_29_span">重庆恒杰化工有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_30" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_30_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_30_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_30_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="秀山县友鑫环境治理有限公司"><span id="select-treetreeSelectOfficeEdit_30_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_30_span">秀山县友鑫环境治理有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_31" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_31_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_31_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_31_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆蓝洁广顺净水材料有限公司"><span id="select-treetreeSelectOfficeEdit_31_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_31_span">重庆蓝洁广顺净水材料有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_32" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_32_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_32_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_32_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆凯怡贵金属有限公司"><span id="select-treetreeSelectOfficeEdit_32_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_32_span">重庆凯怡贵金属有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_33" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_33_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_33_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_33_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆东进世美肯电子材料有限公司"><span id="select-treetreeSelectOfficeEdit_33_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_33_span">重庆东进世美肯电子材料有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_34" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_34_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_34_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_34_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆伟世鑫盛环保科技有限公司"><span id="select-treetreeSelectOfficeEdit_34_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_34_span">重庆伟世鑫盛环保科技有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_35" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_35_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_35_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_35_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆炬缘环保有限公司"><span id="select-treetreeSelectOfficeEdit_35_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_35_span">重庆炬缘环保有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_36" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_36_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_36_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_36_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆万博再生资源利用有限公司"><span id="select-treetreeSelectOfficeEdit_36_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_36_span">重庆万博再生资源利用有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_37" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_37_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_37_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_37_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆中明港桥环保有限责任公司"><span id="select-treetreeSelectOfficeEdit_37_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_37_span">重庆中明港桥环保有限责任公司</span></a></li><li id="select-treetreeSelectOfficeEdit_38" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_38_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_38_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_38_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆拉法基瑞安地维水泥有限公司"><span id="select-treetreeSelectOfficeEdit_38_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_38_span">重庆拉法基瑞安地维水泥有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_39" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_39_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_39_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_39_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆九腾环保工程有限公司"><span id="select-treetreeSelectOfficeEdit_39_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_39_span">重庆九腾环保工程有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_40" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_40_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_40_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_40_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆油润再生资源开发有限公司"><span id="select-treetreeSelectOfficeEdit_40_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_40_span">重庆油润再生资源开发有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_41" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_41_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_41_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_41_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市万州区均荣再生资源回收站"><span id="select-treetreeSelectOfficeEdit_41_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_41_span">重庆市万州区均荣再生资源回收站</span></a></li><li id="select-treetreeSelectOfficeEdit_42" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_42_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_42_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_42_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市万州区众汇再生资源回收有限责任公司"><span id="select-treetreeSelectOfficeEdit_42_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_42_span">重庆市万州区众汇再生资源回收有限责任公司</span></a></li><li id="select-treetreeSelectOfficeEdit_43" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_43_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_43_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_43_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市万州区新聚源再生资源回收有限责任公司"><span id="select-treetreeSelectOfficeEdit_43_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_43_span">重庆市万州区新聚源再生资源回收有限责任公司</span></a></li><li id="select-treetreeSelectOfficeEdit_44" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_44_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_44_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_44_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市涪陵区王丰废旧物资回收有限公司"><span id="select-treetreeSelectOfficeEdit_44_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_44_span">重庆市涪陵区王丰废旧物资回收有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_45" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_45_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_45_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_45_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆天思博瑞环保科技发展有限公司"><span id="select-treetreeSelectOfficeEdit_45_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-folder" style=""></span><span id="select-treetreeSelectOfficeEdit_45_span">重庆天思博瑞环保科技发展有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_46" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_46_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_46_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_46_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="利特运输"><span id="select-treetreeSelectOfficeEdit_46_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_46_span">利特运输</span></a></li><li id="select-treetreeSelectOfficeEdit_47" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_47_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_47_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_47_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="企业产废"><span id="select-treetreeSelectOfficeEdit_47_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_47_span">企业产废</span></a></li><li id="select-treetreeSelectOfficeEdit_48" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_48_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_48_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_48_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="企业运输"><span id="select-treetreeSelectOfficeEdit_48_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_48_span">企业运输</span></a></li><li id="select-treetreeSelectOfficeEdit_49" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_49_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_49_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_49_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="企业处置"><span id="select-treetreeSelectOfficeEdit_49_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_49_span">企业处置</span></a></li><li id="select-treetreeSelectOfficeEdit_50" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_50_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_50_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_50_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="固管家运输方测试机构"><span id="select-treetreeSelectOfficeEdit_50_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_50_span">固管家运输方测试机构</span></a></li><li id="select-treetreeSelectOfficeEdit_51" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_51_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_51_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_51_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="固管家产废方测试机构"><span id="select-treetreeSelectOfficeEdit_51_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_51_span">固管家产废方测试机构</span></a></li><li id="select-treetreeSelectOfficeEdit_52" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_52_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_52_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_52_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="固管家处置方测试机构"><span id="select-treetreeSelectOfficeEdit_52_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_52_span">固管家处置方测试机构</span></a></li><li id="select-treetreeSelectOfficeEdit_53" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_53_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_53_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_53_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆环投再生资源有限公司"><span id="select-treetreeSelectOfficeEdit_53_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_53_span">重庆环投再生资源有限公司</span></a></li><li id="select-treetreeSelectOfficeEdit_54" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_54_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_54_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_54_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="固管家服务平台"><span id="select-treetreeSelectOfficeEdit_54_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_54_span">固管家服务平台</span></a></li><li id="select-treetreeSelectOfficeEdit_55" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-treetreeSelectOfficeEdit_55_switch" title="" class="button level1 switch bottom_docu" treenode_switch=""></span><span id="select-treetreeSelectOfficeEdit_55_check" class="button chk checkbox_false_full" treenode_check=""></span><a id="select-treetreeSelectOfficeEdit_55_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市环境保护局"><span id="select-treetreeSelectOfficeEdit_55_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-treetreeSelectOfficeEdit_55_span">重庆市环境保护局</span></a></li></ul></li></ul>
+													</div>
+												</div>
+
+												<script>
+                                                    $.ajax({
+                                                        url:"/guguanjia/manager/tag/treeselect",
+                                                        type:"post",
+                                                        data:{url:'/guguanjia/manager/office/tree',id:'treeselectid',nameId:'treeselectname',pIdKey:'parentId',
+                                                            selectIds:'',curId:'-1',checked:'true',isLayer:"false",
+                                                            treeSelectId:'treeSelectOfficeEdit',rootNodeName:'机构列表',chkboxType:'1'},
+                                                        success:function(data){
+                                                            $("#treeSelectOfficeEdit").html(data);
+                                                        }
+                                                    });
+												</script>
+											</div>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</form>
+						</div>
+
+							<div class="width-100 clearfix" tag-save-btn="" style="bottom: -36px; left: 0px; position: absolute;">
+	<span class="btn btn-primary btn-sm bigger-110 width-50  pull-left" id="role-save-save">
+		<i class="ace-icon fa fa-floppy-o align-top bigger-125"></i> 确 定
+	</span>
+								<span class="btn btn-yellow btn-sm bigger-110 width-50 pull-right" id="role-save-cancel">
+		<i class="ace-icon fa fa-times align-top  bigger-125"></i> 取 消
+	</span>
+							</div>
+							<script type="text/javascript">
+                                $(function(){
+
+                                    var roleEditForm = $("#role-save").Validform({
+                                        ajaxPost : true,
+                                        beforeSubmit:function(curform){
+                                            var loadi = layer.load(5,2);
+                                            $("#role-save").data('loadi',loadi);
+                                        },
+                                        callback:function(data){
+                                            layer.close($("#role-save").data('loadi'));
+                                            if(data>0) {
+                                                layer.msg('操作成功', 1, 1,function(){
+                                                    if("false" == "true"){
+                                                        location.reload();
+                                                    }else{
+                                                        $curmenu.trigger('click');
+                                                    }
+                                                    layer.closeAll();
+                                                });
+                                            }else{
+                                                layer.msg('操作失败', 3, 1);
+                                            }
+                                        },
+                                        tiptype : function(msg, o, cssctl) {
+                                            if (!o.obj.is("form")) {
+                                                if (o.type != 2) {
+                                                    tip.errorTip(msg,o.obj);
+                                                }
+                                            }
+                                        },
+                                        tipSweep : true
+                                    });
+
+                                    $("#role-save-save").click(function() {
+                                        if("true" == "true"){
+                                            var permission = getCheckbox(treeSelectResEdit);
+                                            var office = getCheckbox(treeSelectOfficeEdit);
+                                            var data = $("#role-save").serialize()+"&resourceIds="+permission.toString()+
+                                                "&officeIds="+office.toString();
+                                            roleEditForm.config({
+                                                ajaxpost:{data:data}
+                                            });
+
+                                        }
+                                        roleEditForm.submitForm(false);
+                                        return false;
+                                    });
+
+                                    $("#role-save-cancel").click(function(){
+                                        layer.closeAll();
+                                        return false;
+                                    });
+
+                                    $("#role-save input,#role-save textarea").blur(function(){
+                                        layer.closeTips();
+                                        return false;
+                                    })
+
+                                });
+							</script></div>
+					</div>
+
+				</div>
+			</div>
+		</div><!-- /.page-content -->
+
+	</div><!-- /.main-content -->
+
+	<a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+		<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+	</a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="../../../static/jquery/jquery.js"></script>
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../../../static/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="../../../static/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="../../../static/ace/js/ace-elements.min.js"></script>
+<script src="../../../static/ace/js/ace.min.js"></script>
+
+<script type="text/javascript">
+    var ctxPath = "../../..";
+    window.onload=function(){
+        /* $("#ace-settings-navbar").trigger("click");//固定头部导航栏
+        $("#ace-settings-sidebar").trigger("click");//固定左侧菜单
+        $("#ace-settings-highlight").trigger("click"); */
+    };
+</script>
+
+<!-- 引入其他js -->
+<script src="../../../static/js/history.js"></script>
+<script type="text/javascript" src="../../../static/layer/layer.js"></script>
+<script type="text/javascript" src="../../../static/js/spin.min.js"></script>
+<script type="text/javascript" src="../../../static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="../../../static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../../../static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.form.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../../../static/js/public.js"></script>
+
+
+</body>
+</html>

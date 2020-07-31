@@ -1,0 +1,1011 @@
+
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>固管家服务平台</title>
+
+	<meta name="description" content="index" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="../../../static/css/font-awesome.min.css" />
+
+	<link rel="stylesheet" href="../../../static/chosen/chosen.min.css" />
+
+	<!-- ace styles -->
+	<link rel="stylesheet" href="../../../static/ace/css/ace.min.css" id="main-ace-style" />
+
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" href="../../../static/ace/css/ace-part2.min.css" />
+	<![endif]-->
+	<link rel="stylesheet" href="../../../static/ace/css/ace-skins.min.css" />
+	<link rel="stylesheet" href="../../../static/ace/css/ace-rtl.min.css" />
+
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" href="../../../static/ace/css/ace-ie.min.css" />
+	<![endif]-->
+
+	<link rel="stylesheet" href="../../../static/ztree/metro.css" />
+	<link rel="stylesheet" href="../../../static/validate/css/validform.css" />
+	<link rel="stylesheet" href="../../../static/css/custom.css" />
+
+
+	<!--[if !IE]> -->
+	<script src="../../../static/jquery/jquery.js"></script>
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+	<script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+	<![endif]-->
+
+
+	<!-- ace settings handler -->
+	<script src="../../../static/ace/js/ace-extra.min.js"></script>
+
+	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+	<!--[if lte IE 8]>
+	<script src="../../../static/bootstrap/html5shiv.min.js"></script>
+	<script src="../../../static/bootstrap/respond.min.js"></script>
+	<script>var ie8 = "ie8";</script>
+	<![endif]-->
+</head>
+
+<body class="no-skin" id="body-content">
+<!-- 顶部条 -->
+<div id="navbar" class="navbar navbar-default">
+	<script type="text/javascript">
+        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+	</script>
+
+	<div class="navbar-container clearfix" id="navbar-container">
+		<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+			<span class="sr-only">Toggle sidebar</span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+		</button>
+
+		<div class="navbar-header pull-left" style="min-width:190px;">
+			<a  class="navbar-brand">
+				<small>
+					固管家服务平台
+				</small>
+			</a>
+		</div>
+		<!-- <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a  data-trigger="ajax" data-target="#fill-main-content" class="bigger-120">
+                    <i class="menu-icon fa "></i>&nbsp;
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+
+		<div class="navbar-buttons navbar-header pull-right" role="navigation">
+			<ul class="nav ace-nav">
+
+				<li class="green">
+					<a class="dropdown-toggle" href="javascript:void(0);" id="fullscreen" title="全屏"
+					   onclick="launchFullscreen(document.documentElement);">
+						<i class="ace-icon fa fa-arrows-alt "></i>
+					</a>
+				</li>
+
+				<li class="purple" style="display:none;">
+					<a data-toggle="dropdown" class="dropdown-toggle" >
+						<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+						<span class="badge badge-important">8</span>
+					</a>
+
+					<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+						<li class="dropdown-header">
+							<i class="ace-icon fa fa-exclamation-triangle"></i>
+							8 Notifications
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+												New Comments
+											</span>
+									<span class="pull-right badge badge-info">+12</span>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<i class="btn btn-xs btn-primary fa fa-user"></i>
+								Bob just signed up as an editor ...
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+												New Orders
+											</span>
+									<span class="pull-right badge badge-success">+8</span>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+												Followers
+											</span>
+									<span class="pull-right badge badge-info">+11</span>
+								</div>
+							</a>
+						</li>
+
+						<li class="dropdown-footer">
+							<a >
+								See all notifications
+								<i class="ace-icon fa fa-arrow-right"></i>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="light-blue">
+					<a data-toggle="dropdown"  class="dropdown-toggle">
+						<img class="nav-user-photo" src="../../../static/img/small-male-pic.png" />
+						<span class="user-info">
+									<small>你好,</small>
+									超级管理员
+								</span>
+
+						<i class="ace-icon fa fa-caret-down"></i>
+					</a>
+
+					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						<li>
+							<a href="../userCenter/userCenter.html">
+								<i class="ace-icon fa fa-user"></i>
+								我的资料
+							</a>
+						</li>
+
+						<li class="divider"></li>
+
+						<li>
+							<a href="../login.html">
+								<i class="ace-icon fa fa-power-off"></i>
+								退出
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /.navbar-container -->
+</div>
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+	<script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+	</script>
+
+
+	<div id="sidebar" class="sidebar responsive">
+		<script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+		</script>
+
+		<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+			<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+				<button class="btn btn-success">
+					<i class="ace-icon fa fa-signal"></i>
+				</button>
+
+				<button class="btn btn-info">
+					<i class="ace-icon fa fa-pencil"></i>
+				</button>
+
+				<button class="btn btn-warning">
+					<i class="ace-icon fa fa-users"></i>
+				</button>
+
+				<button class="btn btn-danger">
+					<i class="ace-icon fa fa-cogs"></i>
+				</button>
+			</div>
+
+			<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+				<span class="btn btn-success"></span>
+
+				<span class="btn btn-info"></span>
+
+				<span class="btn btn-warning"></span>
+
+				<span class="btn btn-danger"></span>
+			</div>
+		</div><!-- /.sidebar-shortcuts -->
+
+		<ul class="nav nav-list" id="sidebar-menu">
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-user"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 个人中心 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../userCenter/userCenter.html"
+								id="menu_manageruserCenter"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-file-o"></i>
+							<span class="menu-text"
+							> 我的资料 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-lastfm"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 单位管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../office/office-detail.html"
+								id="menu_managercompanydetail"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 单位信息 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../user/user.html"
+								id="menu_managercompanyaccounts"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 单位账号 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../work/company/work.html"
+								id="menu_managercompanywork"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 电子台账 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-puzzle-piece"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 业务管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../work/admin/work.html"
+								id="menu_manageradminwork"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 电子台账 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../qualification/index.html"
+								id="menu_managerqualificationindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 资质审核 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="index.html"
+								id="menu_managerdemandindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 服务需求 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../examine/index.html"
+								id="menu_managerexamineindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 考核管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../app/index.html"
+								id="menu_managerappindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> APP管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../statute/index.html"
+								id="menu_managerstatuteindex"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-bolt"></i>
+							<span class="menu-text"
+							> 法律法规 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-group"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 机构用户 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../area/index.html"
+								id="menu_managerarea"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-globe"></i>
+							<span class="menu-text"
+							> 区域管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../office/office.html"
+								id="menu_manageroffice"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-sitemap"></i>
+							<span class="menu-text"
+							> 机构管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../user/user-list.html"
+								id="menu_managersysuser"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-user"></i>
+							<span class="menu-text"
+							> 用户管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../role/role.html"
+								id="menu_managerrole"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-graduation-cap"></i>
+							<span class="menu-text"
+							> 角色管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-cogs"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 系统管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../menu/menu.html"
+								id="menu_managermenu"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"
+							> 菜单配置 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../dict/dict.html"
+								id="menu_managerdict"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-calculator"></i>
+							<span class="menu-text"
+							> 字典管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../log/log.html"
+								id="menu_managersyslog"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-copy"></i>
+							<span class="menu-text"
+							> 日志查询 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-binoculars"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 系统监控 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../ehcache/ehcache.html"
+								id="menu_managermonitorehcache"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-crosshairs"></i>
+							<span class="menu-text"
+							> Ehcache监控 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../jvm/jvm.html"
+								id="menu_managermonitorjvm"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-flash"></i>
+							<span class="menu-text"
+							> jvm监控 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+		</ul><!-- /.nav-list -->
+		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+			<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		</div>
+
+		<script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+		</script>
+	</div>
+
+
+	<div class="main-content">
+		<div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="tab" id="breadcrumb">
+				<!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+			</ul><!-- /.breadcrumb -->
+			<div id="tab-menu">
+				<ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+					<li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+					<li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="page-content">
+			<div class="ace-settings-container" id="ace-settings-container">
+				<div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+					 id="ace-settings-btn">
+					<i class="ace-icon fa fa-cog bigger-150"></i>
+				</div>
+
+				<div class="ace-settings-box clearfix" id="ace-settings-box">
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<div class="pull-left">
+								<select id="skin-colorpicker" class="hide">
+									<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+									<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+									<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+									<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+								</select>
+							</div>
+							<span>&nbsp; 皮肤</span>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-navbar" /> <label class="lbl"
+																	  for="ace-settings-navbar"> 固定页头</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-sidebar" /> <label class="lbl"
+																	   for="ace-settings-sidebar"> 固定导航菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-breadcrumbs" /> <label class="lbl"
+																		   for="ace-settings-breadcrumbs"> 固定导航条</label>
+						</div>
+
+						<!-- <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                id="ace-settings-rtl" /> <label class="lbl" for="ace-settings-rtl">
+                                Right To Left (rtl)</label>
+                        </div> -->
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-add-container" /> <label class="lbl"
+																			 for="ace-settings-add-container"> 固定宽度
+						</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-hover" /> <label class="lbl"
+																	 for="ace-settings-hover"> 滑动式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-compact" /> <label class="lbl"
+																	   for="ace-settings-compact"> 紧凑式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-highlight" /> <label class="lbl"
+																		 for="ace-settings-highlight"> 高亮选中</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+				</div>
+				<!-- /.ace-settings-box -->
+			</div>
+			<!-- /.ace-settings-container -->
+			<div class="page-header">
+				<h1> 测试运输方普通人员 角色分配 </h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="fill-main-content" style="height:100%">
+							<h3 class="header smaller red">通过选择部门，然后为列出部门的人员分配角色</h3>
+							<div class="col-xs-6 col-sm-4 pricing-box">
+								<div class="widget-box widget-color-orange">
+									<div class="widget-header">
+										<h5 class="widget-title bigger lighter">所在部门</h5>
+									</div>
+
+									<div class="widget-body">
+										<div class="widget-main">
+											<ul class="ztree" id="treeOffice"><li id="treeOffice_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_1_switch" title="" class="button level0 switch roots_docu" treenode_switch=""></span><a id="treeOffice_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="新注册用户默认机构"><span id="treeOffice_1_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_1_span">新注册用户默认机构</span></a></li><li id="treeOffice_2" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_2_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_2_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆天志环保有限公司（长寿处置场）"><span id="treeOffice_2_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_2_span">重庆天志环保有限公司（长寿处置场）</span></a></li><li id="treeOffice_3" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_3_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_3_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆天志环保有限公司（主城区处置场）"><span id="treeOffice_3_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_3_span">重庆天志环保有限公司（主城区处置场）</span></a></li><li id="treeOffice_4" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_4_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_4_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市万州区森浩污染物处置有限公司"><span id="treeOffice_4_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_4_span">重庆市万州区森浩污染物处置有限公司</span></a></li><li id="treeOffice_5" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_5_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_5_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆同兴医疗废物处理有限公司"><span id="treeOffice_5_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_5_span">重庆同兴医疗废物处理有限公司</span></a></li><li id="treeOffice_6" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_6_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_6_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市涪陵固体废物处理中心"><span id="treeOffice_6_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_6_span">重庆市涪陵固体废物处理中心</span></a></li><li id="treeOffice_7" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_7_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_7_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆华维实业有限责任公司"><span id="treeOffice_7_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_7_span">重庆华维实业有限责任公司</span></a></li><li id="treeOffice_8" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_8_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_8_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆宏源实业有限公司"><span id="treeOffice_8_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_8_span">重庆宏源实业有限公司</span></a></li><li id="treeOffice_9" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_9_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_9_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆龙健金属制造有限公司"><span id="treeOffice_9_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_9_span">重庆龙健金属制造有限公司</span></a></li><li id="treeOffice_10" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_10_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_10_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市利特环保工程有限公司（德感）"><span id="treeOffice_10_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_10_span">重庆市利特环保工程有限公司（德感）</span></a></li><li id="treeOffice_11" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_11_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_11_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市利特环保工程有限公司（黑石子）"><span id="treeOffice_11_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_11_span">重庆市利特环保工程有限公司（黑石子）</span></a></li><li id="treeOffice_12" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_12_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_12_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市长锦物资有限公司"><span id="treeOffice_12_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_12_span">重庆市长锦物资有限公司</span></a></li><li id="treeOffice_13" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_13_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_13_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市中明环境治理有限公司"><span id="treeOffice_13_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_13_span">重庆市中明环境治理有限公司</span></a></li><li id="treeOffice_14" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_14_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_14_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆宇立金属制品有限公司"><span id="treeOffice_14_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_14_span">重庆宇立金属制品有限公司</span></a></li><li id="treeOffice_15" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_15_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_15_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市固体废物管理服务中心"><span id="treeOffice_15_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_15_span">重庆市固体废物管理服务中心</span></a></li><li id="treeOffice_16" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_16_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_16_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆岭欧环保科技有限公司"><span id="treeOffice_16_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_16_span">重庆岭欧环保科技有限公司</span></a></li><li id="treeOffice_17" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_17_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_17_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆正艾敏再生资源回收有限公司"><span id="treeOffice_17_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_17_span">重庆正艾敏再生资源回收有限公司</span></a></li><li id="treeOffice_18" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_18_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_18_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="开县城市固体废弃物综合处理厂"><span id="treeOffice_18_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_18_span">开县城市固体废弃物综合处理厂</span></a></li><li id="treeOffice_19" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_19_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_19_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="酉阳县钦晟贵金属有限公司"><span id="treeOffice_19_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_19_span">酉阳县钦晟贵金属有限公司</span></a></li><li id="treeOffice_20" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_20_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_20_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆龙瑞化工有限公司"><span id="treeOffice_20_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_20_span">重庆龙瑞化工有限公司</span></a></li><li id="treeOffice_21" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_21_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_21_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆环创固体废物处置有限公司"><span id="treeOffice_21_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_21_span">重庆环创固体废物处置有限公司</span></a></li><li id="treeOffice_22" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_22_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_22_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆可厚德环保技术有限公司"><span id="treeOffice_22_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_22_span">重庆可厚德环保技术有限公司</span></a></li><li id="treeOffice_23" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_23_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_23_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆嘉惠环保科技有限公司"><span id="treeOffice_23_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_23_span">重庆嘉惠环保科技有限公司</span></a></li><li id="treeOffice_24" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_24_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_24_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆宏锐环保科技发展有限公司"><span id="treeOffice_24_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_24_span">重庆宏锐环保科技发展有限公司</span></a></li><li id="treeOffice_25" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_25_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_25_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆德能再生资源股份有限公司"><span id="treeOffice_25_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_25_span">重庆德能再生资源股份有限公司</span></a></li><li id="treeOffice_26" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_26_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_26_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="精永再生资源回收(重庆)有限公司"><span id="treeOffice_26_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_26_span">精永再生资源回收(重庆)有限公司</span></a></li><li id="treeOffice_27" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_27_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_27_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="忠县铭荣医疗废物处理有限公司"><span id="treeOffice_27_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_27_span">忠县铭荣医疗废物处理有限公司</span></a></li><li id="treeOffice_28" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_28_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_28_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆恒杰化工有限公司"><span id="treeOffice_28_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_28_span">重庆恒杰化工有限公司</span></a></li><li id="treeOffice_29" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_29_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_29_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="秀山县友鑫环境治理有限公司"><span id="treeOffice_29_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_29_span">秀山县友鑫环境治理有限公司</span></a></li><li id="treeOffice_30" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_30_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_30_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆蓝洁广顺净水材料有限公司"><span id="treeOffice_30_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_30_span">重庆蓝洁广顺净水材料有限公司</span></a></li><li id="treeOffice_31" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_31_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_31_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆凯怡贵金属有限公司"><span id="treeOffice_31_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_31_span">重庆凯怡贵金属有限公司</span></a></li><li id="treeOffice_32" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_32_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_32_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆东进世美肯电子材料有限公司"><span id="treeOffice_32_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_32_span">重庆东进世美肯电子材料有限公司</span></a></li><li id="treeOffice_33" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_33_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_33_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆伟世鑫盛环保科技有限公司"><span id="treeOffice_33_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_33_span">重庆伟世鑫盛环保科技有限公司</span></a></li><li id="treeOffice_34" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_34_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_34_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆炬缘环保有限公司"><span id="treeOffice_34_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_34_span">重庆炬缘环保有限公司</span></a></li><li id="treeOffice_35" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_35_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_35_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆万博再生资源利用有限公司"><span id="treeOffice_35_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_35_span">重庆万博再生资源利用有限公司</span></a></li><li id="treeOffice_36" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_36_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_36_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆中明港桥环保有限责任公司"><span id="treeOffice_36_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_36_span">重庆中明港桥环保有限责任公司</span></a></li><li id="treeOffice_37" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_37_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_37_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆拉法基瑞安地维水泥有限公司"><span id="treeOffice_37_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_37_span">重庆拉法基瑞安地维水泥有限公司</span></a></li><li id="treeOffice_38" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_38_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_38_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆九腾环保工程有限公司"><span id="treeOffice_38_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_38_span">重庆九腾环保工程有限公司</span></a></li><li id="treeOffice_39" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_39_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_39_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆油润再生资源开发有限公司"><span id="treeOffice_39_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_39_span">重庆油润再生资源开发有限公司</span></a></li><li id="treeOffice_40" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_40_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_40_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市万州区均荣再生资源回收站"><span id="treeOffice_40_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_40_span">重庆市万州区均荣再生资源回收站</span></a></li><li id="treeOffice_41" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_41_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_41_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市万州区众汇再生资源回收有限责任公司"><span id="treeOffice_41_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_41_span">重庆市万州区众汇再生资源回收有限责任公司</span></a></li><li id="treeOffice_42" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_42_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_42_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市万州区新聚源再生资源回收有限责任公司"><span id="treeOffice_42_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_42_span">重庆市万州区新聚源再生资源回收有限责任公司</span></a></li><li id="treeOffice_43" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_43_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_43_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市涪陵区王丰废旧物资回收有限公司"><span id="treeOffice_43_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_43_span">重庆市涪陵区王丰废旧物资回收有限公司</span></a></li><li id="treeOffice_44" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_44_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_44_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆天思博瑞环保科技发展有限公司"><span id="treeOffice_44_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-folder" style=""></span><span id="treeOffice_44_span">重庆天思博瑞环保科技发展有限公司</span></a></li><li id="treeOffice_45" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_45_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_45_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="利特运输"><span id="treeOffice_45_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_45_span">利特运输</span></a></li><li id="treeOffice_46" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_46_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_46_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="企业产废"><span id="treeOffice_46_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_46_span">企业产废</span></a></li><li id="treeOffice_47" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_47_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_47_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="企业运输"><span id="treeOffice_47_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_47_span">企业运输</span></a></li><li id="treeOffice_48" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_48_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_48_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="企业处置"><span id="treeOffice_48_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_48_span">企业处置</span></a></li><li id="treeOffice_49" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_49_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_49_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="固管家运输方测试机构"><span id="treeOffice_49_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_49_span">固管家运输方测试机构</span></a></li><li id="treeOffice_50" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_50_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_50_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="固管家产废方测试机构"><span id="treeOffice_50_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_50_span">固管家产废方测试机构</span></a></li><li id="treeOffice_51" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_51_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_51_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="固管家处置方测试机构"><span id="treeOffice_51_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_51_span">固管家处置方测试机构</span></a></li><li id="treeOffice_52" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_52_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_52_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆环投再生资源有限公司"><span id="treeOffice_52_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_52_span">重庆环投再生资源有限公司</span></a></li><li id="treeOffice_53" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_53_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span><a id="treeOffice_53_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="固管家服务平台"><span id="treeOffice_53_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_53_span">固管家服务平台</span></a></li><li id="treeOffice_54" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeOffice_54_switch" title="" class="button level0 switch bottom_docu" treenode_switch=""></span><a id="treeOffice_54_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="重庆市环境保护局"><span id="treeOffice_54_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="treeOffice_54_span">重庆市环境保护局</span></a></li></ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-xs-6 col-sm-4 pricing-box">
+								<div class="widget-box widget-color-blue">
+									<div class="widget-header">
+										<h5 class="widget-title bigger lighter">待选人员</h5>
+									</div>
+
+									<div class="widget-body">
+										<div class="widget-main" id="dxuser">
+
+										</div>
+										<div class="hide" id="addUserBtn">
+											<a href="javascript:void(0);" class="btn btn-block btn-primary">
+												<i class="ace-icon fa fa-plus bigger-110"></i>
+												<span>添加所选人员</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-xs-6 col-sm-4 pricing-box">
+								<div class="widget-box widget-color-green">
+									<div class="widget-header">
+										<h5 class="widget-title bigger lighter">已选人员</h5>
+									</div>
+
+									<div class="widget-body">
+										<form action="role/saveuser" method="post" id="role-user-form">
+											<div class="widget-main" id="yxuser">
+												<div class="checkbox">
+													<label>
+														<input class="ace ace-checkbox-2" type="checkbox" name="userIds" value="63">
+														<span class="lbl"> 运输方测试账号2</span>
+													</label>
+												</div>
+											</div>
+										</form>
+										<div class="hide" id="removeUserBtn">
+											<a href="javascript:void(0);" class="btn btn-block btn-success">
+												<i class="ace-icon fa fa-trash bigger-110"></i>
+												<span>移除人员</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+							<div class="width-100 clearfix" tag-save-btn="" style="bottom: -36px; left: 0px; position: absolute;">
+	<span class="btn btn-primary btn-sm bigger-110 width-50  pull-left" id="role-user-form-save">
+		<i class="ace-icon fa fa-floppy-o align-top bigger-125"></i> 确认分配
+	</span>
+								<span class="btn btn-yellow btn-sm bigger-110 width-50 pull-right" id="role-user-form-cancel">
+		<i class="ace-icon fa fa-times align-top  bigger-125"></i> 取 消
+	</span>
+							</div>
+							<script type="text/javascript">
+                                $(function(){
+
+                                    var roleUserForm = $("#role-user-form").Validform({
+                                        ajaxPost : true,
+                                        beforeSubmit:function(curform){
+                                            var loadi = layer.load(5,2);
+                                            $("#role-user-form").data('loadi',loadi);
+                                        },
+                                        callback:function(data){
+                                            layer.close($("#role-user-form").data('loadi'));
+                                            if(data>0) {
+                                                layer.msg('操作成功', 1, 1,function(){
+                                                    if("false" == "true"){
+                                                        location.reload();
+                                                    }else{
+                                                        $curmenu.trigger('click');
+                                                    }
+                                                    layer.closeAll();
+                                                });
+                                            }else{
+                                                layer.msg('操作失败', 3, 1);
+                                            }
+                                        },
+                                        tiptype : function(msg, o, cssctl) {
+                                            if (!o.obj.is("form")) {
+                                                if (o.type != 2) {
+                                                    tip.errorTip(msg,o.obj);
+                                                }
+                                            }
+                                        },
+                                        tipSweep : true
+                                    });
+
+                                    $("#role-user-form-save").click(function() {
+                                        if("true" == "true"){
+                                            var userIds = [];
+                                            var yx = $("#yxuser").find("input[type=checkbox]");
+                                            yx.each(function(i,val){
+                                                userIds.push(val.value);
+                                            })
+                                            roleUserForm.config({
+                                                ajaxpost:{data:{id:27,userIds:userIds.toString()}}
+                                            });
+
+                                        }
+                                        roleUserForm.submitForm(false);
+                                        return false;
+                                    });
+
+                                    $("#role-user-form-cancel").click(function(){
+                                        layer.closeAll();
+                                        return false;
+                                    });
+
+                                    $("#role-user-form input,#role-user-form textarea").blur(function(){
+                                        layer.closeTips();
+                                        return false;
+                                    })
+
+                                });
+							</script>
+							<script type="text/javascript">
+                                $(function(){
+                                    var setting = {
+                                        view:{
+                                            selectedMulti : false
+                                        },
+                                        data : {
+                                            simpleData : {
+                                                enable : true,
+                                                idKey : "id",
+                                                pIdKey : "parentId"
+                                            }
+                                        },
+                                        callback: {
+                                            onClick: onClickNode
+                                        }
+                                    };
+                                    var officeTree = $.fn.zTree.init($("#treeOffice"), setting,[{"updateDate":1489647716000,"address":"","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"","createBy":"2,超级管理员","areaId":1,"phone":"","grade":"1","name":"新注册用户默认机构","logo":"","id":2,"fax":"","email":"","createDate":1489647716000}, {"zipCode":"","updateDate":1490082688000,"code":"","address":"重庆市长寿经济技术开发区（晏家镇）化北三支路1号","roles":"3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"刘泉","createBy":"2,超级管理员","areaId":2,"phone":"13220361580","updateBy":"2","grade":"1","name":"重庆天志环保有限公司（长寿处置场）","logo":"/static/uploads/logos/294DD61E4C604FF1BA1C8BF6302534F9.bmp","id":5,"fax":"","remarks":"<p>&nbsp; &nbsp; &nbsp; &nbsp;重庆天志环保有限公司成立于2003年5月，是重庆市成立最早的专业从事危险废物收集、贮存、利用、处置经营活动的单位。2009年1月，经重庆市政府同意，我公司负责主城区（璧山）和长寿两座危险废物处置场的运营，经营《国家危险废物名录》中的HW02-HW09、HW11-HW28、HW30-HW49类危险废物。通过十年努力，公司形成了完善的危险废物运营体系。为重庆市危险废物规范化处置提供了有力保障，并辐射四川、云南、贵州等周边省份。2013年1月，我公司成立了璧山和长寿事业部，分别运营主城区（璧山）和长寿危险废物处置场。<br/>我公司始终秉承“积极开拓、服务社会”的发展理念，为危险废物产生单位提供细致、周到的服务。同时，我公司作为重庆市专业环境应急救援队伍积极参与各类危险废物应急事故抢险，响应速度快、应急处理能力强，有效地降低了环境污染风险，充分展现了企业的社会责任感，为重庆市危险废物安全处置贡献了应有的力量。<br/>长寿危险废物处置场位于长寿晏家化工园区。该项目2003年立项，2005年5月获得原国家环保总局的环评批复，2006年5月开工建设，2007年12月建成，2009年7月投入试运行，2012年7月通过环保验收，2013年2月通过综合验收。2013年11月获得国家危险废物经营许可证（编号：G5001150031）。长寿处置场占地面积192亩，设计处理能力3万吨/年，其中焚烧50吨/天，固化填埋45吨/天，综合污水处理装置（一套）处理能力150m3/天。<br/>长寿事业部现有员工98人，其中各类专业技术人员35人（环保化工技术人员25人）、中级以上职称10余人；设有以危险废物检测为重点的实验室，配备有原子吸收分光光度计、气相色谱仪、紫外分光光度计、发热量测定仪、灰熔点测定仪、烟气测定仪等仪器设备，为危险废物的合理处置提供了技术保障。<br/>目前，长寿处置场与国家危险废物处置工程（重庆）中心、中国环科院合作开展危险废物及特性调查及填埋场导排层淤堵实验研究工作；与环保部固废中心合作开展焚烧熔融炉渣回用技术研究工作。</p>","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472279605000,"code":"","address":"重庆市璧山县璧城街道马家桥村6组288号","roles":"3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"张瑜","createBy":"2,超级管理员","areaId":2,"phone":"02364305518","updateBy":"2","grade":"1","name":"重庆天志环保有限公司（主城区处置场）","id":6,"fax":"","remarks":"\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0重庆天志环保有限公司成立于2003年5月，是重庆市成立最早的专业从事危险废物收集、贮存、利用、处置经营活动的单位。2009年1月，经重庆市政府同意，我公司负责主城区（璧山）和长寿两座危险废物处置场的运营，经营《国家危险废物名录》中的HW02-HW09、HW11-HW28、HW30-HW49类危险废物。通过十年努力，公司形成了完善的危险废物运营体系。为重庆市危险废物规范化处置提供了有力保障，并辐射四川、云南、贵州等周边省份。2013年1月，我公司成立了璧山和长寿事业部，分别运营主城区（璧山）和长寿危险废物处置场。<BR/>\r\n\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0我公司始终秉承“积极开拓、服务社会”的发展理念，为危险废物产生单位提供细致、周到的服务。同时，我公司作为重庆市专业环境应急救援队伍积极参与各类危险废物应急事故抢险，响应速度快、应急处理能力强，有效地降低了环境污染风险，充分展现了企业的社会责任感，为重庆市危险废物安全处置贡献了应有的力量。<BR/>\r\n\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0主城区（璧山）危险废物处置场位于璧山县璧城街道马家桥村。该项目于2003年立项，2005年5月获得原国家环保总局的环评批复，2006年5月开工建设，2008年12月建成。该项目总投资1.9亿元，占地面积280亩，设计处理能力3.06万吨/年，其中焚烧50t/d，固化填埋72t/d，综合污水处理装置（一套）处理能力100m3/d。<BR/>\r\n\r\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0璧山事业部现有员工102人，其中各类专业技术人员30余人（环保化工技术人员25人）、中级以上职称15人；设有以危险废物检测为重点的实验室，包括二噁英快速筛查实验室，投资300万余元，配备有原子吸收分光光度计、气相色谱仪、紫外分光光度计、发热量测定仪、灰熔点测定仪、烟气测定仪等仪器设备，为危险废物的合理处置提供了技术保障。<BR/>","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472279732000,"code":"","address":"重庆市万州区五桥长岭镇程家村1组","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"龙小川","createBy":"2,超级管理员","areaId":2,"phone":"13896958900","updateBy":"2","grade":"1","name":"重庆市万州区森浩污染物处置有限公司","id":7,"fax":"","remarks":"重庆市万州区森浩污染物处置有限公司，主要经营生态环境建设项目、环保工程招标代理；污水、垃圾、废气、噪声、粉尘、江河流域污染的环保工程治理的技术咨询；环保产品设备销售。<BR/>\r\n\r\n公司于2003年8月5日在重庆万州工商局登记注册，业务经理是黄春，公司注册资本125（万元），我公司的办公地址位于交通便利的重庆 重庆万州 太白岩１０７号，我们有最好的产品和专业的销售和技术团队，在公司发展壮大的13年里，我们为客户提供最好的产品、良好的技术支持、健全的售后服务，重庆市万州区森浩污染物处置有限公司是重庆万州卫生行业知名企业，如果您对我公司的产品服务有兴趣，请在线留言或者来电咨询。<BR/>\r\n\r\n公司主营产品包括：生态环境建设项目、环保工程招标代理；污水、垃圾、废气、噪声、粉尘、江河流域污染的环保工程治理的技术咨询；环保产品设备销售。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472279800000,"code":"","address":"重庆北碚区童家溪镇五星村田坝子社","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"梁心红","createBy":"2,超级管理员","areaId":2,"phone":"13983382602","updateBy":"2","grade":"1","name":"重庆同兴医疗废物处理有限公司","id":8,"fax":"","remarks":"重庆同兴医疗废物处理有限公司作为经营金属制品业的企事业单位，我们始终坚持诚信和让利于客户，坚持用自己的服务去打动客户。 公司地址：重庆市北碚区童家溪镇同兴村田坝社。 您如果对我们的产品服务感兴趣的话，也可以直接在线留言给我们以便及时联系。<BR/>\r\n公司主要经营产品：非金属废料和碎屑的加工处 金属制品业等产品。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472279894000,"code":"","address":"重庆市涪陵松翠路4号","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"杜春阳","createBy":"2,超级管理员","areaId":2,"phone":"13896519666","updateBy":"2","grade":"1","name":"重庆市涪陵固体废物处理中心","id":9,"fax":"","remarks":"重庆市涪陵固体废物处理中心地址设在长江上游地区经济中心、金融中心重庆，公司地址：黎明路３号，联系人：况红。公司于2002年4月16日在重庆工商局登记注册挂牌成立，公司以“至诚至信、至精至美”为服务信条，构建一个高效、专业、迅捷的服务平台。<BR/>\r\n我们不断完善自身管理机制，强调客户与市场导向，拓宽服务范围，提高服务深度，追求与客户长远、稳定、双赢的合作关系，使企业获得各界客户的信赖与支持。公司坚持以人为本，以诚信求客户，以质量求生存，努力做到客户第一、市场第一、质量第一。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472279964000,"code":"","address":"重庆市长寿区晏家街道中心路67号","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"李富正","createBy":"2,超级管理员","areaId":2,"phone":"13996401559","updateBy":"2","grade":"1","name":"重庆华维实业有限责任公司","id":10,"fax":"","remarks":"重庆华维实业有限责任公司坐落于重庆市长寿区晏家街道，紧邻重庆天然气化工园区，西距重庆市主城区70公里，东距长寿区15公里，南临长江，北靠渝万高速公路，西临渝怀铁路，距重庆江北国际机场60公里，地理位置十分优越，水陆交通十分便利。公司于2007年7月由原重庆华维实业总公司改制而成。公司下设综合管理部、生产安全环保技术开发部、人力资源部、财务资产部、市场经营部等五个综合管理部门，设维修分公司、化工分公司、服务分公司、多经分公司和劳务分公司等五个二级单位。其中劳务分公司具有独立法人资格。公司注册资本1800多万元，净资产2500万元，拥有员工800余人。<BR/>\r\n公司主要经营：VAE系列防水涂料、工业冰醋酸、醋酸酯、粉煤灰，以及印刷、铁路维护、劳务输出、废钢材回收、办公用品和劳保用品的采购等。主要产品有：工业冰醋酸、醋酸酯、VAE系列防水涂料、粉煤灰等。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280013000,"code":"","address":"重庆市长寿区朱家镇川维厂内","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"罗斌","createBy":"2,超级管理员","areaId":2,"phone":"13996063198","updateBy":"2","grade":"1","name":"重庆宏源实业有限公司","id":11,"fax":"","remarks":"重庆宏源实业有限公司，公司尊崇“踏实、拼搏、责任”的企业精神，并以诚信、共赢、开创经营理念，创造良好的企业环境，以全新的管理模式，完善的技术，周到的服务，卓越的品质为生存根本，我们始终坚持用户至上 用心服务于客户，坚持用自己的服务去打动客户。<BR/>\r\n公司主要经营溶家解乙炔等产品。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280106000,"code":"","address":"重庆市江津区德感工业园","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"王成禹","createBy":"2,超级管理员","areaId":2,"phone":"15002369265","updateBy":"2","grade":"1","name":"重庆龙健金属制造有限公司","logo":"/static/uploads/logos/4395CD4B601942569F15C21FE7B7E27B.png,/static/uploads/logos/0021EDED834543858B004025BB8213AF.png,/static/uploads/logos/74B11212137447F9A5293F01741E9F9F.png","id":12,"fax":"","remarks":"重庆龙健金属制造有限公司，位于重庆市江津区德感工业园区，厂区占地面积40余亩，建筑面积20000平方米。我厂现有员工85人，其中高级工程师5人，中级技术职称人员占30%，公司经过十余年发展，在电子、电镀废弃物综合利用项目上取得重大突破。<BR/>\r\n\r\n公司于2006年取得重庆市《危险废物经营许可证》，成为具有专业资质的环保企业。公司以发展循环经济，实现可持续发展、力争行业领头兵为企业目标。凭着先进的生产工艺设备、雄厚的技术力量、科学的管理制度、良好的企业信誉，充分保证国家对环境保护和用户对产品的要求，销售网络遍及全国各地。<BR/>\r\n\r\n主要经营产品：氧化铜、硫酸铜、铜粉、铜米、氧化镍、硫酸镍、氯化镍、碳酸镍、氧化钴、氢氧化铬等产品（其产品均符合国家或者相关行业企业标准），从而降低了危险废物对环境的危害性，促进了合理利用和资源节约，提高了资源利用率，保护了环境，实现了经济社会的可持续发展，达到了将危险废物变废为宝，化害为利和资源综合利用的根本目的。<BR/>","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1489631761000,"code":"","address":"江津德感园区","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"薛莉萍","createBy":"2,超级管理员","areaId":2,"phone":"15909308893","updateBy":"2","grade":"1","name":"重庆市利特环保工程有限公司（德感）","logo":"","id":13,"fax":"","remarks":"<p>重庆利特环保工程有限公司是一家专门从事环境污染治理的专业环保公司，公司成立于2005年，是重庆市环保产业协会和重庆水泥协会的会员单位，曾获得“重庆市高新技术服务”称号、“环保部科学技术进步二等奖”等荣誉。\r\n公司主要开展工业固体废物水泥窑协同处置，工业企业环境污染治理第三方服务，棕地污染修复治理，电子废物资源化利用等业务。目前，利特环保与拉法基地维水泥厂合作的危险废物水泥窑协同处置项目是中挪水泥窑协同处置项目第一批和第二批试点项目。\r\n利特与拉法基开展的水泥窑协同处置项目得到环保部水泥窑协同处置专家的一致认可，截至目前已经协同处置危险废物数万吨，为重庆市危险废物治理做出了巨大贡献。利特环保水泥窑协同处置项目年处置危险废物30000吨，为重庆市500多家企业单位提供危险废物处置服务，获得诸多客户的一致好评。\r\n重庆利特环保工程有限公司通过了ISO9001质量管理体系、ISO14001环境管理体系和OHSAS18001职业健康安全管理体系认证，并严格按照体系要求开展公司各项经营活动，积累了丰富的环保工程经验。\r\n利特环保立足重庆，面向全国，放眼世界，与国内外多家科研机构和技术企业建立了密切的合作关系。作为有责任有担当的环保企业，公司常年聘请多名高级外籍华人工程师和专家指导公司技术能力建设和项目实施，努力构建符合中国国情的、具有先进技术的专业团队，立志成为国内环境污染治理行业的引领企业。</p>","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1489208355000,"code":"","address":"江北区黑石子","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"薛莉萍","createBy":"2,超级管理员","areaId":2,"phone":"15909308893","updateBy":"2","grade":"1","name":"重庆市利特环保工程有限公司（黑石子）","logo":"/static/uploads/logos/ECAD311F60C3429AA62628B77DF2919C.png","id":14,"fax":"","remarks":"<p>重庆利特环保工程有限公司是一家专门从事环境污染治理的专业环保公司，公司成立于2005年，是重庆市环保产业协会和重庆水泥协会的会员单位，曾获得“重庆市高新技术服务”称号、“环保部科学技术进步二等奖”等荣誉。<br/>公司主要开展工业固体废物水泥窑协同处置，工业企业环境污染治理第三方服务，棕地污染修复治理，电子废物资源化利用等业务。目前，利特环保与拉法基地维水泥厂合作的危险废物水泥窑协同处置项目是中挪水泥窑协同处置项目第一批和第二批试点项目。<br/>利特与拉法基开展的水泥窑协同处置项目得到环保部水泥窑协同处置专家的一致认可，截至目前已经协同处置危险废物数万吨，为重庆市危险废物治理做出了巨大贡献。利特环保水泥窑协同处置项目年处置危险废物30000吨，为重庆市500多家企业单位提供危险废物处置服务，获得诸多客户的一致好评。<br/>重庆利特环保工程有限公司通过了ISO9001质量管理体系、ISO14001环境管理体系和OHSAS18001职业健康安全管理体系认证，并严格按照体系要求开展公司各项经营活动，积累了丰富的环保工程经验。<br/>利特环保立足重庆，面向全国，放眼世界，与国内外多家科研机构和技术企业建立了密切的合作关系。作为有责任有担当的环保企业，公司常年聘请多名高级外籍华人工程师和专家指导公司技术能力建设和项目实施，努力构建符合中国国情的、具有先进技术的专业团队，立志成为国内环境污染治理行业的引领企业。</p>","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280198000,"code":"","address":"重庆市沙坪坝区西永都市工业园89号","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"邓传华","createBy":"2,超级管理员","areaId":2,"phone":"13617689936","updateBy":"2","grade":"1","name":"重庆市长锦物资有限公司","id":15,"fax":"","remarks":"重庆市长锦物资有限公司本着“客户第一，诚信至上”的原则，欢迎国内外企业/公司/机构与本单位建立长期的合作关系。<BR/>\r\n公司尊崇“踏实、拼搏、责任”的企业精神，并以诚信、共赢、开创经营理念，创造良好的企业环境，以全新的管理模式，完善的技术，周到的服务，卓越的品质为生存根本，我们始终坚持用户至上 用心服务于客户，坚持用自己的服务去打动客户，公司拥有一支较强的队伍并和国内多家单位强强联手。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280263000,"code":"","address":"重庆市永川区双石镇大涧口村十四社","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"何志","createBy":"2,超级管理员","areaId":2,"phone":"13618216123","updateBy":"2","grade":"1","name":"重庆市中明环境治理有限公司","id":16,"fax":"","remarks":"重庆市中明环境治理有限公司成立于2011年8月，注册资本为3000万元，占地面积为240亩，计划总投资3.7亿元。<BR/>\r\n公司主要经营：医疗废物的收集、贮藏和处置，工业危险废物的收集、贮藏和处置，国家家电下乡规定的电子拆解以及光伏材料的生产、销售等。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280346000,"code":"","address":"重庆市大足县智凤镇普安村5社","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"吴勇","createBy":"2,超级管理员","areaId":2,"phone":"13808360445","updateBy":"2","grade":"1","name":"重庆宇立金属制品有限公司","id":17,"fax":"","remarks":"重庆宇立金属制品有限公司位于“世界文化遗产”的“大足石刻”县城智风镇，于2008年迁入占地64亩的新厂区，生产厂房面积扩大到12000M2，拥有2500M2办公楼以及3000M2职工宿舍楼，同时拥有国内先进的“钴镍萃取生产线”，在企业发展过程中汇集了专业技术人才和管理人才，产品以镍、钴、铜无机盐为主，开发出硝酸盐、硫酸盐、醋酸盐、氯化物、氧化物等系列的无机精细化工产品。产品广泛应用于电镀、陶瓷、表面处理、催化剂、蓄电池等领域。同时，我们还致力于金、银、铂、铑、钯等贵金属的提纯及其化合物的制备。从2004年起涉入充电电池及电池材料用硝酸镍、硝酸钴的制备，成为专业性的电池原料供应商。不仅如此，我司还与不锈钢、集成电路,电子通讯,特种合金材料等客户有广泛的合作，我们将有色金属合金与化工应用领域有机地结合起来。“宇立”牌硫酸镍、硝酸镍,硫酸铜、醋酸铜、氯化钴以及镍铁合金已成为我们的拳头产品,在全国享有盛誉。<BR/>\r\n“保护环境，综合利用”已逐步深入到每个员工的心中。在综合利用再生资源上，我们加大环保投入，采取了一系列有效的环境保护措施，得到了各方面的好评。公司于2006年顺利通过了ISO9001质量认证，2008年迁入新厂顺利通过“环境影响评估”，并同时取得了重庆市“危险废物经营许可证”,成为具有专业资质的再生资源综合利用型环保企业。为保护环境，走持续发展之路作出自己的贡献。“重质量、守信誉”是我们的宗旨，“诚信为本”、“互利互惠”是我们的原则。愿与广大朋友真城交流合作、共谋发展！","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280639000,"code":"","address":"重庆市巴南区花溪镇建新村十三队","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"马宁","createBy":"2,超级管理员","areaId":2,"phone":"02389136235","updateBy":"2","grade":"1","name":"重庆市固体废物管理服务中心","id":18,"fax":"","remarks":"重庆市固体废物管理服务中心注册员工人数为12人，注册资本50万元人民币。公司尊崇“踏实、拼搏、责任”的企业精神，并以诚信、共赢、开创经营理念，创造良好的企业环境，以全新的管理模式，完善的技术，周到的服务，卓越的品质为生存根本，我们始终坚持用户至上 用心服务于客户，坚持用自己的服务去打动客户。<BR/>\r\n公司主要从事：固体废物经营管理技术，固体废物污染防治技术，建设项目环保技术的研究及咨询服务等产品。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280537000,"code":"","address":"重庆市九龙坡区西彭工业园","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"张林福","createBy":"2,超级管理员","areaId":2,"phone":"13370729999","updateBy":"2","grade":"1","name":"重庆岭欧环保科技有限公司","id":19,"fax":"","remarks":"重庆岭欧环保科技有限公司成立于2012年11月5日，位于重庆市九龙坡区西彭工业园，注册资金1068万元，占地面积8800㎡。我们的产品设计理念是将有限的资源，进行无限的循环。<BR/>\r\n公司是一家专业从事收集、贮存、利用、处置：HW06、HW08、HW13、HW17、HW21、HW22、HW31、HW34、HW35、HW46类危险废物39600吨/年；HW22含铜废物（406-003-22：含铜蚀刻液、406-004-22：含铜污泥）27000吨/年；HW49类其他废物（900-041-49、900-044-49、900-999-49、900-045-49：废弃的印刷电路板）8500吨/年；废弃电子元件拆解、废旧电子电气设备、包装物及一般固体废弃物的综合利用，再生产品的销售，环保技术研发：废旧有色金属、贵金属、塑料制品回收加工；货物进出口、技术进出口的企业。<BR/>\r\n现公司有一批复合型管理人才，多名专业技术指导人员，废电路板年生产产量达4800吨/年，公司自成立以来，始终坚持“完善环保制度，落实环保责任”的思想，以完善的加工设备、先进的工艺和优质的服务，与富士康、英业达、新普等多家知名企业建立了长期合作伙伴关系。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280737000,"code":"","address":"重庆市大足区双桥经开区邮亭工业园区智伦电镀园区","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"蔡世成","createBy":"2,超级管理员","areaId":2,"phone":"15922895805","updateBy":"2","grade":"1","name":"重庆正艾敏再生资源回收有限公司","id":20,"fax":"","remarks":"重庆正艾敏再生资源回收有限公司于2013年注册成立，公司坐落在重庆市双桥经开区邮亭工业园区，注册资本500.0万元人民币。<BR/>\r\n公司主要经营：金属塑料回收及再生利用，环保科技设备研发、加工、制造，","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280852000,"code":"","address":"重庆市开县赵家街道办和平村10社","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"邱占梅","createBy":"2,超级管理员","areaId":2,"phone":"15223711122","updateBy":"2","grade":"1","name":"开县城市固体废弃物综合处理厂","id":21,"fax":"","remarks":"开县城市固体废弃物综合处理厂（垃圾处理厂）位于开县镇歇马村，性质为国有企业，隶属开县市政局。而垃圾处理项目是经渝计委投（2001）260号文件批准，总投资9634万元，占地310亩，总库容量266万立方米，日处理城市生活垃圾250吨，计划使用年限17年。于2002年10月开始建设，2003年建成并通过县、市两级专家组验收合格，同年7月1日投入运行，下设运行科、综合科、财务科、办公室、化验室、现有职工37人，具有专业技术职称3人，党员13人。<BR/>\r\n\r\n我单位主要担负着城区及周边四个乡镇的生活垃圾处置任务，每天处理城市生活垃圾约120吨，垃圾渗滤液通过约10km的专线管网输送至污水处理厂。<BR/>\r\n\r\n开县城市固体废弃物综合处理厂目前配备有挖掘机、推土机、压实机各一台，密闭压缩式垃圾运输车十五台，电子地磅一台，城市生活垃圾处理采用卫生填埋技术规范，采取检查计量、定点倾倒、分层作业，最大限度控制垃圾暴露面积，减少二次污染，自投入运行以来，较好地完成了上级下达的各项工作目标任务，截止目前共处理城市生活垃圾25余万吨，有效地提高了开县城市生活垃圾无害化处理率，保护了长江三峡水体、水质，促进了开县经济社会和环境的协调发展。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280887000,"code":"","address":"重庆市酉阳县龙江重工业园","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"张光伟","createBy":"2,超级管理员","areaId":2,"phone":"13906553860","updateBy":"2","grade":"1","name":"酉阳县钦晟贵金属有限公司","id":22,"fax":"","remarks":"酉阳县钦晟贵金属有限公司成立于2011年,注册资金3518万元人民币。是一家有限责任公司，酉阳县钦晟贵金属有限公司法人是张光伟，主要面象全国市场，客户群为中小型企业。员工人数3518人，不断提升企业的核心竞争力，使企业在发展中树立起良好的社会形象。凭借专业的水平和成熟的技术。公司将始终坚持“质量第一，信誉第一”的宗旨，以科学的管理手段，雄厚的技术力量，将不断深化改革，创新机制，适应市场，全面发展，酉阳县钦晟贵金属有限公司以诚信、实力和产品质量获得业界的高度认可。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472280982000,"code":"","address":"重庆市长寿区过滩村12组2号","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"唐小华","createBy":"2,超级管理员","areaId":2,"phone":"13896555999","updateBy":"2","grade":"1","name":"重庆龙瑞化工有限公司","id":23,"fax":"","remarks":"重庆龙瑞化工有限公司位于重庆重庆市长寿区凤城镇过滩村长85号，主营 氟化物 等。公司秉承\"顾客第一，勇攀高峰\"的经营理念，坚持\"诚实守信\"的原则为广大客户提供优质的服务。我们有最好的产品和专业的销售和技术团队，我们为客户提供最好的产品、良好的技术支持、健全的售后服务。 <BR/>\r\n公司主要经营：硭硝、氟硅酸钠、氟硅酸镁、氟化钠。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472022673000,"code":"","address":"綦江区新盛镇德胜村五社、六社交界处（綦江区城市生活垃圾填埋场北侧）","roles":"1,2,3","parentIds":"0,","delFlag":"0","type":"1","parentId":0,"master":"夏洪林","createBy":"2,超级管理员","areaId":2,"phone":"13883685888","updateBy":"2","grade":"1","name":"重庆环创固体废物处置有限公司","id":24,"fax":"","remarks":"暂无","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281079000,"code":"","address":"江津区双宝绣庄村垃圾处理场","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"刘明睿","createBy":"2,超级管理员","areaId":2,"phone":"13110222120","updateBy":"2","grade":"1","name":"重庆可厚德环保技术有限公司","id":25,"fax":"","remarks":"重庆可厚德环保技术有限公司尊崇“踏实、拼搏、责任”的企业精神，并以诚信、共赢、开创经营理念，创造良好的企业环境，以全新的管理模式，完善的技术，周到的服务，卓越的品质为生存根本。<BR/>\r\n公司主要从事：环保技术研发；环保技术咨询服务；环境污染治理；污染土壤修复；固体废弃物及餐厨垃圾处理（不含危险废弃物处置)等产品。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281122000,"code":"","address":"涪陵区白涛化工园区","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"李传坛","createBy":"2,超级管理员","areaId":2,"phone":"13706189659","updateBy":"2","grade":"1","name":"重庆嘉惠环保科技有限公司","id":26,"fax":"","remarks":"重庆嘉惠环保科技有限公司成立于2012年6月1日，位于重庆市白涛镇化工园区油坊村7社，一期厂房面积约为11874平方米。是一家新建的专业回收、处置PCB线路板生产过程中产生的含铜蚀刻废液的公司，目前公司采用国内领先的技术水平生产线配合全面有效的管理对电子化学品废弃物进行再生处置和无害化处理。公司秉承“顾客至上、锐意进取的理念，以循环利用、变废为宝、保护环境、造福人类”为宗旨为客户为社会提供优质的服务。<BR/>\r\n公司主要从事：回收处置含铜蚀刻废液（HW22）、含铜污泥（HW22）；生产销售碱式氯化铜、氧化铜、硫酸铜，等铜盐产品；以及电子化学品药水配制贸易销售。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281170000,"code":"","address":"黔江区城南办事处南家居委会鸡公田","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"朱章印","createBy":"2,超级管理员","areaId":2,"phone":"13896859875","updateBy":"2","grade":"1","name":"重庆宏锐环保科技发展有限公司","id":27,"fax":"","remarks":"重庆宏锐环保科技发展有限公司于貳零壹參年注册成立，公司地址：重庆市黔江区城东办事处建设街45号。<BR/>\r\n公司主要经营：环境污染治理（废水、废气、噪音、固体废物），环境工程咨询，污水管网建设，环境设施建设，土壤修复，环境监理，环境治理、工程咨询。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281227000,"code":"","address":"重庆市双桥经开区邮亭工业园区（红林村4、7组）","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"王勇","createBy":"2,超级管理员","areaId":2,"phone":"18580622388","updateBy":"2","grade":"1","name":"重庆德能再生资源股份有限公司","id":28,"fax":"","remarks":"重庆德能再生资源股份有限公司尊崇“踏实、拼搏、责任”的企业精神，并以诚信、共赢、开创经营理念，创造良好的企业环境，以全新的管理模式，完善的技术，周到的服务，卓越的品质为生存根本。<BR/>\r\n公司主要经营：回收处理废旧铅酸蓄电池；再生铅；精铅；合金铅；硫酸；硫酸钠；混合塑料；生产及销售。\r\n","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281276000,"code":"","address":"永川区凤凰湖工业园","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"黄顺豪","createBy":"2,超级管理员","areaId":2,"phone":"18580687577","updateBy":"2","grade":"1","name":"精永再生资源回收(重庆)有限公司","id":29,"fax":"","remarks":"重庆市永川区通过招商引资，台湾华科事业群（PSA集团）将华科事业群西部生产基地落户于永川区凤凰湖工业园。为配合PSA集团中的PCB（印制电路板）行业生产，降低污染，改善环境，PSA集团旗下的精成科技子公司设立了精永再生资源回收（重庆）有限公司（以下简称“精永公司”），在重庆市永川工业园区凤凰湖工业园华科事业群厂区新建凤凰湖工业园华科事业群标准化厂房（一区）项目 (以下简称“该项目”)，该项目专门针对华科事业群旗下弘电、华盈、川亿、元茂四家企业在PCB生产中产生的废弃物，以先进技术，进行资源化再利用，使废弃物、药水可重复使用，以达到危险废弃物减量化和资源化利用之目的，实现可持续发展。<BR/>\r\n公司主要经营：印刷电路板废弃物回收处理；废旧纸张、纸板、塑料制品、废旧金属回收与销售；环境污染处理专用药剂材料销售；自有产权设备租赁；销售部分危险化学品（具体项目按有效期内《危险化学品经营许可证》核定的范围从事经营）。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281320000,"code":"","address":"重庆市忠县忠州镇护国村一社","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"唐明荣","createBy":"2,超级管理员","areaId":2,"phone":"13609454931","updateBy":"2","grade":"1","name":"忠县铭荣医疗废物处理有限公司","id":30,"fax":"","remarks":"忠县铭荣医疗废物处理有限公司于2014年12月23日在重庆工商局登记注册，业务经理是唐明荣，公司注册资本未提供，我公司的办公地址位于长江上游地区经济中心、金融中心重庆，重庆市忠县忠州镇护国村一社，我们有最好的产品和专业的销售和技术团队，在公司发展壮大的2年里，我们为客户提供最好的产品、良好的技术支持、健全的售后服务，忠县铭荣医疗废物处理有限公司是重庆危险废物治理行业知名企业。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281404000,"code":"","address":"垫江县澄溪小企业创业基地（垫江工业园区B区）","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"夏瑜","createBy":"2,超级管理员","areaId":2,"phone":"18696911777","updateBy":"2","grade":"1","name":"重庆恒杰化工有限公司","id":31,"fax":"","remarks":"重庆恒杰化工有限公司总部设在重庆垫江澄溪镇通集村，公司拥有完整、科学的质量管理体系。<BR/>\r\n公司主要经营：硫代硫酸钠、硝酸钠等、吗啉、二甲基亚砜、吗啉高沸物、CS2等产品的生产加工。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281473000,"code":"","address":"重庆市秀山县官庄镇官联村","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"蒲志友","createBy":"2,超级管理员","areaId":2,"phone":"18716963888","updateBy":"2","grade":"1","name":"秀山县友鑫环境治理有限公司","id":32,"fax":"","remarks":"秀山县友鑫环境治理有限公司于2014年注册成立，公司地址：重庆市秀山县官庄镇官联村（县垃圾处理场旁）。企业类型：有限责任公司。<BR/>\r\n公司主要经营医疗废物处置（按行政许可核定期限从事经营）。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281606000,"code":"","address":"荣昌县广富工业园","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"邹宏","createBy":"2,超级管理员","areaId":2,"phone":"15923234099","updateBy":"2","grade":"1","name":"重庆蓝洁广顺净水材料有限公司","id":33,"fax":"","remarks":"重庆蓝洁广顺净水材料有限公司是重庆蓝洁自来水材料有限公司在荣昌县广顺工业园区新建的一家以聚氯化铝生产为主的水处理药剂大型生产基地，公司投资3000万人民币，占地30亩，前期固体聚氯化铝的生产能力为年产25000吨，后期生产能力可达到50000吨。广顺公司距荣昌县7公里，距成渝高速路8公里，交通便利，环境优美，欢迎全国各地客户莅临指导工作。重庆广顺净水材料有限公司是重庆蓝洁自来水材料有限公司的全资子公司。<BR/>\r\n\r\n公司目前生产销售饮用水处理化学品、工业用水处理化学品和城市污水处理化学品三大类产品。公司技术力量雄厚，产品品种齐全，严格按照ISO9001：2008质量管理体系组织生产，产品质量完全符合国家标准及行业标准，并达到国内、国际先进水平。<BR/>\r\n\r\n公司建立有完善的售后服务体系，包括技术咨询、提供最佳应用方案、现场调试、客户培训及定期回访客户等，深受顾客的好评。<BR/>\r\n\r\n我们是中国西南地区饮用水处理化学品生产规模最大、技术力量最雄厚的供应商之一。我们是聚氯化铝（GB15892-2009）和聚合硫酸铁（GB14591-2006）的国家标准修订的主要单位之一，其中GB15892-2003项目获中国石油和化学工业协会2004年度科技进步二等奖，GB14591-2006项目获中国石油和化学工业协会2008年度科技进步一等奖。<BR/>\r\n\r\n我们在工业水处理方面积累了许多丰富的经验，并根据客户的特殊需要提供特殊的产品和处理方案。<BR/>\r\n\r\n我们致力于城市污水除磷和污泥脱水化学品的研发和产业化生产，2004年开始，我们与重庆大学合作，共同完成重庆市重大科技计划“中小城镇缺氧/需氧组合式污水处理”的子项目“城市污水新型高效絮凝剂预处理和深度处理关键技术研究”科研项目，2005年12月，该项目成功通过重庆市科委专家组验收，并建议在污水处理中推广应用。<BR/>\r\n\r\n我们将以诚实的信誉、先进的技术、全优的质量、满意的服务、合理的价格，与客户携手合作，共同为人类水体环境保护事业作出应有的贡献。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281679000,"code":"","address":"重庆市酉阳县龙江重工业园","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"王凯杰","createBy":"2,超级管理员","areaId":2,"phone":"13666854222","updateBy":"2","grade":"1","name":"重庆凯怡贵金属有限公司","id":34,"fax":"","remarks":"重庆凯怡贵金属有限公司主要经营：稀有金属的生产和销售；硅料的生产和销售；从事建筑相关业务；矿产品销售。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281722000,"code":"","address":"两江新区","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"东进高","createBy":"2,超级管理员","areaId":2,"phone":"18628101986","updateBy":"2","grade":"1","name":"重庆东进世美肯电子材料有限公司","id":35,"fax":"","remarks":"重庆东进世美肯电子材料有限公司，是DONGJIN SEMICHEM CO .,LTD投资的外资企业，公司地址位于重庆两江新区水土高新技术产业园云汉大道5号附132，注册资金600万美元，投资总额1500万美元。主要业务范围包括液晶板制造及半导体制造用剥离剂、蚀刻剂、稀释剂、显影剂、光刻胶、有机绝缘膜、废剥离剂回收再利用精炼等精密化学产品的开发、生产、销售及相关原材料的批发、进出口业务；提供相关技术咨询、技术服务。<BR/>\r\n我公司采用的工艺为自动化，先进化，用很少的人力资源创造最大效益；并为员工提供学习先进的管理理念及生产工艺的培训机会（ERP,MES系统）； 我们将延续DONGJIN SEMICHEM CO.,LTD的信念，为人类提供更多便利，为员工创造更多福利，奋力打造东进中国第一先进生产企业。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281779000,"code":"","address":"江津区双福新区享堂镇","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"陈彦甫","createBy":"2,超级管理员","areaId":2,"phone":"02367390907","updateBy":"2","grade":"1","name":"重庆伟世鑫盛环保科技有限公司","id":36,"fax":"","remarks":"重庆伟世鑫盛环保科技有限公司是一家积极响应政府“互联网+”的号召而新兴的互联网环保企业。公司携手互联网、物联网、云技术以及传统环保产业、水泥窑技术、生态修复技术方面的专家，倾力打造全国第一家危险废物O2O平台，通过线上线下相结合的全新模式，服务重庆地区中小企业客户群，用新技术改变传统行业，让互联网提高监管效率，以绿色信念捍卫重庆碧水蓝天！","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472281934000,"code":"","address":"渝北区空港工业园区勤业路44号","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"段成奎","createBy":"2,超级管理员","areaId":2,"phone":"13500352140","updateBy":"2","grade":"1","name":"重庆炬缘环保有限公司","id":37,"fax":"","remarks":"重庆炬缘环保有限公司位于重庆市双凤桥街道空港工业园区勤业路44号，于2015年12月成立是一家合法收集处置废包装桶,包括：HW08废矿油，HW12染料涂料废物，HW13有机树脂类废和HW42废有机溶剂等的废包装桶，收集，中转HW08废矿物油，HW09油和水，和水混合物或乳化液，HW12染料涂料废物，HW13有机树脂类废物，HW16感光材料废物，HW17表面处理废物，HW42废有机溶剂，HW49其他废物的绿色环保公司。<BR/>\r\n\r\n公司主要面向重庆地区各种企业所需收集及提供包装桶。 收集，中转各企业生产过程中产生的各类固体废物。公司自成立以来，始终倡导“质量立品牌、价格争市场、服务树口碑”的经营理念，彻底贯彻“质量求生存、信誉求发展、管理求效益”的发展方针，以人为本、以客为先，开拓进取、搏击奋进，现正继续不断地朝着“品类全、质量优、技术硬、服务好”的企业发展目标前进!<BR/>\r\n\r\n我们奉行“重质量、守信用、全方位服务”的企业宗旨，以“青云第一，品质第一”的精神理念，真诚欢迎广大新老客户光临，与我们携手共创辉煌未来。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472282102000,"code":"","address":"酉阳县龙江重工业园","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"秦世刚","createBy":"2,超级管理员","areaId":2,"phone":"13896800000","updateBy":"2","grade":"1","name":"重庆万博再生资源利用有限公司","id":38,"fax":"","remarks":"重庆万博再生资源利用有限公司成立于2008年7月，是一家从事有色金属加工、销售业务的私营公司。公司位于重庆市酉阳县龙江重工业园区（龙潭镇），职工人数157人，其中大专以上学历21人，中高级以上职称15人。公司组织架构包括四部（行政部、生技部、财务部、营销部、一室（中心化验室）、三车间（硫酸锌车间、活性氧化锌车间、五氧化二锑车间）、一厂（回转窑厂）<BR/>\r\n\r\n公司属于酉阳县2008年重点招商企业，其锌治炼弃渣综合回收利用（一期）建设项目占地39亩，总投资 5800万元该项目主要是针对锌治炼企业的废弃渣及低品位锌矿进行综合回收并加以开发利用，生产化工产品（一水、七水）硫酸锌和提炼氧化锌，以达到资源综 合利用，发展循环经济的目的。项目的实施，可将当地锌治炼企业生产过程中排出的净化渣以及锌矿石渣作为原料制成化工产品和提炼金属、不仅可以节省矿产资 源，扩大资源利用范围，消除环境污染，还可以节省大量用地和资金，既有环境效益，又有经济效益和社会效益。项目工艺成熟稳定，属发展“资源—产品—废物— 再生资源”循环经济模式，以“减量”和“循环”为主要手段，通过资源综合利用上的减量和将主要废弃物商品化，达到节约资源和保护环境的目的，符合清洁生产 的原则。项目属于〈〈产业结构调整指导目录〉〉中的鼓励类，符合国家产业政策。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472282137000,"code":"","address":"永川区港桥工业园","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"何志","createBy":"2,超级管理员","areaId":2,"phone":"13618216123","updateBy":"2","grade":"1","name":"重庆中明港桥环保有限责任公司","id":39,"fax":"","remarks":"重庆中明环境治理有限公司是一家集生产加工、经销批发的私营独资企业，燃料油、医疗废物、危险废物、是重庆中明环境治理有限公司的主营产品。重庆中明环境治理有限公司是一家经国家相关部门批准注册的企业。重庆中明环境治理有限公司以雄厚的实力、合理的价格、优良的服务与多家企业建立了长期的合作关系。<BR/>\r\n公司专业从事危险废物处置和综合利用，为改善生态质量的环保企业。公司按照国家环保对重庆市危险废物处理总体规划布点要求，前期斥资4000万元建成占地面积17000平方米的综合处置场。公司项目曾被列入重庆市委市政府环境保护工作目标实事工程。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1470544140000,"code":"","address":"重庆市江津区珞璜工业园","roles":"1","parentIds":"0,","delFlag":"0","type":"1","parentId":0,"master":"崔保信","createBy":"2,超级管理员","areaId":2,"phone":"15823579397","updateBy":"2","grade":"1","name":"重庆拉法基瑞安地维水泥有限公司","id":40,"fax":"","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472282205000,"code":"","address":"长寿区凤城街道李家坪","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"李德建","createBy":"2,超级管理员","areaId":2,"phone":"13320388332","updateBy":"2","grade":"1","name":"重庆九腾环保工程有限公司","id":41,"fax":"","remarks":"重庆九腾环保工程有限公司位于名城长寿区，成立于2015年，目前拥有78名以上员工。重庆九腾环保工程有限公司以人才为核心竞争力作为企业发展驱动力，目前大学以上学历员工已占员工总数的85%以上。目前，重庆九腾环保工程有限公司业务网络遍及重庆、逐步形成向全国其他省市辐射的趋势！已为许多客户提供了优质服务，用心赢得了众多企业的信赖和好评，在重庆地区逐渐树立起良好品牌形象。<BR/>\r\n公司主要经营：环保技术咨询服务、环评、建设项目竣工环境保护验收等","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472282267000,"code":"","address":"重庆市南岸区长生乡江南再生资源市场","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"刘清","createBy":"2,超级管理员","areaId":2,"phone":"13752871338","updateBy":"2","grade":"1","name":"重庆油润再生资源开发有限公司","id":42,"fax":"","remarks":"重庆油润再生资源开发有限公司经营项目为循环经济和环保产业的重要组成部份，取得环保局颁发的《重庆市危险废物经营许可证》、《重庆市环境污染治理资质证书》，是合法的废油回收环保单位，曾先后荣获“再生资源常务理事单位”和“先进企业”的荣誉称号。<BR/>\r\n\r\n公司拥有一支专业性强、业务精练、经验丰富的员工队伍，能规范地回收废矿物油，主要从事小车油、黑油、变压油、液压油、冷冻机油、重油、轮胎油等各种工矿、机械、车辆、船舶废机油的回收，同时回收废铁桶、废铁、废电瓶、废轮胎等各类废旧物资，为各类相关企业提供高效率的物资清理及配送服务。<BR/>\r\n\r\n目前与我公司合作的厂矿企业有：汽车制造厂、汽车维修及保养厂、机械制造厂、炼钢厂、大型化工厂、油料加工厂、各大型车队、煤矿、加油站、钢模扣件厂、内燃机厂等单位一直与我公司保持着友好持续、稳固紧密的合作关系。<BR/>\r\n\r\n我们本着“让资源循环无限，让地球洁净如初”的口号，愿竭诚为您提供最优质的服务，为环保事业献上一份小小的力量。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472282325000,"code":"","address":"重庆市万州区天城镇中坝村1组","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"段均昌","createBy":"2,超级管理员","areaId":2,"phone":"13594464042","updateBy":"2","grade":"1","name":"重庆市万州区均荣再生资源回收站","id":43,"fax":"","remarks":"重庆市万州区均荣再生资源回收站于2013年注册成立，公司地址：重庆市万州区天城镇中坝村1组。<BR/>\r\n公司主要经营回收废机油（凭备案登记证经营）。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472282387000,"code":"","address":"重庆市万州区龙都办事处大桥村3组","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"何光睿","createBy":"2,超级管理员","areaId":2,"phone":"18696639397","updateBy":"2","grade":"1","name":"重庆市万州区众汇再生资源回收有限责任公司","id":44,"fax":"","remarks":"重庆市万州区众汇再生资源回收有限责任公司于2014年注册成立，公司地址：重庆市万州区花厂11号。企业类型：有限责任公司。<BR/>\r\n公司主要经营：废矿物油回收服务（依法须经批准的项目，经相关部门批准后方可开展经营活动）。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472282430000,"code":"","address":"重庆市万州区甘宁镇新农7组","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"杨忠林","createBy":"2,超级管理员","areaId":2,"phone":"15123457302","updateBy":"2","grade":"1","name":"重庆市万州区新聚源再生资源回收有限责任公司","id":45,"fax":"","remarks":"重庆市万州区新聚源再生资源回收有限责任公司于貳零壹參年注册成立，公司地址：重庆市万州区甘宁镇新农七组。<BR/>\r\n公司主要经营再生资源（生产性废旧金属、电子产品、塑料、纸类、玻璃、废矿物油）回收。","email":"","createDate":1470544140000}, {"zipCode":"","updateDate":1472282507000,"code":"","address":"重庆市涪陵区白涛街道办事处水源5组","roles":"1,2,3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"王丰","createBy":"2,超级管理员","areaId":2,"phone":"15223047738","updateBy":"2","grade":"1","name":"重庆市涪陵区王丰废旧物资回收有限公司","id":46,"fax":"","remarks":"重庆市涪陵区王丰废旧物资回收有限公司于2014年2月14日在重庆工商局登记注册，业务经理是王丰，公司注册资本30000（万元），我公司的办公地址位于长江上游地区经济中心、金融中心重庆，重庆市涪陵区白涛街道办事处水源村5组，我们有最好的产品和专业的销售和技术团队。<BR/>\r\n公司主要经营再生资源（不含危险品）回收、销售。","email":"","createDate":1470544140000}, {"updateDate":1473406922000,"address":"重庆市渝北区财富大道15号财富园","roles":"1,2","parentIds":"0,","icon":"fa fa-folder","delFlag":"0","type":"1","parentId":0,"master":"吴茜","createBy":"2,超级管理员","areaId":2,"phone":"02386898400","updateBy":"2","grade":"1","name":"重庆天思博瑞环保科技发展有限公司","logo":"/static/uploads/logos/8690927AF1A543BA913D347D993690E3.png,/static/uploads/logos/FA2B454A354B4DB19796451CB2A0FE5E.png","id":47,"fax":"","remarks":"固管家 \r\n    固管家是专注危险废物处置行业的O2O服务平台，具备在线资质查询、电子联单专拍、处置企业匹配、在线在途监管等功能。\r\n    产品形式\r\n    固管家具备WEB、手机APP、微信公众号等多种产品承载形式，以现代化信息管理技术，打通产废、运输、处置三方企业，帮助企业由分散化管理迈向平台化管理，实现信息共享、业务协同、智能服务的目标。同时，固管家还通过对数据的集成与融合，提高企业信息化、智慧化、便捷化、精细化的管理水平，构建危废处置业务闭环，促进多方互利互惠的良性循环。","email":"","createDate":1470994926000}, {"updateDate":1473735340000,"address":"","roles":"2","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"","createBy":"2,超级管理员","areaId":2,"phone":"","grade":"1","name":"利特运输","id":48,"fax":"","remarks":"","email":"","createDate":1473735340000}, {"updateDate":1473735488000,"address":"","roles":"1","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"","createBy":"2,超级管理员","areaId":2,"phone":"","grade":"1","name":"企业产废","id":49,"fax":"","remarks":"","email":"","createDate":1473735488000}, {"updateDate":1473735508000,"address":"","roles":"2","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"","createBy":"2,超级管理员","areaId":2,"phone":"","grade":"1","name":"企业运输","id":50,"fax":"","remarks":"","email":"","createDate":1473735508000}, {"updateDate":1473735543000,"address":"","roles":"3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"","createBy":"2,超级管理员","areaId":2,"phone":"","grade":"1","name":"企业处置","id":51,"fax":"","remarks":"","email":"","createDate":1473735522000}, {"updateDate":1489644393000,"address":"","roles":"2","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"运输方测试负责人","createBy":"2,超级管理员","areaId":2,"phone":"","grade":"1","name":"固管家运输方测试机构","logo":"","id":52,"fax":"","remarks":"","email":"","createDate":1475199658000}, {"updateDate":1489650831000,"address":"产废方测试负责人","roles":"1","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"产废方测试负责人","createBy":"40,平台工作人员1","areaId":2,"phone":"","grade":"1","name":"固管家产废方测试机构","logo":"","id":53,"fax":"","remarks":"<p>产废方测试负责人</p>","email":"","createDate":1475199825000}, {"updateDate":1489644377000,"address":"","roles":"3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"固管家运输方测试机构负责人","createBy":"2,超级管理员","areaId":2,"phone":"","grade":"1","name":"固管家处置方测试机构","logo":"","id":54,"fax":"","email":"","createDate":1475199878000}, {"updateDate":1489642222000,"address":"","roles":"3","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"","createBy":"2,超级管理员","areaId":2,"phone":"","grade":"1","name":"重庆环投再生资源有限公司","logo":"","id":55,"fax":"","email":"","createDate":1483511639000}, {"updateDate":1490180173000,"address":"","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"管理员","createBy":"2,超级管理员","areaId":1,"phone":"","grade":"1","name":"固管家服务平台","logo":"/static/uploads/logos/07A71D4101DD4A6995221B0B1BCFED08.png","id":56,"fax":"","email":"","createDate":1489642645000}, {"updateDate":1489643207000,"address":"重庆市渝北区冉家坝旗山路252号","parentIds":"0,","icon":"","delFlag":"0","type":"1","parentId":0,"master":"张天霸","createBy":"2,超级管理员","areaId":2,"phone":"","grade":"1","name":"重庆市环境保护局","logo":"","id":57,"fax":"","remarks":"","email":"","createDate":1489643207000}]);
+                                    var yxuser = [{"name":"运输方测试账号2","id":63}]; //初始化已选列表
+                                    var yxList = {},dxList = {};
+                                    for(var i in yxuser){
+                                        yxList[yxuser[i].id] = yxuser[i].name;
+                                    }
+                                    function onClickNode(event, treeId, treeNode) {
+                                        $.post("role/officeuser",{'officeId':treeNode.id},function(data){
+                                            $("#dxuser").empty();
+                                            dxList = {};
+                                            for(var i=0;i<data.length;i++){
+                                                dxList[data[i].id] = data[i].name;
+                                                var isyx = "",isyxText = "";
+                                                if(yxList[data[i].id] != undefined){
+                                                    isyx = "disabled checked";
+                                                    isyxText = "<span class='badge badge-pink'> 已 选 </span>";
+                                                }
+                                                var str = '<div class="checkbox"><label><input '+isyx+' class="ace ace-checkbox-2" value="'+data[i].id
+                                                    +'" type="checkbox" data-mode="add" name="'+data[i].name+'">'+
+                                                    '<span class="lbl"> '+data[i].name+'</span>'+isyxText+'</label></div>';
+                                                $("#dxuser").append(str);
+                                            }
+                                            $("#addUserBtn").addClass('hide');
+                                        },"json");
+                                    }
+
+                                    var nodes = officeTree.getNodesByParam("level", 0);
+                                    for(var i=0; i<nodes.length; i++) {
+                                        officeTree.expandNode(nodes[i], true, false, false);
+                                    }
+
+                                    $(document).on('click','.layer input[type=checkbox]',function(){
+                                        var mode = $(this).data("mode");
+                                        if(mode == "add"){
+                                            var ck = $("#dxuser").find("input[type='checkbox']").is(":checked");
+                                            if(ck){
+                                                $("#addUserBtn").removeClass('hide');
+                                            }else{
+                                                $("#addUserBtn").addClass('hide');
+                                            }
+                                        }else if(mode == undefined){
+                                            var ck = $("#yxuser").find("input[type='checkbox']").is(":checked");
+                                            if(ck){
+                                                $("#removeUserBtn").removeClass('hide');
+                                            }else{
+                                                $("#removeUserBtn").addClass('hide');
+                                            }
+                                        }
+                                    });
+
+                                    //添加人员
+                                    $("#addUserBtn").click(function(){
+                                        var ck = $("#dxuser").find("input[type='checkbox']:checked").not("[disabled]");
+                                        ck.each(function(i,val){
+                                            ck.eq(i).attr("disabled","disabled");
+                                            ck.eq(i).parent().append("<span class='badge badge-pink'> 已 选 </span>");
+                                            yxList[val.value] = val.name;
+                                            var str = '<div class="checkbox"><label><input name="userIds" class="ace ace-checkbox-2" value="'+val.value
+                                                +'" type="checkbox"><span class="lbl"> '+val.name+'</span></label></div>';
+                                            $("#yxuser").append(str);
+                                        })
+                                    });
+
+                                    //移除人员
+                                    $("#removeUserBtn").click(function(){
+                                        var ck = $("#yxuser").find("input[type='checkbox']:checked");
+                                        ck.closest('.checkbox').remove();
+                                        ck.each(function(i,val){
+                                            delete yxList[val.value];
+                                            var dx = $("#dxuser").find("input[value='"+val.value+"']");
+                                            dx.removeAttr("disabled").prop("checked",false).siblings(".badge").remove();
+                                        })
+                                        var len = $("#yxuser").children().length;
+                                        if(len == 0) $("#removeUserBtn").addClass('hide');
+                                    });
+
+                                })
+							</script></div></div>
+
+
+
+		</div><!-- /.page-content -->
+
+	</div><!-- /.main-content -->
+
+	<a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+		<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+	</a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="../../../static/jquery/jquery.js"></script>
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../../../static/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="../../../static/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="../../../static/ace/js/ace-elements.min.js"></script>
+<script src="../../../static/ace/js/ace.min.js"></script>
+
+<script type="text/javascript">
+    var ctxPath = "../../..";
+    window.onload=function(){
+        /* $("#ace-settings-navbar").trigger("click");//固定头部导航栏
+        $("#ace-settings-sidebar").trigger("click");//固定左侧菜单
+        $("#ace-settings-highlight").trigger("click"); */
+    };
+</script>
+
+<!-- 引入其他js -->
+<script src="../../../static/js/history.js"></script>
+<script type="text/javascript" src="../../../static/layer/layer.js"></script>
+<script type="text/javascript" src="../../../static/js/spin.min.js"></script>
+<script type="text/javascript" src="../../../static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="../../../static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../../../static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.form.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../../../static/js/public.js"></script>
+
+
+</body>
+</html>

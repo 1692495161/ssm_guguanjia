@@ -1,0 +1,886 @@
+
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>固管家服务平台</title>
+
+	<meta name="description" content="index" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="../../../static/css/font-awesome.min.css" />
+
+	<link rel="stylesheet" href="../../../static/chosen/chosen.min.css" />
+
+	<!-- ace styles -->
+	<link rel="stylesheet" href="../../../static/ace/css/ace.min.css" id="main-ace-style" />
+
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" href="../../../static/ace/css/ace-part2.min.css" />
+	<![endif]-->
+	<link rel="stylesheet" href="../../../static/ace/css/ace-skins.min.css" />
+	<link rel="stylesheet" href="../../../static/ace/css/ace-rtl.min.css" />
+
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" href="../../../static/ace/css/ace-ie.min.css" />
+	<![endif]-->
+
+	<link rel="stylesheet" href="../../../static/ztree/metro.css" />
+	<link rel="stylesheet" href="../../../static/validate/css/validform.css" />
+	<link rel="stylesheet" href="../../../static/css/custom.css" />
+
+	<!--[if !IE]> -->
+	<script src="../../../static/jquery/jquery.js"></script>
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+	<script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+	<![endif]-->
+
+
+	<!-- ace settings handler -->
+	<script src="../../../static/ace/js/ace-extra.min.js"></script>
+
+	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+	<!--[if lte IE 8]>
+	<script src="../../../static/bootstrap/html5shiv.min.js"></script>
+	<script src="../../../static/bootstrap/respond.min.js"></script>
+	<script>var ie8 = "ie8";</script>
+	<![endif]-->
+</head>
+
+<body class="no-skin" id="body-content">
+<!-- 顶部条 -->
+<div id="navbar" class="navbar navbar-default">
+	<script type="text/javascript">
+        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+	</script>
+
+	<div class="navbar-container clearfix" id="navbar-container">
+		<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+			<span class="sr-only">Toggle sidebar</span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+		</button>
+
+		<div class="navbar-header pull-left" style="min-width:190px;">
+			<a  class="navbar-brand">
+				<small>
+					固管家服务平台
+				</small>
+			</a>
+		</div>
+		<!-- <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a  data-trigger="ajax" data-target="#fill-main-content" class="bigger-120">
+                    <i class="menu-icon fa "></i>&nbsp;
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+
+		<div class="navbar-buttons navbar-header pull-right" role="navigation">
+			<ul class="nav ace-nav">
+
+				<li class="green">
+					<a class="dropdown-toggle" href="javascript:void(0);" id="fullscreen" title="全屏"
+					   onclick="launchFullscreen(document.documentElement);">
+						<i class="ace-icon fa fa-arrows-alt "></i>
+					</a>
+				</li>
+
+				<li class="purple" style="display:none;">
+					<a data-toggle="dropdown" class="dropdown-toggle" >
+						<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+						<span class="badge badge-important">8</span>
+					</a>
+
+					<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+						<li class="dropdown-header">
+							<i class="ace-icon fa fa-exclamation-triangle"></i>
+							8 Notifications
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+												New Comments
+											</span>
+									<span class="pull-right badge badge-info">+12</span>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<i class="btn btn-xs btn-primary fa fa-user"></i>
+								Bob just signed up as an editor ...
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+												New Orders
+											</span>
+									<span class="pull-right badge badge-success">+8</span>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+												Followers
+											</span>
+									<span class="pull-right badge badge-info">+11</span>
+								</div>
+							</a>
+						</li>
+
+						<li class="dropdown-footer">
+							<a >
+								See all notifications
+								<i class="ace-icon fa fa-arrow-right"></i>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="light-blue">
+					<a data-toggle="dropdown"  class="dropdown-toggle">
+						<img class="nav-user-photo" src="../../../static/img/small-male-pic.png" />
+						<span class="user-info">
+									<small>你好,</small>
+									超级管理员
+								</span>
+
+						<i class="ace-icon fa fa-caret-down"></i>
+					</a>
+
+					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						<li>
+							<a href="../userCenter/userCenter.html">
+								<i class="ace-icon fa fa-user"></i>
+								我的资料
+							</a>
+						</li>
+
+						<li class="divider"></li>
+
+						<li>
+							<a href="../login.html">
+								<i class="ace-icon fa fa-power-off"></i>
+								退出
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /.navbar-container -->
+</div>
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+	<script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+	</script>
+
+
+	<div id="sidebar" class="sidebar responsive">
+		<script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+		</script>
+
+		<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+			<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+				<button class="btn btn-success">
+					<i class="ace-icon fa fa-signal"></i>
+				</button>
+
+				<button class="btn btn-info">
+					<i class="ace-icon fa fa-pencil"></i>
+				</button>
+
+				<button class="btn btn-warning">
+					<i class="ace-icon fa fa-users"></i>
+				</button>
+
+				<button class="btn btn-danger">
+					<i class="ace-icon fa fa-cogs"></i>
+				</button>
+			</div>
+
+			<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+				<span class="btn btn-success"></span>
+
+				<span class="btn btn-info"></span>
+
+				<span class="btn btn-warning"></span>
+
+				<span class="btn btn-danger"></span>
+			</div>
+		</div><!-- /.sidebar-shortcuts -->
+
+		<ul class="nav nav-list" id="sidebar-menu">
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-user"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 个人中心 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../userCenter/userCenter.html"
+								id="menu_manageruserCenter"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-file-o"></i>
+							<span class="menu-text"
+							> 我的资料 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-lastfm"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 单位管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../office/office-detail.html"
+								id="menu_managercompanydetail"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 单位信息 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../user/user.html"
+								id="menu_managercompanyaccounts"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 单位账号 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../work/company/work.html"
+								id="menu_managercompanywork"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 电子台账 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-puzzle-piece"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 业务管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../work/admin/work.html"
+								id="menu_manageradminwork"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 电子台账 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../qualification/index.html"
+								id="menu_managerqualificationindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 资质审核 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="index.html"
+								id="menu_managerdemandindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 服务需求 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../examine/index.html"
+								id="menu_managerexamineindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 考核管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../app/index.html"
+								id="menu_managerappindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> APP管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../statute/index.html"
+								id="menu_managerstatuteindex"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-bolt"></i>
+							<span class="menu-text"
+							> 法律法规 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-group"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 机构用户 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../area/index.html"
+								id="menu_managerarea"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-globe"></i>
+							<span class="menu-text"
+							> 区域管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../office/office.html"
+								id="menu_manageroffice"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-sitemap"></i>
+							<span class="menu-text"
+							> 机构管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../user/user-list.html"
+								id="menu_managersysuser"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-user"></i>
+							<span class="menu-text"
+							> 用户管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../role/role.html"
+								id="menu_managerrole"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-graduation-cap"></i>
+							<span class="menu-text"
+							> 角色管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-cogs"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 系统管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../menu/menu.html"
+								id="menu_managermenu"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"
+							> 菜单配置 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../dict/dict.html"
+								id="menu_managerdict"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-calculator"></i>
+							<span class="menu-text"
+							> 字典管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../log/log.html"
+								id="menu_managersyslog"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-copy"></i>
+							<span class="menu-text"
+							> 日志查询 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-binoculars"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 系统监控 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../ehcache/ehcache.html"
+								id="menu_managermonitorehcache"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-crosshairs"></i>
+							<span class="menu-text"
+							> Ehcache监控 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../jvm/jvm.html"
+								id="menu_managermonitorjvm"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-flash"></i>
+							<span class="menu-text"
+							> jvm监控 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+		</ul><!-- /.nav-list -->
+		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+			<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		</div>
+
+		<script type="text/javascript">
+            try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+		</script>
+	</div>
+
+
+	<div class="main-content">
+		<div class="breadcrumbs" id="breadcrumbs">
+			<script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+			</script>
+
+			<ul class="tab" id="breadcrumb">
+				<!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+			</ul><!-- /.breadcrumb -->
+			<div id="tab-menu">
+				<ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+					<li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+					<li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="page-content">
+			<div class="ace-settings-container" id="ace-settings-container">
+				<div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+					 id="ace-settings-btn">
+					<i class="ace-icon fa fa-cog bigger-150"></i>
+				</div>
+
+				<div class="ace-settings-box clearfix" id="ace-settings-box">
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<div class="pull-left">
+								<select id="skin-colorpicker" class="hide">
+									<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+									<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+									<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+									<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+								</select>
+							</div>
+							<span>&nbsp; 皮肤</span>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-navbar" /> <label class="lbl"
+																	  for="ace-settings-navbar"> 固定页头</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-sidebar" /> <label class="lbl"
+																	   for="ace-settings-sidebar"> 固定导航菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-breadcrumbs" /> <label class="lbl"
+																		   for="ace-settings-breadcrumbs"> 固定导航条</label>
+						</div>
+
+						<!-- <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                id="ace-settings-rtl" /> <label class="lbl" for="ace-settings-rtl">
+                                Right To Left (rtl)</label>
+                        </div> -->
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-add-container" /> <label class="lbl"
+																			 for="ace-settings-add-container"> 固定宽度
+						</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-hover" /> <label class="lbl"
+																	 for="ace-settings-hover"> 滑动式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-compact" /> <label class="lbl"
+																	   for="ace-settings-compact"> 紧凑式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-highlight" /> <label class="lbl"
+																		 for="ace-settings-highlight"> 高亮选中</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+				</div>
+				<!-- /.ace-settings-box -->
+			</div>
+			<!-- /.ace-settings-container -->
+			<div class="page-header">
+				<h1> 编辑 </h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="fill-main-content" style="height:100%">
+						<div class="xuboxPageHtml" id="xboxTest" style="overflow-y: auto; height: 266px;"><div class="layer">
+							<form name="FormPost" id="dict-save" class="FormGrid" method="post" action="dict/save">
+
+								<input type="hidden" value="1" name="id">
+								<table class="EditTable" width="100%">
+									<tbody>
+									<tr style="display: none;">
+										<td class="ui-state-error" id="FormError"></td>
+									</tr>
+									<tr class="FormData">
+										<td class="CaptionTD">标签</td>
+										<td class="DataTD width-100"><input type="text" name="label" datatype="*" nullmsg="请输入标签！" value="正常"></td>
+									</tr>
+									<tr class="FormData">
+										<td class="CaptionTD">键值</td>
+										<td class="DataTD width-100"><input type="text" name="value" datatype="*" nullmsg="请输入键值！" value="0"></td>
+									</tr>
+									<tr class="FormData">
+										<td class="CaptionTD">类型</td>
+										<td class="DataTD width-100">
+											<input type="text" value="del_flag" name="type">
+										</td>
+									</tr>
+									<tr class="FormData">
+										<td class="CaptionTD">排序</td>
+										<td class="DataTD">
+											<input type="text" value="10" name="sort">
+										</td>
+									</tr>
+									<tr class="FormData">
+										<td class="CaptionTD">描述</td>
+										<td class="DataTD">
+											<textarea name="description" class="autosize-transition form-control " style="resize: none; overflow: hidden; word-wrap: break-word; height: 52px;">删除标记</textarea>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</form>
+						</div>
+
+							<div class="width-100 clearfix" tag-save-btn="" style="bottom: -36px; left: 0px; position: absolute;">
+	<span class="btn btn-primary btn-sm bigger-110 width-50  pull-left" id="dict-save-save">
+		<i class="ace-icon fa fa-floppy-o align-top bigger-125"></i> 确 定
+	</span>
+								<span class="btn btn-yellow btn-sm bigger-110 width-50 pull-right" id="dict-save-cancel">
+		<i class="ace-icon fa fa-times align-top  bigger-125"></i> 取 消
+	</span>
+							</div>
+							<!--<script type="text/javascript">
+                                $(function(){
+
+                                    var dictsave = $("#dict-save").Validform({
+                                        ajaxPost : true,
+                                        beforeSubmit:function(curform){
+                                            var loadi = layer.load(5,2);
+                                            $("#dict-save").data('loadi',loadi);
+                                        },
+                                        callback:function(data){
+                                            layer.close($("#dict-save").data('loadi'));
+                                            if(data>0) {
+                                                layer.msg('操作成功', 1, 1,function(){
+                                                    if("false" == "true"){
+                                                        location.reload();
+                                                    }else{
+                                                        $curmenu.trigger('click');
+                                                    }
+                                                    layer.closeAll();
+                                                });
+                                            }else{
+                                                layer.msg('操作失败', 3, 1);
+                                            }
+                                        },
+                                        tiptype : function(msg, o, cssctl) {
+                                            if (!o.obj.is("form")) {
+                                                if (o.type != 2) {
+                                                    tip.errorTip(msg,o.obj);
+                                                }
+                                            }
+                                        },
+                                        tipSweep : true
+                                    });
+
+                                    $("#dict-save-save").click(function() {
+                                        if("false" == "true"){
+
+                                        }
+                                        dictsave.submitForm(false);
+                                        return false;
+                                    });
+
+                                    $("#dict-save-cancel").click(function(){
+                                        layer.closeAll();
+                                        return false;
+                                    });
+
+                                    $("#dict-save input,#dict-save textarea").blur(function(){
+                                        layer.closeTips();
+                                        return false;
+                                    })
+
+                                });
+							</script>
+							<script type="text/javascript">
+
+                                //描述框自动扩张高度
+                                $('textarea[class*=autosize]').autosize({append: "\n"});
+
+							</script>-->
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div><!-- /.page-content -->
+
+	</div><!-- /.main-content -->
+
+	<a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+		<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+	</a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+
+
+
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../../../static/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="../../../static/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="../../../static/ace/js/ace-elements.min.js"></script>
+<script src="../../../static/ace/js/ace.min.js"></script>
+
+<script type="text/javascript">
+    var ctxPath = "../../..";
+    window.onload=function(){
+        /* $("#ace-settings-navbar").trigger("click");//固定头部导航栏
+        $("#ace-settings-sidebar").trigger("click");//固定左侧菜单
+        $("#ace-settings-highlight").trigger("click"); */
+    };
+</script>
+
+<!-- 引入其他js -->
+<script src="../../../static/js/history.js"></script>
+<script type="text/javascript" src="../../../static/layer/layer.js"></script>
+<script type="text/javascript" src="../../../static/js/spin.min.js"></script>
+<script type="text/javascript" src="../../../static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="../../../static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../../../static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.form.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../../../static/js/public.js"></script>
+
+
+</body>
+</html>

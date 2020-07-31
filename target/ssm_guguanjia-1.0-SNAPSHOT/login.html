@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <base href="/guguanjia/">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <title>登录</title>
+
+    <meta name="description" content="login"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="static/css/font-awesome.min.css"/>
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="static/ace/css/ace.min.css"/>
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="static/ace/css/ace-part2.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="static/ace/css/ace-rtl.min.css"/>
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="static/ace/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="static/bootstrap/html5shiv.min.js"></script>
+    <script src="static/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="login-layout blur-login">
+<div class="main-container">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="login-container" style="padding-top: 60px;">
+                    <div class="center">
+                        <h1>
+                            <span class="red" id="id-text2">固管家服务平台</span>
+                        </h1>
+                        <h4 class="blue" id="id-company-text">&copy; 东标</h4>
+                    </div>
+
+                    <div class="space-6"></div>
+
+                    <div class="position-relative">
+                        <div id="login-box" class="login-box visible widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header blue lighter bigger" id="msg">
+                                        <i class="ace-icon fa fa-coffee green"></i>
+                                        固管家-危废处置好帮手
+                                    </h4>
+
+                                    <div class="space-6"></div>
+
+                                    <form id="login-form" action="${ctxPath}/manager/login" method="post">
+                                        <fieldset>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control" name="username"
+                                                                   placeholder="用户名" v-model="username"/>
+															<i class="ace-icon fa fa-user"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control" name="password"
+                                                                   placeholder="密码" v-model="password"/>
+															<i class="ace-icon fa fa-lock"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control width-55 pull-left"
+                                                                   name="code" placeholder="验证码" v-model="code"/>
+															<img :src="path" id="code" @click="changeCode"
+                                                                 class="pull-right" title="点击换一张"
+                                                                 style="cursor: pointer;border: 1px solid rgb(181, 181, 181);"/>
+														</span>
+                                            </label>
+
+                                            <div class="space"></div>
+
+                                            <div class="clearfix">
+														<span type="button" @click="toLogin"
+                                                              class="width-100 pull-right btn btn-primary"
+                                                              id="login-btn">
+															<i class="ace-icon fa fa-key"></i>
+															<span class="bigger-115">登&nbsp;录</span>
+														</span>
+                                            </div>
+
+                                            <div class="space-4"></div>
+                                        </fieldset>
+                                    </form>
+                                </div><!-- /.widget-main -->
+
+                                <div class="toolbar clearfix">
+                                    <div style="width: 100%;text-align: center;">
+                                        <a href="javascript:void(0);" class="forgot-password-link bigger-130"
+                                           style="text-decoration: none;">
+                                            <i class="ace-icon fa fa-arrow-left"></i>
+                                            请关注微信公众号"固管家"进行注册!
+                                            <i class="ace-icon fa fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.login-box -->
+                    </div><!-- /.position-relative -->
+
+                </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.main-content -->
+</div><!-- /.main-container -->
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="static/jquery/jquery.js"></script>
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="static/jquery/jquery-1.11.1.min.js"></script>
+<![endif]-->
+
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='static/jquery/jquery.min.js'>" + "<" + "/script>");
+</script>
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='static/jquery/jquery1x.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='static/jquery/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+
+<script type="text/javascript" src="static/layer/layer.js"></script>
+<script type="text/javascript" src="static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="static/vue/vue.js"></script>
+<script type="text/javascript" src="static/vue/axios.js"></script>
+
+<script type="text/javascript">
+    let vm = new Vue({
+        el: '.main-content',
+        data: {
+            username: '',
+            password: '',
+            code: '',
+            path: 'code.png',
+        },
+        methods: {
+            changeCode: function () {
+                this.path = `code.png?` + new Date()
+            },
+            toLogin: function () {
+                axios({
+                    url: 'login/toLogin',
+                    params: {
+                        username: this.username,
+                        password: this.password,
+                        code: this.code
+                    }
+                }).then((response) => {
+                	layer.msg(response.data.msg)
+                	if (response.data.success){
+                	    //登录成功后需要保存sessionStorage(String,String)，将登录用户的状态绑定到前端
+                        //将对象转换为json格式字符串
+                        let loginUser = JSON.stringify(response.data.obj);
+                        // sessionStorage.setItem("loginUser",loginUser);
+                        localStorage.setItem("loginUser",loginUser);
+                        //登录成功，跳转首页
+                		location.href='login/toIndex';
+					}
+                }).catch(error=>{
+                	layer.msg(error.message)
+				})
+            }
+        },
+    });
+</script>
+</body>
+</html>
