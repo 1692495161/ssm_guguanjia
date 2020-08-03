@@ -58,7 +58,7 @@
         <div class="page-content">
 
             <div class="page-header">
-                <h1> 重庆市编辑 </h1>
+                <h1> 新增区域 </h1>
             </div>
             <div class="row">
                 <div class="col-xs-12">
@@ -78,12 +78,12 @@
                                         <tr class="FormData">
                                             <td class="CaptionTD">区域名称</td>
                                             <td class="DataTD width-100"><input type="text" name="name" v-model="area.name"
-                                                                                nullmsg="请输入区域名称！" value="重庆市"></td>
+                                                                                nullmsg="请输入区域名称！" ></td>
                                         </tr>
                                         <tr class="FormData">
                                             <td class="CaptionTD">区域编码</td>
-                                            <td class="DataTD width-100"><input type="text" name="code" v-model="area.code"
-                                                                                nullmsg="请输入区域编码！" value="110000"></td>
+                                            <td class="DataTD width-100"><input type="text" name="code"  v-model="area.code"
+                                                                                nullmsg="请输入区域编码！"></td>
                                         </tr>
                                         <tr class="FormData">
                                             <td class="CaptionTD">区域类型</td>
@@ -93,7 +93,7 @@
                                                     <option value="1">
                                                         国家
                                                     </option>
-                                                    <option value="2" selected="">
+                                                    <option value="2">
                                                         省份、直辖市
                                                     </option>
                                                     <option value="3">
@@ -113,9 +113,9 @@
 
                                                 <div class="clearfix width-100  input-group" style="">
                                                     <input class="form-control search-query" type="text" readonly=""
-                                                           id="treeselectname" name="" value="中国" v-model="area.parentName">
+                                                           id="treeselectname" name="" value="中国" >
                                                     <span class="input-group-btn">
-		<span class="btn btn-purple btn-sm" type="button" style="height: 34px;"  @click="toSelect">
+		<span class="btn btn-purple btn-sm" type="button" style="height: 34px;" >
 			<i class="ace-icon fa fa-search bigger-110" ></i>
             <a >查找</a>
 		</span>
@@ -129,11 +129,11 @@
                                             <td class="CaptionTD">区域图标</td>
                                             <td class="DataTD">
                                                 <div class="width-100 clearfix ">
-                                                    <input type="hidden" value="fa fa-smile-o" name="icon" v-model="area.icon"
+                                                    <input type="hidden" value="fa fa-smile-o" name="icon"
                                                            id="icon-input">
-                                                    <i class="ace-icon  bigger-200 pink" :class="area.icon"
+                                                    <i class="ace-icon  bigger-200 pink"
                                                        style="vertical-align: middle;padding-right: 10px;"></i>
-                                                    <span class="btn btn-sm btn-purple" id="icon-icon-btn" @click="toModules">
+                                                    <span class="btn btn-sm btn-purple" id="icon-icon-btn">
 		<i class="ace-icon fa fa-search bigger-110" ></i>查找
 	</span>
                                                 </div>
@@ -143,7 +143,7 @@
                                         <tr class="FormData">
                                             <td class="CaptionTD">区域描述</td>
                                             <td class="DataTD">
-                                                <textarea name="remarks" class="autosize-transition form-control " v-model="area.remarks"
+                                                <textarea name="remarks" class="autosize-transition form-control "
                                                           style="resize: none; overflow: hidden; word-wrap: break-word; height: 52px;"></textarea>
                                             </td>
                                         </tr>
@@ -154,7 +154,7 @@
 
                             <div class="width-100 clearfix" tag-save-btn=""
                                  style="bottom: -36px; left: 0px; position: absolute;">
-	<span class="btn btn-primary btn-sm bigger-110 width-50  pull-left" id="area-save-save" @click="toInsert">
+	<span class="btn btn-primary btn-sm bigger-110 width-50  pull-left" id="area-save-save">
 		<i class="ace-icon fa fa-floppy-o align-top bigger-125"></i> 确 定
 	</span>
                                 <span class="btn btn-yellow btn-sm bigger-110 width-50 pull-right"
@@ -218,7 +218,6 @@
 <script type="text/javascript" src="static/vue/vue.js"></script>
 <script type="text/javascript" src="static/vue/axios.js"></script>
 
-<script type="text/javascript" src="static/js/area/update.js"></script>
 
 </body>
 </html>

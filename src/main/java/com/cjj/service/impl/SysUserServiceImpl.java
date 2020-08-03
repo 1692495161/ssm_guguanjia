@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @author cjj
  * @date 2020/7/31
@@ -17,4 +19,14 @@ import org.springframework.transaction.annotation.Transactional;
 public class SysUserServiceImpl extends BaseServiceImpl<SysUser> implements SysUserService {
     @Autowired
     SysUserMapper userMapper;
+
+    @Override
+    public List<SysUser> selectByRid(long rid) {
+        return userMapper.selectByRid(rid);
+    }
+
+    @Override
+    public List<SysUser> selectNoRole(long oid, long rid) {
+        return userMapper.selectNoRole(oid,rid);
+    }
 }

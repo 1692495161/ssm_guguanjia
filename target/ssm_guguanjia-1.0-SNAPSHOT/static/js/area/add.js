@@ -4,7 +4,7 @@ let vm =new Vue({
         area:{}
     },
     methods:{
-        toInsert:function () {
+        /*toInsert:function () {
             axios({
                 // url:'',
             }).then((response)=>{
@@ -12,6 +12,6 @@ let vm =new Vue({
             }).catch((error)=>{
 
             });
-        }
+        }*/
     }
 });
