@@ -203,9 +203,19 @@
 
 									<div class="widget-body">
 										<div class="widget-main" id="dxuser">
-
+											<div class="checkbox">
+												<label v-for="u in dxUsers">
+													<!--
+                                                    input选中处理：
+                                                    1.value与v-model的值一致选中
+                                                    2.v-model是true选中
+                                                    -->
+													<input class="ace ace-checkbox-2" type="checkbox" name="userIds" value="0" v-model="u.show" @click="checkDxUsers(u.id)">
+													<span class="lbl"> {{u.name}}</span>
+												</label>
+											</div>
 										</div>
-										<div class="hide" id="addUserBtn">
+										<div :class="showInsert?'':'hide'" id="addUserBtn" @click="insertBatch">
 											<a href="javascript:void(0);" class="btn btn-block btn-primary">
 												<i class="ace-icon fa fa-plus bigger-110"></i>
 												<span>添加所选人员</span>
@@ -237,7 +247,7 @@
 												</div>
 											</div>
 										</form>
-										<div :class="showDelete?'':'hide'" id="removeUserBtn">
+										<div :class="showDelete?'':'hide'" id="removeUserBtn" @click="deleteBatch">
 											<a href="javascript:void(0);" class="btn btn-block btn-success">
 												<i class="ace-icon fa fa-trash bigger-110"></i>
 												<span>移除人员</span>
