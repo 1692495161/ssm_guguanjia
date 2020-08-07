@@ -5,7 +5,9 @@ import tk.mybatis.mapper.annotation.KeySql;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
+import java.util.List;
 
 @Table(name = "sys_user")
 public class SysUser {
@@ -126,6 +128,17 @@ public class SysUser {
      */
     @Column(name = "head_picture")
     private String headPicture;
+
+    @Transient
+    private List<SysResource> resources;
+
+    public List<SysResource> getResources() {
+        return resources;
+    }
+
+    public void setResources(List<SysResource> resources) {
+        this.resources = resources;
+    }
 
     /**
      * 获取编号

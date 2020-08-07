@@ -27,4 +27,9 @@ public class SysOfficeController {
         List<SysOffice> select = sysOfficeService.select(sysOffice);
         return new Result(true,"查询成功",select);
     }
+
+    @RequestMapping("selectOfficeByRid")
+    public Result selectOfficeByRid(long rid){
+        return new Result(true,"查询成功",sysOfficeService.selectOfficeByRid(rid));
+    }
 }

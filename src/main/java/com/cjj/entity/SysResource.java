@@ -80,6 +80,7 @@ public class SysResource {
     @Column(name = "permission_str")
     private String permissionStr;
 
+
     /**
      * @return id
      */

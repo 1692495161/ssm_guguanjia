@@ -43,7 +43,7 @@ let vm = new Vue({
             console.log(treeId);//树节点id
             console.log(treeNode);//当前点击的节点对象*/
 
-            console.log(treeNode);
+            // console.log(treeNode);
             parent.layer.parentName = treeNode.name;
             parent.layer.parentId = treeNode.id;
             //父区域的parentIds+父区域id+','

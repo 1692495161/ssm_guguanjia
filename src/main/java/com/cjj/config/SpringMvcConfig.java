@@ -1,11 +1,12 @@
 package com.cjj.config;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import com.cjj.interceptor.LoginInterceptor;
-import com.sun.org.apache.bcel.internal.generic.NEW;
+import com.cjj.interceptor.SysResourceInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -25,6 +26,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();  //静态资源放行
     }
+
     @Bean
     public InternalResourceViewResolver getViewResolver(){
         return new InternalResourceViewResolver("/WEB-INF/html",".html");
@@ -40,6 +42,10 @@ public class SpringMvcConfig implements WebMvcConfigurer {
         return multipartResolver;
     }
 
+    //将该拦截器放入spring容器，注入进来
+    @Autowired
+    SysResourceInterceptor resourceInterceptor;
+
     //注册拦截器，配置拦截和放行规则
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -51,5 +57,8 @@ public class SpringMvcConfig implements WebMvcConfigurer {
         interceptor.addPathPatterns("/**");//拦截所有
         //设置放行规则
         interceptor.excludePathPatterns("/main/*","/login/toLogin","/login/loginOut");
+
+        InterceptorRegistration interceptor1 = registry.addInterceptor(resourceInterceptor);
+        interceptor1.addPathPatterns("/manager/**");
     }
 }

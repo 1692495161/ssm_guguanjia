@@ -36,6 +36,7 @@ public class SpringCacheConfig {
         List<String> cacheNames = new ArrayList<>();
         cacheNames.add("officeCache");
         cacheNames.add("orderCache");
+        cacheNames.add("resourceCache");
         //设置缓存管理器对象中管理的缓存名字
         redisCacheManager.setCacheNames(cacheNames);
         //设置缓存默认的生存时间（秒）

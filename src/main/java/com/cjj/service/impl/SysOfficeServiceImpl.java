@@ -1,6 +1,7 @@
 package com.cjj.service.impl;
 
 import com.cjj.entity.SysOffice;
+import com.cjj.mapper.SysOfficeMapper;
 import com.cjj.service.SysOfficeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
@@ -19,6 +20,9 @@ import java.util.List;
 @CacheConfig(cacheNames = "officeCache")
 public class SysOfficeServiceImpl extends BaseServiceImpl<SysOffice> implements SysOfficeService {
 
+
+    @Autowired
+    SysOfficeMapper officeMapper;
 
     /*@Autowired
     RedisTemplate<Object, Object> redisTemplate;*/
@@ -79,5 +83,10 @@ public class SysOfficeServiceImpl extends BaseServiceImpl<SysOffice> implements 
     @Override
     public int updateByPrimaryKeySelective(SysOffice sysOffice) {
         return super.updateByPrimaryKeySelective(sysOffice);
+    }
+
+    @Override
+    public List<SysOffice> selectOfficeByRid(long rid){
+        return officeMapper.selectOfficeByRid(rid);
     }
 }

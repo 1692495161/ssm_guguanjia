@@ -30,7 +30,7 @@ let vm=new Vue({
     methods:{
         checkYxUsers:function(id){
             for (let i in this.yxUsers){
-                //点击组件，判断在已选用户中是否存在，修改其show的布尔值
+                //点击组件，判断已选用户中的点击对象，修改其show的布尔值
                 if (this.yxUsers[i].id===id){
                     this.yxUsers[i].show=!this.yxUsers[i].show;
                     if (this.yxUsers[i].show){

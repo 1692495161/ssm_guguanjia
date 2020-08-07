@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import java.util.Date;
+import java.util.List;
 
 @Table(name = "sys_role")
 public class SysRole {
@@ -68,6 +69,50 @@ public class SysRole {
 
     @Transient
     private String officeName;
+
+    @Transient
+    private List<SysResource> resources;
+
+    @Transient
+    private List<SysResource> oldResources;
+
+    @Transient
+    private List<SysOffice> offices;
+
+    @Transient
+    private List<SysOffice> oldOffices;
+
+    public List<SysResource> getResources() {
+        return resources;
+    }
+
+    public void setResources(List<SysResource> resources) {
+        this.resources = resources;
+    }
+
+    public List<SysResource> getOldResources() {
+        return oldResources;
+    }
+
+    public void setOldResources(List<SysResource> oldResources) {
+        this.oldResources = oldResources;
+    }
+
+    public List<SysOffice> getOffices() {
+        return offices;
+    }
+
+    public void setOffices(List<SysOffice> offices) {
+        this.offices = offices;
+    }
+
+    public List<SysOffice> getOldOffices() {
+        return oldOffices;
+    }
+
+    public void setOldOffices(List<SysOffice> oldOffices) {
+        this.oldOffices = oldOffices;
+    }
 
     public String getOfficeName() {
         return officeName;
@@ -271,6 +316,10 @@ public class SysRole {
                 ", remarks='" + remarks + '\'' +
                 ", delFlag='" + delFlag + '\'' +
                 ", officeName='" + officeName + '\'' +
+                ", resources=" + resources +
+                ", oldResources=" + oldResources +
+                ", offices=" + offices +
+                ", oldOffices=" + oldOffices +
                 '}';
     }
 }

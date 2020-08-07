@@ -204,7 +204,7 @@
 																		<div class="dropdown-menu dropdown-caret scrollable width-100" data-height="250">
 																			<div class="padding-15">
 																				<div style="padding-bottom: 10px;">
-																					<input type="text" id="pullDownTreeSearchone" @keydown.enter="search" placeholder="搜索" class="width-100"/>
+																					<input type="text" id="pullDownTreeSearchone" v-model="name" @keydown.enter="search" placeholder="搜索" class="width-100"/>
 																				</div>
 																				<ul class="ztree" id="pullDownTreeone">
 
@@ -272,7 +272,7 @@
 														<a class="pink"  @click="toUsers(role.id,role.name)">
 															<i class="ace-icon fa fa-users bigger-130"></i> 分配人员
 														</a>
-														<a class="green" >
+														<a class="green" @click="toUpdate(role)" >
 															<i class="ace-icon fa fa-pencil bigger-130"></i> 编辑
 														</a>
 

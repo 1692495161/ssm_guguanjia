@@ -11,6 +11,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.Properties;
 
 /**
@@ -33,6 +34,15 @@ public class SpringMyBatisConfig {
         try {
             prop.load(is);
             dataSource.configFromPropety(prop);
+
+            try {
+                //druid自带的监控filter，打开
+                //stat:打开监控
+                //wall:SQL防火墙
+                dataSource.setFilters("stat,wall");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             return dataSource;
         } catch (IOException e) {
             e.printStackTrace();

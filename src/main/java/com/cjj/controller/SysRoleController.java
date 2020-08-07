@@ -1,6 +1,7 @@
 package com.cjj.controller;
 
 import com.cjj.entity.Result;
+import com.cjj.entity.SysRole;
 import com.cjj.service.SysRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +26,7 @@ public class SysRoleController {
     @Autowired
     SysRoleService sysRoleService;
 
-    @RequestMapping("/toIndex")
+    @RequestMapping("")
     public ModelAndView toIndex() {
         return new ModelAndView("/role/role");
     }
@@ -33,6 +34,16 @@ public class SysRoleController {
     @RequestMapping("/toUsers")
     public ModelAndView toUsers() {
         return new ModelAndView("/role/role-user");
+    }
+
+    @RequestMapping("/toSelect")
+    public ModelAndView toSelect() {
+        return new ModelAndView("/role/role-select");
+    }
+
+    @RequestMapping("/toUpdate")
+    public ModelAndView toUpdate() {
+        return new ModelAndView("/role/role-save");
     }
 
     /*@RequestMapping("/admin/detail")
@@ -63,6 +74,11 @@ public class SysRoleController {
     @RequestMapping("deleteBatch")
     public Result deleteBatch(long rid ,long[] ids){
         return new Result(true,"移除人员成功",sysRoleService.deleteBatch(rid,ids));
+    }
+
+    @RequestMapping("doUpdate")
+    public Result doUpdate(@RequestBody SysRole sysRole){
+        return new Result(true,"修改成功",sysRoleService.updateByPrimaryKeySelective(sysRole));
     }
 
 

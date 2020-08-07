@@ -11,7 +11,7 @@ let vm = new Vue({
                 oid: ''
             },
             name:'',//查询框的查询名
-            officeName:'全部',//显示的公司名
+            officeName:'全部机构',//显示的公司名
             nodes: [],
             setting: {
                 data: {
@@ -77,13 +77,24 @@ let vm = new Vue({
                         title: false,
                         content: 'manager/role/toUsers',
                         area: ['90%', '90%'],
-                        end: () => {
-
-                        }
                     })
                 }
             }).catch(error => {
                 layer.msg(error.message);
+            })
+        },
+        toUpdate:function(role){
+            layer.obj=role;
+            layer.open({
+                type: 2,
+                title: false,
+                content: 'manager/role/toUpdate',
+                area: ['90%', '90%'],
+                end: () => {
+                    if (layer.success==undefined || layer.success==""){
+                        this.selectPage();
+                    }
+                }
             })
         },
         initTree: function () {

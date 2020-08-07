@@ -25,7 +25,7 @@ public class SysAreaController {
     @Autowired
     AreaService areaService;
 
-    @RequestMapping("index")
+    @RequestMapping("")
     public ModelAndView toIndex() {
         return new ModelAndView("/area/index");
     }

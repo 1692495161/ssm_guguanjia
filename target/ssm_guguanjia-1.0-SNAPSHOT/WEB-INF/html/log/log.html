@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
+	<base href="/guguanjia/">
 	<meta charset="utf-8" />
 	<meta name="renderer" content="webkit">
 
@@ -13,44 +14,44 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 	<!-- bootstrap & fontawesome -->
-	<link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css" />
-	<link rel="stylesheet" href="../../../static/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="static/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="static/css/font-awesome.min.css" />
 
-	<link rel="stylesheet" href="../../../static/chosen/chosen.min.css" />
+	<link rel="stylesheet" href="static/chosen/chosen.min.css" />
 
 	<!-- ace styles -->
-	<link rel="stylesheet" href="../../../static/ace/css/ace.min.css" id="main-ace-style" />
+	<link rel="stylesheet" href="static/ace/css/ace.min.css" id="main-ace-style" />
 
 	<!--[if lte IE 9]>
-	<link rel="stylesheet" href="../../../static/ace/css/ace-part2.min.css" />
+	<link rel="stylesheet" href="static/ace/css/ace-part2.min.css" />
 	<![endif]-->
-	<link rel="stylesheet" href="../../../static/ace/css/ace-skins.min.css" />
-	<link rel="stylesheet" href="../../../static/ace/css/ace-rtl.min.css" />
+	<link rel="stylesheet" href="static/ace/css/ace-skins.min.css" />
+	<link rel="stylesheet" href="static/ace/css/ace-rtl.min.css" />
 
 	<!--[if lte IE 9]>
-	<link rel="stylesheet" href="../../../static/ace/css/ace-ie.min.css" />
+	<link rel="stylesheet" href="static/ace/css/ace-ie.min.css" />
 	<![endif]-->
 
-	<link rel="stylesheet" href="../../../static/ztree/metro.css" />
-	<link rel="stylesheet" href="../../../static/validate/css/validform.css" />
-	<link rel="stylesheet" href="../../../static/css/custom.css" />
+	<link rel="stylesheet" href="static/ztree/metro.css" />
+	<link rel="stylesheet" href="static/validate/css/validform.css" />
+	<link rel="stylesheet" href="static/css/custom.css" />
 
 	<!--[if !IE]> -->
-	<script src="../../../static/jquery/jquery.js"></script>
+	<script src="static/jquery/jquery.js"></script>
 	<!-- <![endif]-->
 
 	<!--[if IE]>
-	<script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+	<script src="static/jquery/jquery-1.11.1.min.js"></script>
 	<!-- <![endif]-->
 
 	<!-- ace settings handler -->
-	<script src="../../../static/ace/js/ace-extra.min.js"></script>
+	<script src="static/ace/js/ace-extra.min.js"></script>
 
 	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
 	<!--[if lte IE 8]>
-	<script src="../../../static/bootstrap/html5shiv.min.js"></script>
-	<script src="../../../static/bootstrap/respond.min.js"></script>
+	<script src="static/bootstrap/html5shiv.min.js"></script>
+	<script src="static/bootstrap/respond.min.js"></script>
 	<script>var ie8 = "ie8";</script>
 	<![endif]-->
 </head>
@@ -58,144 +59,7 @@
 <body class="no-skin" id="body-content">
 <!-- 顶部条 -->
 <div id="navbar" class="navbar navbar-default">
-	<script type="text/javascript">
-        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-	</script>
 
-	<div class="navbar-container clearfix" id="navbar-container">
-		<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
-			<span class="sr-only">Toggle sidebar</span>
-
-			<span class="icon-bar"></span>
-
-			<span class="icon-bar"></span>
-
-			<span class="icon-bar"></span>
-		</button>
-
-		<div class="navbar-header pull-left" style="min-width:190px;">
-			<a  class="navbar-brand">
-				<small>
-					固管家服务平台
-				</small>
-			</a>
-		</div>
-		<!-- <div class="navbar-header">
-            <ul class="nav navbar-nav">
-                <li class="">
-                    <a  data-trigger="ajax" data-target="#fill-main-content" class="bigger-120">
-                    <i class="menu-icon fa "></i>&nbsp;
-                    </a>
-                </li>
-            </ul>
-        </div> -->
-
-		<div class="navbar-buttons navbar-header pull-right" role="navigation">
-			<ul class="nav ace-nav">
-
-				<li class="green">
-					<a class="dropdown-toggle" href="javascript:void(0);" id="fullscreen" title="全屏"
-					   onclick="launchFullscreen(document.documentElement);">
-						<i class="ace-icon fa fa-arrows-alt "></i>
-					</a>
-				</li>
-
-				<li class="purple" style="display:none;">
-					<a data-toggle="dropdown" class="dropdown-toggle" >
-						<i class="ace-icon fa fa-bell icon-animated-bell"></i>
-						<span class="badge badge-important">8</span>
-					</a>
-
-					<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-						<li class="dropdown-header">
-							<i class="ace-icon fa fa-exclamation-triangle"></i>
-							8 Notifications
-						</li>
-
-						<li>
-							<a >
-								<div class="clearfix">
-											<span class="pull-left">
-												<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-												New Comments
-											</span>
-									<span class="pull-right badge badge-info">+12</span>
-								</div>
-							</a>
-						</li>
-
-						<li>
-							<a >
-								<i class="btn btn-xs btn-primary fa fa-user"></i>
-								Bob just signed up as an editor ...
-							</a>
-						</li>
-
-						<li>
-							<a >
-								<div class="clearfix">
-											<span class="pull-left">
-												<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
-												New Orders
-											</span>
-									<span class="pull-right badge badge-success">+8</span>
-								</div>
-							</a>
-						</li>
-
-						<li>
-							<a >
-								<div class="clearfix">
-											<span class="pull-left">
-												<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
-												Followers
-											</span>
-									<span class="pull-right badge badge-info">+11</span>
-								</div>
-							</a>
-						</li>
-
-						<li class="dropdown-footer">
-							<a >
-								See all notifications
-								<i class="ace-icon fa fa-arrow-right"></i>
-							</a>
-						</li>
-					</ul>
-				</li>
-
-				<li class="light-blue">
-					<a data-toggle="dropdown"  class="dropdown-toggle">
-						<img class="nav-user-photo" src="../../../static/img/small-male-pic.png" />
-						<span class="user-info">
-									<small>你好,</small>
-									超级管理员
-								</span>
-
-						<i class="ace-icon fa fa-caret-down"></i>
-					</a>
-
-					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-						<li>
-							<a href="../userCenter/userCenter.html">
-								<i class="ace-icon fa fa-user"></i>
-								我的资料
-							</a>
-						</li>
-
-						<li class="divider"></li>
-
-						<li>
-							<a href="../login.html">
-								<i class="ace-icon fa fa-power-off"></i>
-								退出
-							</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</div><!-- /.navbar-container -->
 </div>
 <!-- 主体 -->
 <div class="main-container" id="main-container">
@@ -205,425 +69,12 @@
 
 
 	<div id="sidebar" class="sidebar responsive">
-		<script type="text/javascript">
-            try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
-		</script>
 
-		<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-			<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-				<button class="btn btn-success">
-					<i class="ace-icon fa fa-signal"></i>
-				</button>
-
-				<button class="btn btn-info">
-					<i class="ace-icon fa fa-pencil"></i>
-				</button>
-
-				<button class="btn btn-warning">
-					<i class="ace-icon fa fa-users"></i>
-				</button>
-
-				<button class="btn btn-danger">
-					<i class="ace-icon fa fa-cogs"></i>
-				</button>
-			</div>
-
-			<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-				<span class="btn btn-success"></span>
-
-				<span class="btn btn-info"></span>
-
-				<span class="btn btn-warning"></span>
-
-				<span class="btn btn-danger"></span>
-			</div>
-		</div><!-- /.sidebar-shortcuts -->
-
-		<ul class="nav nav-list" id="sidebar-menu">
-			<li data-level="1">
-
-				<a
-						href="javascript:void(0);" class="dropdown-toggle"
-						haschild="true"
-				>
-					<i class="menu-icon fa fa-user"></i>
-					<span class="menu-text"
-						  style="vertical-align: middle;"
-					> 个人中心 </span>
-					<b class="arrow fa fa-angle-down"></b>
-				</a>
-				<b class="arrow"></b>
-
-				<ul class="submenu nav-hide" style="display:none;">
-					<li data-level="2">
-
-						<a
-								href="../userCenter/userCenter.html"
-								id="menu_manageruserCenter"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-file-o"></i>
-							<span class="menu-text"
-							> 我的资料 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-				</ul>
-			</li>
-			<li data-level="1">
-
-				<a
-						href="javascript:void(0);" class="dropdown-toggle"
-						haschild="true"
-				>
-					<i class="menu-icon fa fa-lastfm"></i>
-					<span class="menu-text"
-						  style="vertical-align: middle;"
-					> 单位管理 </span>
-					<b class="arrow fa fa-angle-down"></b>
-				</a>
-				<b class="arrow"></b>
-
-				<ul class="submenu nav-hide" style="display:none;">
-					<li data-level="2">
-
-						<a
-								href="../office/office-detail.html"
-								id="menu_managercompanydetail"
-								haschild="false"
-						>
-							<i class="menu-icon "></i>
-							<span class="menu-text"
-							> 单位信息 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../user/user.html"
-								id="menu_managercompanyaccounts"
-								haschild="false"
-						>
-							<i class="menu-icon "></i>
-							<span class="menu-text"
-							> 单位账号 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../work/company/work.html"
-								id="menu_managercompanywork"
-								haschild="false"
-						>
-							<i class="menu-icon "></i>
-							<span class="menu-text"
-							> 电子台账 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-				</ul>
-			</li>
-			<li data-level="1">
-
-				<a
-						href="javascript:void(0);" class="dropdown-toggle"
-						haschild="true"
-				>
-					<i class="menu-icon fa fa-puzzle-piece"></i>
-					<span class="menu-text"
-						  style="vertical-align: middle;"
-					> 业务管理 </span>
-					<b class="arrow fa fa-angle-down"></b>
-				</a>
-				<b class="arrow"></b>
-
-				<ul class="submenu nav-hide" style="display:none;">
-					<li data-level="2">
-
-						<a
-								href="../work/admin/work.html"
-								id="menu_manageradminwork"
-								haschild="false"
-						>
-							<i class="menu-icon "></i>
-							<span class="menu-text"
-							> 电子台账 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../qualification/index.html"
-								id="menu_managerqualificationindex"
-								haschild="false"
-						>
-							<i class="menu-icon "></i>
-							<span class="menu-text"
-							> 资质审核 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="index.html"
-								id="menu_managerdemandindex"
-								haschild="false"
-						>
-							<i class="menu-icon "></i>
-							<span class="menu-text"
-							> 服务需求 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../examine/index.html"
-								id="menu_managerexamineindex"
-								haschild="false"
-						>
-							<i class="menu-icon "></i>
-							<span class="menu-text"
-							> 考核管理 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../app/index.html"
-								id="menu_managerappindex"
-								haschild="false"
-						>
-							<i class="menu-icon "></i>
-							<span class="menu-text"
-							> APP管理 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../statute/index.html"
-								id="menu_managerstatuteindex"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-bolt"></i>
-							<span class="menu-text"
-							> 法律法规 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-				</ul>
-			</li>
-			<li data-level="1">
-
-				<a
-						href="javascript:void(0);" class="dropdown-toggle"
-						haschild="true"
-				>
-					<i class="menu-icon fa fa-group"></i>
-					<span class="menu-text"
-						  style="vertical-align: middle;"
-					> 机构用户 </span>
-					<b class="arrow fa fa-angle-down"></b>
-				</a>
-				<b class="arrow"></b>
-
-				<ul class="submenu nav-hide" style="display:none;">
-					<li data-level="2">
-
-						<a
-								href="../area/index.html"
-								id="menu_managerarea"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-globe"></i>
-							<span class="menu-text"
-							> 区域管理 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../office/office.html"
-								id="menu_manageroffice"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-sitemap"></i>
-							<span class="menu-text"
-							> 机构管理 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../user/user-list.html"
-								id="menu_managersysuser"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-user"></i>
-							<span class="menu-text"
-							> 用户管理 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../role/role.html"
-								id="menu_managerrole"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-graduation-cap"></i>
-							<span class="menu-text"
-							> 角色管理 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-				</ul>
-			</li>
-			<li data-level="1">
-
-				<a
-						href="javascript:void(0);" class="dropdown-toggle"
-						haschild="true"
-				>
-					<i class="menu-icon fa fa-cogs"></i>
-					<span class="menu-text"
-						  style="vertical-align: middle;"
-					> 系统管理 </span>
-					<b class="arrow fa fa-angle-down"></b>
-				</a>
-				<b class="arrow"></b>
-
-				<ul class="submenu nav-hide" style="display:none;">
-					<li data-level="2">
-
-						<a
-								href="../menu/menu.html"
-								id="menu_managermenu"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"
-							> 菜单配置 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../dict/dict.html"
-								id="menu_managerdict"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-calculator"></i>
-							<span class="menu-text"
-							> 字典管理 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../log/log.html"
-								id="menu_managersyslog"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-copy"></i>
-							<span class="menu-text"
-							> 日志查询 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-				</ul>
-			</li>
-			<li data-level="1">
-
-				<a
-						href="javascript:void(0);" class="dropdown-toggle"
-						haschild="true"
-				>
-					<i class="menu-icon fa fa-binoculars"></i>
-					<span class="menu-text"
-						  style="vertical-align: middle;"
-					> 系统监控 </span>
-					<b class="arrow fa fa-angle-down"></b>
-				</a>
-				<b class="arrow"></b>
-
-				<ul class="submenu nav-hide" style="display:none;">
-					<li data-level="2">
-
-						<a
-								href="../ehcache/ehcache.html"
-								id="menu_managermonitorehcache"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-crosshairs"></i>
-							<span class="menu-text"
-							> Ehcache监控 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-					<li data-level="2">
-
-						<a
-								href="../jvm/jvm.html"
-								id="menu_managermonitorjvm"
-								haschild="false"
-						>
-							<i class="menu-icon fa fa-flash"></i>
-							<span class="menu-text"
-							> jvm监控 </span>
-						</a>
-						<b class="arrow"></b>
-
-					</li>
-				</ul>
-			</li>
-		</ul><!-- /.nav-list -->
-		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-			<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-		</div>
-
-		<script type="text/javascript">
-            try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
-		</script>
 	</div>
 
 
 	<div class="main-content">
 		<div class="breadcrumbs" id="breadcrumbs">
-			<script type="text/javascript">
-                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-			</script>
 
 			<ul class="tab" id="breadcrumb">
 				<!-- <li class="active" >
@@ -734,7 +185,7 @@
 									<form action="#" method="post" id="search-form" target="list-page" class="clearfix">
 										<div class="pull-left width-25">
 											<label>类型：</label>
-											<select class="chosen-select" name="type" id="chosen-select" style="display: none;">
+											<select class="select" name="type" v-model="log.type" class="width-80" id="select">
 												<option value="">全部</option>
 												<option value="1">
 													操作日志
@@ -742,19 +193,13 @@
 												<option value="2">
 													异常日志
 												</option>
-
-											</select><div class="chosen-container chosen-container-single chosen-container-active chosen-with-drop" style="width: 60%; display: none" title="" id="chosen_select_chosen"><a class="chosen-single" tabindex="-1"><span>全部</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"><li class="active-result result-selected" data-option-array-index="0">全部</li><li class="active-result" data-option-array-index="1">操作日志</li><li class="active-result" data-option-array-index="2">异常日志</li></ul></div></div>
-											<script>
-                                                $(function(){
-                                                    $("#chosen-select").chosen({width: "60%",search_contains: true});
-                                                });
-											</script>
+											</select>
 										</div>
 										<div class="pull-left width-30">
 											<label>描述：</label>
-											<input type="text" class="width-80" name="description"/>
+											<input type="text" v-model="log.description" class="width-80" name="description"/>
 										</div>
-										<div class="pull-left"><span class="btn btn-info btn-sm " id="search-btn">查 询</span></div>
+										<div class="pull-left"><span class="btn btn-info btn-sm " id="search-btn" @click="_selectPage(1,pageInfo.pageSize)">查 询</span></div>
 									</form>
 									<hr/>
 									<div id="list-page">
@@ -772,13 +217,13 @@
 											</thead>
 
 											<tbody>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">java.lang.…</td>
-												<td class="center"></td>
-												<td class="center">POST</td>
-												<td class="center">[参数1，类型:Long，值:135]</td>
-												<td class="center">/guguanjia/manager/work/showlayer</td>
+											<tr v-for="log in pageInfo.list">
+												<td class="center">{{log.type==1?'正常日志':'异常日志'}}</td>
+												<td class="center">{{log.createBy}}</td>
+												<td class="center">{{log.description}}</td>
+												<td class="center">{{log.method}}</td>
+												<td class="center">{{log.params}}</td>
+												<td class="center">{{log.requestUri}} </td>
 												<td class="center">
 													<div class="hidden-sm hidden-xs action-buttons">
 														<a class="purple" href="log-detail.html"
@@ -799,249 +244,6 @@
 													</div>
 												</td>
 											</tr>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">java.lang.…</td>
-												<td class="center"></td>
-												<td class="center">POST</td>
-												<td class="center">[参数1，类型:Long，值:135]</td>
-												<td class="center">/guguanjia/manager/work/showlayer</td>
-												<td class="center">
-													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'739'}"
-														   data-width="50%">
-															<i class="ace-icon fa fa-search-plus bigger-130"></i>
-														</a>
-
-														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'739'}">
-															<i class="ace-icon fa fa-trash-o bigger-130"></i>
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">org.mybati…</td>
-												<td class="center"></td>
-												<td class="center">POST</td>
-												<td class="center">[参数1，类型:Long，值:69][参…</td>
-												<td class="center">/guguanjia/api/workOrder/add</td>
-												<td class="center">
-													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'738'}"
-														   data-width="50%">
-															<i class="ace-icon fa fa-search-plus bigger-130"></i>
-														</a>
-
-														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'738'}">
-															<i class="ace-icon fa fa-trash-o bigger-130"></i>
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">org.mybati…</td>
-												<td class="center"></td>
-												<td class="center">POST</td>
-												<td class="center">[参数1，类型:Long，值:69][参…</td>
-												<td class="center">/guguanjia/api/workOrder/add</td>
-												<td class="center">
-													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'737'}"
-														   data-width="50%">
-															<i class="ace-icon fa fa-search-plus bigger-130"></i>
-														</a>
-
-														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'737'}">
-															<i class="ace-icon fa fa-trash-o bigger-130"></i>
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">org.mybati…</td>
-												<td class="center"></td>
-												<td class="center">POST</td>
-												<td class="center">[参数1，类型:Long，值:69][参…</td>
-												<td class="center">/guguanjia/api/workOrder/add</td>
-												<td class="center">
-													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'736'}"
-														   data-width="50%">
-															<i class="ace-icon fa fa-search-plus bigger-130"></i>
-														</a>
-
-														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'736'}">
-															<i class="ace-icon fa fa-trash-o bigger-130"></i>
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">org.spring…</td>
-												<td class="center"></td>
-												<td class="center">GET</td>
-												<td class="center"></td>
-												<td class="center">/ggj/</td>
-												<td class="center">
-													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'735'}"
-														   data-width="50%">
-															<i class="ace-icon fa fa-search-plus bigger-130"></i>
-														</a>
-
-														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'735'}">
-															<i class="ace-icon fa fa-trash-o bigger-130"></i>
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">org.spring…</td>
-												<td class="center"></td>
-												<td class="center">GET</td>
-												<td class="center"></td>
-												<td class="center">/ggj/</td>
-												<td class="center">
-													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'734'}"
-														   data-width="50%">
-															<i class="ace-icon fa fa-search-plus bigger-130"></i>
-														</a>
-
-														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'734'}">
-															<i class="ace-icon fa fa-trash-o bigger-130"></i>
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">org.spring…</td>
-												<td class="center"></td>
-												<td class="center">GET</td>
-												<td class="center"></td>
-												<td class="center">/ggj/</td>
-												<td class="center">
-													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'733'}"
-														   data-width="50%">
-															<i class="ace-icon fa fa-search-plus bigger-130"></i>
-														</a>
-
-														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'733'}">
-															<i class="ace-icon fa fa-trash-o bigger-130"></i>
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">org.spring…</td>
-												<td class="center"></td>
-												<td class="center">GET</td>
-												<td class="center"></td>
-												<td class="center">/ggj/</td>
-												<td class="center">
-													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'732'}"
-														   data-width="50%">
-															<i class="ace-icon fa fa-search-plus bigger-130"></i>
-														</a>
-
-														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'732'}">
-															<i class="ace-icon fa fa-trash-o bigger-130"></i>
-														</a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td class="center">异常日志</td>
-												<td class="center">org.spring…</td>
-												<td class="center"></td>
-												<td class="center">GET</td>
-												<td class="center"></td>
-												<td class="center">/ggj/</td>
-												<td class="center">
-													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'731'}"
-														   data-width="50%">
-															<i class="ace-icon fa fa-search-plus bigger-130"></i>
-														</a>
-
-														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'731'}">
-															<i class="ace-icon fa fa-trash-o bigger-130"></i>
-														</a>
-													</div>
-												</td>
-											</tr>
 											</tbody>
 										</table>
 										<div class="space-8"></div>
@@ -1050,25 +252,19 @@
 											<div style="float: left;">
 												<div style="padding-top:5px;">
 			<span class="badge badge-info">
-				当前第 1 页 / 73 页，共 721 条数据
+				当前第 {{pageInfo.pageNum}} 页 / {{pageInfo.pages}} 页，共 {{pageInfo.total}} 条数据
 			</span>
 												</div>
 											</div>
 											<div>
 												<div class="pagination no-margin pull-right clearfix">
-													<li class="prev disabled"><a href="javascript:void(0);" onclick="">首页</a></li>
-													<li class="prev disabled"><a href="javascript:void(0);" onclick="">上一页</a></li>
-													<li class="active"><a href="javascript:void(0);" onclick="">1</a></li>
-													<li><a href="javascript:void(0);" onclick="">2</a></li>
-													<li><a href="javascript:void(0);" onclick="">3</a></li>
-													<li><a href="javascript:void(0);" onclick="">4</a></li>
-													<li><a href="javascript:void(0);" onclick="">5</a></li>
-													<li><a href="javascript:void(0);" onclick="">6</a></li>
-													<li><a href="javascript:void(0);" onclick="">7</a></li>
-													<li><a href="javascript:void(0);">…</a></li>
-
-													<li><a href="javascript:void(0);" onclick="">下一页</a></li>
-													<li><a href="javascript:void(0);" onclick="">尾页</a></li>
+													<li class="prev"><a href="javascript:void(0);" @click="_selectPage(1,pageInfo.pageSize)">首页</a></li>
+													<li v-if="pageInfo.hasPreviousPage" class="prev"><a href="javascript:void(0);" @click="_selectPage(pageInfo.prePage,pageInfo.pageSize)">上一页</a></li>
+													<li v-else class="prev disabled"><a>上一页</a></li>
+													<li v-for="i in pageInfo.navigatepageNums" :class="i==pageInfo.pageNum?'active':''"><a href="javascript:void(0);" @click="_selectPage(i,pageInfo.pageSize)">{{i}}</a></li>
+													<li v-if="pageInfo.hasNextPage" class="next"><a href="javascript:void(0);" @click="_selectPage(pageInfo.nextPage,pageInfo.pageSize)">下一页</a></li>
+													<li v-else class="next disabled"><a >下一页</a></li>
+													<li class="next"><a href="javascript:void(0);" @click="_selectPage(pageInfo.pages,pageInfo.pageSize)">尾页</a></li>
 												</div>
 
 											</div>
@@ -1103,13 +299,13 @@
 <![endif]-->
 
 <script type="text/javascript">
-    if('ontouchstart' in document.documentElement) document.write("<script src='../../../static/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    if('ontouchstart' in document.documentElement) document.write("<script src='static/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
-<script src="../../../static/bootstrap/bootstrap.min.js"></script>
+<script src="static/bootstrap/bootstrap.min.js"></script>
 
 <!-- ace scripts -->
-<script src="../../../static/ace/js/ace-elements.min.js"></script>
-<script src="../../../static/ace/js/ace.min.js"></script>
+<script src="static/ace/js/ace-elements.min.js"></script>
+<script src="static/ace/js/ace.min.js"></script>
 
 <script type="text/javascript">
     var ctxPath = "../../..";
@@ -1121,18 +317,28 @@
 </script>
 
 <!-- 引入其他js -->
-<script src="../../../static/js/history.js"></script>
-<script type="text/javascript" src="../../../static/layer/layer.js"></script>
-<script type="text/javascript" src="../../../static/js/spin.min.js"></script>
-<script type="text/javascript" src="../../../static/ztree/jquery.ztree.all-3.5.min.js"></script>
-<script type="text/javascript" src="../../../static/js/jquery.autosize.min.js"></script>
-<script type="text/javascript" src="../../../static/chosen/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="../../../static/validate/Validform_v5.3.2_min.js"></script>
-<script type="text/javascript" src="../../../static/js/jquery.form.js"></script>
-<script type="text/javascript" src="../../../static/js/bootstrap-contextmenu.js"></script>
-<script type="text/javascript" src="../../../static/js/jquery.nicescroll.min.js"></script>
-<script type="text/javascript" src="../../../static/js/public.js"></script>
+<script src="static/js/history.js"></script>
+<script type="text/javascript" src="static/layer/layer.js"></script>
+<script type="text/javascript" src="static/js/spin.min.js"></script>
+<script type="text/javascript" src="static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="static/js/jquery.form.js"></script>
+<script type="text/javascript" src="static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="static/js/public.js"></script>
+<script type="text/javascript" src="static/vue/vue.js"></script>
+<script type="text/javascript" src="static/vue/axios.js"></script>
 
+<script type="text/javascript" src="static/js/log/log.js"></script>
+
+<script>
+	$(function () {
+		$("#navbar").load("main/navbar");
+		$("#sidebar").load("main/sidebar");
+	})
+</script>
 
 </body>
 </html>

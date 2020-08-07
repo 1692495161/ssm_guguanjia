@@ -1,7 +1,9 @@
 package com.cjj.controller;
 
 import com.cjj.entity.Result;
+import com.cjj.entity.SysResource;
 import com.cjj.entity.SysUser;
+import com.cjj.service.SysResourceService;
 import com.cjj.service.SysUserService;
 import com.cjj.utils.EncryptUtils;
 import com.sun.org.apache.regexp.internal.RE;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @author cjj
@@ -27,6 +30,9 @@ public class LoginController {
 
     @Autowired
     SysUserService userService;
+
+    @Autowired
+    SysResourceService resourceService;
 
     @RequestMapping("toIndex")
     public ModelAndView toIndex(){
@@ -42,7 +48,12 @@ public class LoginController {
             sysUser.setPassword(EncryptUtils.MD5_HEX(EncryptUtils.MD5_HEX(password)+username));
             SysUser loginUser = userService.selectOne(sysUser);
             if (loginUser!=null){
+                //根据用户的登录信息的id获取该用户的权限
+                List<SysResource> resources = resourceService.selectByUid(loginUser.getId());
+                loginUser.setResources(resources);
+
                 session.setAttribute("loginUser",loginUser);
+                session.setAttribute("resources",resources);
                 loginUser.setPassword(null); //将密码请出后传给前端，防止session显示密码
                 return new Result(true,"登陆成功",loginUser);
             }else {
@@ -59,4 +70,9 @@ public class LoginController {
         //跳转登录界面
         return "redirect:/login.html";
     }
+
+    /*@RequestMapping("selectByUid")
+    public Result selectByUid(long uid){
+        return new Result(true,"查询成功",resourceService.selectByUid(uid));
+    }*/
 }
