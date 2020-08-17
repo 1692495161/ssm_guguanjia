@@ -1,6 +1,5 @@
 package com.cjj.service.impl;
 
-import com.cjj.entity.AppVersion;
 import com.cjj.service.BaseService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

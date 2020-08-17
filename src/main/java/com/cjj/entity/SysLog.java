@@ -1,5 +1,7 @@
 package com.cjj.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -28,6 +30,7 @@ public class SysLog {
      * 创建时间
      */
     @Column(name = "create_date")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "CTT")
     private Date createDate;
 
     /**

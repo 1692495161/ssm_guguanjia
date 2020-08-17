@@ -226,19 +226,12 @@
 												<td class="center">{{log.requestUri}} </td>
 												<td class="center">
 													<div class="hidden-sm hidden-xs action-buttons">
-														<a class="purple" href="log-detail.html"
-														   data-mode="detail" data-title="详情"
-														   data-url="syslog/detail/showlayer"
-														   data-data="{id:'740'}"
-														   data-width="50%">
+														<a class="purple" @click="toDetail(log)">
 															<i class="ace-icon fa fa-search-plus bigger-130"></i>
 														</a>
 
 														<a class="red" href="javascript:void(0);"
-														   data-mode="del" data-title="删除操作"
-														   data-msg="你确定删除此数据吗?"
-														   data-url="syslog/delete"
-														   data-data="{id:'740'}">
+														   @click="toDelete(log.id)">
 															<i class="ace-icon fa fa-trash-o bigger-130"></i>
 														</a>
 													</div>

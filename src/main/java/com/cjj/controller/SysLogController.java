@@ -24,8 +24,18 @@ public class SysLogController {
         return new ModelAndView("/log/log");
     }
 
+    @RequestMapping("toDetail")
+    public ModelAndView toDetail(){
+        return new ModelAndView("/log/log-detail");
+    }
+
     @RequestMapping(value = "selectPage/{pageNum}/{pageSize}",method = RequestMethod.POST)
     public Result selectPage(@PathVariable("pageNum") int pageNum,@PathVariable("pageSize") int pageSize,@RequestBody SysLog sysLog){
         return new Result(true,"查询成功",logService.selectPages(pageNum,pageSize,sysLog));
+    }
+
+    @RequestMapping(value = "toDelete")
+    public Result toDelete(Long id){
+        return new Result(true,"删除成功",logService.deleteByPrimaryKey(id));
     }
 }

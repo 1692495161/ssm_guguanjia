@@ -59,7 +59,7 @@ let vm = new Vue({
             }).then((response) => {
                 this.nodes = response.data.obj;
                 //动态添加一个父节点
-                this.nodes[this.nodes.length]={id:0,name:'全部机构',open:true}
+                this.nodes[this.nodes.length]={id:0,name:'全部机构',open: false}
                 /*
                 init():初始化树的api
                 obj:需要挂载树的jq节点对象
@@ -108,8 +108,13 @@ let vm = new Vue({
             }
             //将模糊查询到的父节点的高亮设为true
             for (let i in fuzzy) {
-                fuzzy[i].highLight=true;
-                zTreeObj.updateNode(fuzzy[i])
+                if (this.name!=''){
+                    fuzzy[i].highLight = true;
+                    zTreeObj.updateNode(fuzzy[i])
+                }else {
+                    fuzzy[i].highLight = false;
+                    zTreeObj.updateNode(fuzzy[i])
+                }
             }
         },
         fontCss: function (treeId,treeNode) {
